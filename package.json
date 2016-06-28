@@ -4,6 +4,8 @@
   "description": "A react UI library for resmio",
   "main": "index.js",
   "scripts": {
+    "build": "webpack",
+    "start": "webpack",
     "test": "test"
   },
   "repository": {
@@ -26,5 +28,14 @@
   "dependencies": {
     "react": "^15.1.0",
     "react-dom": "^15.1.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.10.4",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.11.1",
+    "babel-preset-stage-1": "^6.5.0",
+    "webpack": "^1.13.1",
+    "webpack-merge": "^0.14.0"
   }
 }
