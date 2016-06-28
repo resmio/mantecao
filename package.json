@@ -1,0 +1,26 @@
+{
+  "name": "mantecao",
+  "version": "0.0.1",
+  "description": "A react UI library for resmio",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/resmio/mantecao.git"
+  },
+  "keywords": [
+    "react",
+    "ui",
+    "library",
+    "components",
+    "resmio"
+  ],
+  "author": "Resmio Team <developers@resmio.com> (https://resmio.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/resmio/mantecao/issues"
+  },
+  "homepage": "https://github.com/resmio/mantecao#readme"
+}
