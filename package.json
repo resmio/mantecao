@@ -17,7 +17,7 @@
     "components",
     "resmio"
   ],
-  "author": "Resmio Team <developers@resmio.com> (https://resmio.com)",
+  "author": "Resmio Team <services+npm@resmio.com> (https://resmio.com)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/resmio/mantecao/issues"
