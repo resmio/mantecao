@@ -2,7 +2,8 @@ const webpack = require('webpack')
 const path = require('path')
 const validate = require('webpack-validator')
 const merge = require('webpack-merge')
-// const parts = require('./webpack.parts')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const parts = require('./webpack.parts')
 
 const PORTS = {
   devServer: 3000
@@ -11,6 +12,7 @@ const PORTS = {
 const PATHS = {
   build: path.join(__dirname, 'build'),
   modules: path.join(__dirname, 'node_modules'),
+  publicPath: `http://localhost:${PORTS.devServer}/build/`,
   src: path.join(__dirname, 'src')
 }
 
@@ -24,7 +26,7 @@ const ENTRIES = {
 const common = {
   output: {
     path: PATHS.build,
-    filename: '[name].js'
+    filename: 'mantecao.js'
   },
 
   module: {
@@ -50,7 +52,13 @@ const common = {
       path.join(__dirname, 'node_modules')
     ],
     extensions: ['', '.js', '.jsx']
-  }
+  },
+
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: 'Mantecao'
+    })
+  ]
 }
 
 var config
@@ -65,14 +73,20 @@ switch (process.env.npm_lifecycle_event) {
         devtool: 'source-map'
       }
     )
+    break
 
   default:
     config = merge(
       common,
       {
-        entry: ENTRIES.dev,
+        entry: { app: ENTRIES.dev},
         devtool: 'eval-source-map'
-      }
+      },
+      parts.devServer({
+        contentBase: PATHS.build,
+        host: 'localhost',
+        port: PORTS.devServer
+      })
     )
 }
 
