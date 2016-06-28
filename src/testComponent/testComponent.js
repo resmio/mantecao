@@ -7,7 +7,7 @@ class TestComponent extends Component {
 
   render() {
     return (
-      <h1>Hallo {this.props.text}</h1>
+      <h1>Holo {this.props.text}</h1>
     )
   }
 }

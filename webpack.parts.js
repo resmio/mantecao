@@ -7,7 +7,6 @@ const BundleTracker = require('webpack-bundle-tracker')
 exports.devServer = function (options) {
   return {
     devServer: {
-      contentBase: options.contentBase || null,
       // Enable history API fallback so HTML5 History API based
       // routing works.
       historyApiFallback: true,
