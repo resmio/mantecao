@@ -1,4 +1,4 @@
-import {Component, PropTypes} from 'react'
+import React, {Component, PropTypes} from 'react'
 
 class TestComponent extends Component {
   static propTypes = {
@@ -7,7 +7,7 @@ class TestComponent extends Component {
 
   render () {
     return (
-      <h1>{this.props.text}</h1>
+      <h1>Holo {this.props.text}</h1>
     )
   }
 }
