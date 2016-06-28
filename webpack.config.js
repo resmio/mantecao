@@ -38,6 +38,13 @@ const common = {
           cacheDirectory: true
         }
       }
+    ],
+    preLoaders: [
+      {
+        test: /\.js$/,
+        loaders: ['eslint'],
+        include: PATHS.src
+      }
     ]
   },
 
