@@ -1,11 +1,11 @@
-import React, {Component, PropTypes} from 'react'
+import {Component, PropTypes} from 'react'
 
 class TestComponent extends Component {
   static propTypes = {
     text: PropTypes.string
   }
 
-  render() {
+  render () {
     return (
       <h1>Holo {this.props.text}</h1>
     )
