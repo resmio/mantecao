@@ -10,8 +10,15 @@
     "browser": true,
     "node": true
   },
+  "rules": {
+    "no-unused-vars": 0
+  },
   // Enable custom plugin known as eslint-plugin-react
   "plugins": [
     "react"
-  ]
+  ],
+  "globals": {
+    "React": true
+   },
+   "ecmaFeatures": {"jsx": true}
 }
