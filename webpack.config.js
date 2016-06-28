@@ -1,12 +1,12 @@
-const webpack = require('webpack')
+// const webpack = require('webpack')
 const path = require('path')
 const validate = require('webpack-validator')
 const merge = require('webpack-merge')
 // const parts = require('./webpack.parts')
 
-const PORTS = {
-  devServer: 3000
-}
+// const PORTS = {
+//   devServer: 3000
+// }
 
 const PATHS = {
   build: path.join(__dirname, 'build'),
@@ -65,6 +65,7 @@ switch (process.env.npm_lifecycle_event) {
         devtool: 'source-map'
       }
     )
+    break
 
   default:
     config = merge(
