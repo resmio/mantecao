@@ -34,3 +34,21 @@ exports.devServer = function (options) {
     ]
   }
 }
+
+// ---------------------------------------------------------------------------
+// Styles tasks
+// ---------------------------------------------------------------------------
+exports.devCSS = function (paths) {
+  return {
+    module: {
+      loaders: [
+        {
+          test: /\.scss$/,
+          loaders: ['style', 'css', 'sass'],
+          include: paths,
+          exclude: 'node_modules'
+        }
+      ]
+    }
+  }
+}

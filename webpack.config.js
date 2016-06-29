@@ -88,6 +88,7 @@ switch (process.env.npm_lifecycle_event) {
       common,
       { entry: ENTRIES.dev },
       { devtool: 'eval-source-map' },
+      parts.devCSS(PATHS.src),
       parts.devServer({
         host: 'localhost',
         port: PORTS.devServer

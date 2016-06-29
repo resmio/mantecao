@@ -1,4 +1,5 @@
 import React, {Component, PropTypes} from 'react'
+import styles from './_TestComponent.scss'
 
 class TestComponent extends Component {
   static propTypes = {
@@ -7,7 +8,7 @@ class TestComponent extends Component {
 
   render () {
     return (
-      <h1>Holo {this.props.text}</h1>
+      <h1 className='testimon'>Holo {this.props.text}</h1>
     )
   }
 }
