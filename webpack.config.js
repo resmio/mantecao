@@ -79,7 +79,8 @@ switch (process.env.npm_lifecycle_event) {
       {
         entry: ENTRIES.prod,
         devtool: 'source-map'
-      }
+      },
+      parts.devCSS(PATHS.src)
     )
     break
 
