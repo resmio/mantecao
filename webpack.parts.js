@@ -44,7 +44,7 @@ exports.devCSS = function (paths) {
       loaders: [
         {
           test: /\.scss$/,
-          loaders: ['style', 'css', 'sass'],
+          loaders: ['style', 'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]', 'sass'],
           include: paths,
           exclude: 'node_modules'
         }

@@ -59,7 +59,7 @@ const common = {
     modulesDirectories: [
       path.join(__dirname, 'node_modules')
     ],
-    extensions: ['', '.js', '.jsx']
+    extensions: ['', '.js', '.jsx', '.scss']
   },
 
   plugins: [
@@ -79,7 +79,8 @@ switch (process.env.npm_lifecycle_event) {
       {
         entry: ENTRIES.prod,
         devtool: 'source-map'
-      }
+      },
+      parts.devCSS(PATHS.src)
     )
     break
 
