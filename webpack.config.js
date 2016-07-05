@@ -59,7 +59,7 @@ const common = {
     modulesDirectories: [
       path.join(__dirname, 'node_modules')
     ],
-    extensions: ['', '.js', '.jsx']
+    extensions: ['', '.js', '.jsx', '.scss']
   },
 
   plugins: [
