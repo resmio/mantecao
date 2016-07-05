@@ -8,7 +8,7 @@ class TestComponent extends Component {
 
   render () {
     return (
-      <h1 className='testimon'>Holo {this.props.text}</h1>
+      <h1 className={styles.testimon}>Holo {this.props.text}</h1>
     )
   }
 }
