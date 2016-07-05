@@ -18,6 +18,7 @@ const PATHS = {
 
 const ENTRIES = {
   dev: [ PATHS.src ],
+  vendor: ['react', 'react-dom'],
   prod: PATHS.src
 }
 
@@ -26,7 +27,7 @@ const ENTRIES = {
 const common = {
   output: {
     path: PATHS.build,
-    filename: 'mantecao.js',
+    filename: '[name].js',
     publicPath: PATHS.publicPath
   },
 
@@ -77,9 +78,20 @@ switch (process.env.npm_lifecycle_event) {
     config = merge(
       common,
       {
-        entry: ENTRIES.prod,
+        entry: {
+          mantecao: ENTRIES.prod,
+          vendor: ENTRIES.vendor,
+        },
         devtool: 'source-map'
       },
+      parts.setFreeVariable(
+        'process.env.NODE_ENV',
+        'production'
+      ),
+      parts.extractBundle({
+        name: 'vendor',
+        entries: ENTRIES.vendor
+      }),
       parts.devCSS(PATHS.src)
     )
     break
