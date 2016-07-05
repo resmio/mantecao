@@ -1,5 +1,6 @@
 const webpack = require('webpack')
 const BundleTracker = require('webpack-bundle-tracker')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 
 // ---------------------------------------------------------------------------
 //  devServer task
@@ -36,9 +37,24 @@ exports.devServer = function (options) {
 }
 
 // ---------------------------------------------------------------------------
-// Styles tasks
+// Clean build task
 // ---------------------------------------------------------------------------
-exports.devCSS = function (paths) {
+exports.clean = function(path) {
+  return {
+    plugins: [
+      new CleanWebpackPlugin([path], {
+        // Without `root` CleanWebpackPlugin won't point to our
+        // project and will fail to work.
+        root: process.cwd()
+      })
+    ]
+  };
+}
+
+// ---------------------------------------------------------------------------
+// Styles task
+// ---------------------------------------------------------------------------
+exports.CSS = function (paths) {
   return {
     module: {
       loaders: [

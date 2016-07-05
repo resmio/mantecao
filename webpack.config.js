@@ -84,6 +84,7 @@ switch (process.env.npm_lifecycle_event) {
         },
         devtool: 'source-map'
       },
+      parts.clean(PATHS.build),
       parts.setFreeVariable(
         'process.env.NODE_ENV',
         'production'
@@ -92,7 +93,7 @@ switch (process.env.npm_lifecycle_event) {
         name: 'vendor',
         entries: ENTRIES.vendor
       }),
-      parts.devCSS(PATHS.src)
+      parts.CSS(PATHS.src)
     )
     break
 
@@ -101,7 +102,7 @@ switch (process.env.npm_lifecycle_event) {
       common,
       { entry: ENTRIES.dev },
       { devtool: 'eval-source-map' },
-      parts.devCSS(PATHS.src),
+      parts.CSS(PATHS.src),
       parts.devServer({
         host: 'localhost',
         port: PORTS.devServer
