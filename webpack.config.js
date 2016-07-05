@@ -93,6 +93,7 @@ switch (process.env.npm_lifecycle_event) {
         name: 'vendor',
         entries: ENTRIES.vendor
       }),
+      parts.uglify(),
       parts.CSS(PATHS.src)
     )
     break

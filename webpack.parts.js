@@ -70,7 +70,7 @@ exports.CSS = function (paths) {
 }
 
 // ---------------------------------------------------------------------------
-// Set environment tasks
+// Set environment task
 // ---------------------------------------------------------------------------
 exports.setFreeVariable = function(key, value) {
   const env = {};
@@ -84,7 +84,7 @@ exports.setFreeVariable = function(key, value) {
 }
 
 // ---------------------------------------------------------------------------
-// Extract Bundles tasks
+// Extract Bundles task
 // ---------------------------------------------------------------------------
 exports.extractBundle = function(options) {
   const entry = {};
@@ -98,6 +98,21 @@ exports.extractBundle = function(options) {
       // needed for reliable caching.
       new webpack.optimize.CommonsChunkPlugin({
         names: [options.name, 'manifest']
+      })
+    ]
+  };
+}
+
+// ---------------------------------------------------------------------------
+// Uglify task
+// ---------------------------------------------------------------------------
+exports.uglify = function() {
+  return {
+    plugins: [
+      new webpack.optimize.UglifyJsPlugin({
+        compress: {
+          warnings: false
+        }
       })
     ]
   };
