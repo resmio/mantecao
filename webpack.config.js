@@ -4,13 +4,14 @@ const validate = require('webpack-validator')
 const merge = require('webpack-merge')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const parts = require('./webpack.parts')
+const nodeExternals = require('webpack-node-externals')
 
 const PORTS = {
   devServer: 3000
 }
 
 const PATHS = {
-  build: path.join(__dirname, 'build'),
+  build: path.join(__dirname, 'dist'),
   modules: path.join(__dirname, 'node_modules'),
   publicPath: `http://localhost:${PORTS.devServer}/`,
   src: path.join(__dirname, 'src')
@@ -61,13 +62,7 @@ const common = {
       path.join(__dirname, 'node_modules')
     ],
     extensions: ['', '.js', '.jsx', '.scss']
-  },
-
-  plugins: [
-    new HtmlWebpackPlugin({
-      title: 'Mantecao'
-    })
-  ]
+  }
 }
 
 var config
@@ -79,20 +74,20 @@ switch (process.env.npm_lifecycle_event) {
       common,
       {
         entry: {
-          mantecao: ENTRIES.prod,
-          vendor: ENTRIES.vendor,
+          index: ENTRIES.prod
         },
-        devtool: 'source-map'
+        output: {
+          libraryTarget: "commonjs"
+        },
+        devtool: 'source-map',
+        externals: [nodeExternals()],
+        
       },
       parts.clean(PATHS.build),
       parts.setFreeVariable(
         'process.env.NODE_ENV',
         'production'
       ),
-      parts.extractBundle({
-        name: 'vendor',
-        entries: ENTRIES.vendor
-      }),
       parts.uglify(),
       parts.CSS(PATHS.src)
     )
@@ -104,6 +99,11 @@ switch (process.env.npm_lifecycle_event) {
       { entry: ENTRIES.dev },
       { devtool: 'eval-source-map' },
       parts.CSS(PATHS.src),
+      { plugins: [
+        new HtmlWebpackPlugin({
+          title: 'Mantecao'
+        })
+      ]},
       parts.devServer({
         host: 'localhost',
         port: PORTS.devServer

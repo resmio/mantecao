@@ -1,13 +1,16 @@
 {
   "name": "mantecao",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "description": "A react UI library for resmio",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "build": "webpack",
+    "lint": "eslint . --ext .js --ext .jsx || true",
+    "lint:fix": "eslint . --ext .js --ext .jsx --fix || true",
+    "prepublish": "npm run build",
     "start": "webpack-dev-server",
-    "test": "cd src && babel-node tests.js | faucet || true",
-    "test:lint": "eslint . --ext .js --ext .jsx || true"
+    "test": "npm run lint && npm run test:only",
+    "test:only": "cd src && babel-node tests.js | faucet || true"
   },
   "repository": {
     "type": "git",
@@ -20,13 +23,13 @@
     "components",
     "resmio"
   ],
-  "author": "Resmio Team <services+npm@resmio.com> (https://resmio.com)",
+  "author": "resmio <developers@resmio.com> (https://resmio.com)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/resmio/mantecao/issues"
   },
   "homepage": "https://github.com/resmio/mantecao#readme",
-  "dependencies": {
+  "peerDependencies": {
     "react": "^15.1.0",
     "react-dom": "^15.1.0"
   },
@@ -55,6 +58,7 @@
     "webpack": "^1.13.1",
     "webpack-bundle-tracker": "0.0.93",
     "webpack-dev-server": "^1.14.1",
-    "webpack-merge": "^0.14.0"
+    "webpack-merge": "^0.14.0",
+    "webpack-node-externals": "^1.2.0"
   }
 }

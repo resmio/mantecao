@@ -4,7 +4,7 @@ logs
 npm-debug.log*
 
 # Build folder
-build/
+dist/
 
 # Runtime data
 pids

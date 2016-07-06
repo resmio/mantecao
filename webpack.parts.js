@@ -39,7 +39,7 @@ exports.devServer = function (options) {
 // ---------------------------------------------------------------------------
 // Clean build task
 // ---------------------------------------------------------------------------
-exports.clean = function(path) {
+exports.clean = function (path) {
   return {
     plugins: [
       new CleanWebpackPlugin([path], {
@@ -48,7 +48,7 @@ exports.clean = function(path) {
         root: process.cwd()
       })
     ]
-  };
+  }
 }
 
 // ---------------------------------------------------------------------------
@@ -72,23 +72,23 @@ exports.CSS = function (paths) {
 // ---------------------------------------------------------------------------
 // Set environment task
 // ---------------------------------------------------------------------------
-exports.setFreeVariable = function(key, value) {
-  const env = {};
-  env[key] = JSON.stringify(value);
+exports.setFreeVariable = function (key, value) {
+  const env = {}
+  env[key] = JSON.stringify(value)
 
   return {
     plugins: [
       new webpack.DefinePlugin(env)
     ]
-  };
+  }
 }
 
 // ---------------------------------------------------------------------------
 // Extract Bundles task
 // ---------------------------------------------------------------------------
-exports.extractBundle = function(options) {
-  const entry = {};
-  entry[options.name] = options.entries;
+exports.extractBundle = function (options) {
+  const entry = {}
+  entry[options.name] = options.entries
 
   return {
     // Define an entry point needed for splitting.
@@ -100,13 +100,13 @@ exports.extractBundle = function(options) {
         names: [options.name, 'manifest']
       })
     ]
-  };
+  }
 }
 
 // ---------------------------------------------------------------------------
 // Uglify task
 // ---------------------------------------------------------------------------
-exports.uglify = function() {
+exports.uglify = function () {
   return {
     plugins: [
       new webpack.optimize.UglifyJsPlugin({
@@ -115,5 +115,5 @@ exports.uglify = function() {
         }
       })
     ]
-  };
+  }
 }
