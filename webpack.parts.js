@@ -25,7 +25,7 @@ exports.devServer = function (options) {
       new BundleTracker({
       //   // mmmh this should be in the config and not here
       //   // but if does not work if I use options.contentBase
-        filename: './build/webpack-stats.json'
+        filename: './webpack-stats.json'
       }),
       // Enable multi-pass compilation for enhanced performance
       // in larger projects. Good default.

@@ -1,15 +1,15 @@
- // export TestComponent from './TestComponent'
- import React from 'react'
- import ReactDOM from 'react-dom'
- import styles from './styles'
- import TestComponent from './TestComponent'
+import React from 'react'
+import ReactDOM from 'react-dom'
+import styles from './styles'
+import TestComponent from './TestComponent'
 
- function main () {
-   const app = document.createElement('div')
-   document.body.appendChild(app)
+// Create here the component you want to see
+const component = <TestComponent text='mantecao'/>
 
-   ReactDOM.render(<TestComponent text='mantecao'/>,
-     app)
- }
+function main () {
+  const app = document.createElement('div')
+  document.body.appendChild(app)
+  ReactDOM.render(component, app)
+}
 
- main()
+main()

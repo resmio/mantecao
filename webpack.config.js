@@ -14,11 +14,12 @@ const PATHS = {
   build: path.join(__dirname, 'dist'),
   modules: path.join(__dirname, 'node_modules'),
   publicPath: `http://localhost:${PORTS.devServer}/`,
-  src: path.join(__dirname, 'src')
+  src: path.join(__dirname, 'src'),
+  devServer: path.join(__dirname, 'src', 'index.dev')
 }
 
 const ENTRIES = {
-  dev: [ PATHS.src ],
+  dev: [ PATHS.devServer ],
   vendor: ['react', 'react-dom'],
   prod: PATHS.src
 }
@@ -81,7 +82,7 @@ switch (process.env.npm_lifecycle_event) {
         },
         devtool: 'source-map',
         externals: [nodeExternals()],
-        
+
       },
       parts.clean(PATHS.build),
       parts.setFreeVariable(
@@ -99,11 +100,11 @@ switch (process.env.npm_lifecycle_event) {
       { entry: ENTRIES.dev },
       { devtool: 'eval-source-map' },
       parts.CSS(PATHS.src),
-      { plugins: [
-        new HtmlWebpackPlugin({
-          title: 'Mantecao'
-        })
-      ]},
+      {
+        plugins: [
+          new HtmlWebpackPlugin({})
+        ]
+      },
       parts.devServer({
         host: 'localhost',
         port: PORTS.devServer

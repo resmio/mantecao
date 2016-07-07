@@ -5,6 +5,7 @@ npm-debug.log*
 
 # Build folder
 dist/
+webpack-stats.json
 
 # Runtime data
 pids
