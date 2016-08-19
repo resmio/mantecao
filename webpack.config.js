@@ -78,10 +78,10 @@ switch (process.env.npm_lifecycle_event) {
           index: ENTRIES.prod
         },
         output: {
-          libraryTarget: "commonjs"
+          libraryTarget: 'commonjs'
         },
         devtool: 'source-map',
-        externals: [nodeExternals()],
+        externals: [nodeExternals()]
 
       },
       parts.clean(PATHS.build),

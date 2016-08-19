@@ -7,6 +7,9 @@ npm-debug.log*
 dist/
 webpack-stats.json
 
+# Code coverage
+coverage/
+
 # Runtime data
 pids
 *.pid
