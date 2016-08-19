@@ -36,7 +36,7 @@ const common = {
   module: {
     loaders: [
       {
-        test: /.js$/,
+        test: /.jsx?$/,
         include: PATHS.src,
         exclude: PATHS.modules,
         loader: 'babel-loader', /* Converts ES6 to JS */
@@ -47,7 +47,7 @@ const common = {
     ],
     preLoaders: [
       {
-        test: /\.js$/,
+        test: /\.jsx?$/,
         loaders: ['eslint'],
         include: PATHS.src
       }

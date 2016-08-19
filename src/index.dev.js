@@ -1,10 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import styles from './styles'
-import TestComponent from './TestComponent'
+import Calendar from './Calendar'
 
 // Create here the component you want to see
-const component = <TestComponent text='mantecao'/>
+const component = <Calendar />
 
 function main () {
   const app = document.createElement('div')

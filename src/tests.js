@@ -1,2 +1,2 @@
 // Import here the tests you want to be run
-import './TestComponent/TestComponent.spec'
+import './Calendar/Calendar.spec'
