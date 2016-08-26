@@ -4,7 +4,7 @@ logs
 npm-debug.log*
 
 # Build folder
-# dist/
+dist/
 webpack-stats.json
 
 # Code coverage

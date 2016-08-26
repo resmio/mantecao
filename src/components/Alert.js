@@ -8,7 +8,7 @@ const defaultAlertStyle = {
   boxShadow: '0px 0px 20px ' + colors.alto,
   width: '80%',
   zIndex: 1,
-  margin: '0 auto',
+  margin: '0rem auto',
   backgroundColor: colors.white,
   textAlign: 'center',
   position: 'relative'
@@ -30,35 +30,31 @@ const defaultFooterStyle = {
   margin: '0rem',
   fontSize: '1.8rem'
 }
+const defaultAlertColors = {
+  'alert': colors.goldenTainoi,
+  'error': colors.amaranth,
+  'info': colors.pacificBlue,
+  'success': colors.java
+}
+const defaultAlertIcons = {
+  'alert': <CloseIcon large />,
+  'error': <CloseIcon large />,
+  'info': <CloseIcon large />,
+  'success': <CloseIcon large />
+}
 
 class Alert extends Component {
   constructor (props) {
     super(props)
-
-    this.headerStyle = {}
-    this.headingStyle = {}
-    switch (props.type) {
-      case 'alert':
-        this.headerStyle = Object.assign({}, defaultHeaderStyle, { backgroundColor: colors.goldenTainoi })
-        this.headingStyle = Object.assign({}, defaultHeadingStyle, { color: colors.goldenTainoi })
-        this.alertIcon = <CloseIcon large /> // replace with the correct later
-        break
-      case 'error':
-        this.headerStyle = Object.assign(defaultHeaderStyle, { backgroundColor: colors.amaranth })
-        this.headingStyle = Object.assign({}, defaultHeadingStyle, { color: colors.amaranth })
-        this.alertIcon = <CloseIcon large /> // replace with the correct later
-        break
-      case 'info':
-        this.headerStyle = Object.assign(defaultHeaderStyle, { backgroundColor: colors.pacificBlue })
-        this.headingStyle = Object.assign({}, defaultHeadingStyle, { color: colors.pacificBlue })
-        this.alertIcon = <CloseIcon large /> // replace with the correct later
-        break
-      case 'success':
-        this.headerStyle = Object.assign(defaultHeaderStyle, { backgroundColor: colors.java })
-        this.headingStyle = Object.assign({}, defaultHeadingStyle, { color: colors.java })
-        this.alertIcon = <CloseIcon large /> // replace with the correct later
-        break
-    }
+    this.headerStyle = Object.assign({},
+      defaultHeaderStyle,
+      { backgroundColor: defaultAlertColors[props.type] }
+    )
+    this.headingStyle = Object.assign({},
+      defaultHeadingStyle,
+      { color: defaultAlertColors[props.type] }
+    )
+    this.alertIcon = defaultAlertIcons[props.type]
   }
   render () {
     let alert = (
