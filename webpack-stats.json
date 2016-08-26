@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 {"status":"done","chunks":{"main":[{"name":"main.js","publicPath":"http://localhost:3000/main.js","path":"/main.js"},{"name":"0.99beddfdf08cfe254328.hot-update.js","publicPath":"http://localhost:3000/0.99beddfdf08cfe254328.hot-update.js","path":"/0.99beddfdf08cfe254328.hot-update.js"}]},"publicPath":"http://localhost:3000/"}
+=======
+{"status":"done","chunks":{"main":[{"name":"main.js","publicPath":"http://localhost:3000/main.js","path":"/main.js"}]},"publicPath":"http://localhost:3000/"}
+>>>>>>> c86dbda... fixing

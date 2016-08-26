@@ -9,10 +9,9 @@ class DateInput extends Component {
   render () {
     return (
       <input
-        className={ styles.dateInput }
+        className={styles.dateInput}
         type='text'
-        defaultValue={ this.formatDate(this.props.defaultValue, 'A') }
-        onChange= { this.props.onChange } />
+        value='July 3rd, 2016' />
     )
   }
 
