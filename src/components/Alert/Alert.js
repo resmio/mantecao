@@ -1,9 +1,10 @@
 import React, {Component, PropTypes} from 'react'
 import ReactDOM from 'react-dom'
 
-import { CloseIcon } from '../icons'
+import { CloseIcon } from '../../icons'
 
-import { colors } from '../styles/variables'
+import { colors } from '../../variables'
+
 const defaultAlertStyle = {
   boxShadow: '0px 0px 20px ' + colors.alto,
   width: '80%',
@@ -28,7 +29,8 @@ const defaultMessageStyle = {
 }
 const defaultFooterStyle = {
   margin: '0rem',
-  fontSize: '1.8rem'
+  fontSize: '1.8rem',
+  overflow: 'hidden'
 }
 const defaultAlertColors = {
   'alert': colors.goldenTainoi,
@@ -43,6 +45,9 @@ const defaultAlertIcons = {
   'success': <CloseIcon large />
 }
 
+/**
+ * Alert component (types: alert, error, info, success) with a large icon display, heading, message and body
+ */
 class Alert extends Component {
   constructor (props) {
     super(props)

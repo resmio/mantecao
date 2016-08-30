@@ -1,7 +1,8 @@
 import React, { PropTypes } from 'react'
-import Button from './Button'
+import Button from '../Button'
 
-import { colors } from '../styles/variables'
+import { colors } from '../../variables'
+
 const defaultStyle = {
   color: colors.alto,
   bgColor: colors.white
