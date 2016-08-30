@@ -5,9 +5,7 @@ import { shallow, mount } from 'enzyme'
 import { setupDOM } from '../../utils/testUtils'
 setupDOM()
 
-import { hexToRgb } from '../../utils/colorUtils'
-
-import DialogHeader from '../DialogHeader'
+import DialogHeader from './DialogHeader'
 
 const testChildren = <h1 className='unique'>I am a child</h1>
 

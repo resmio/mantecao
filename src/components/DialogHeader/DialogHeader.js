@@ -1,9 +1,10 @@
 import React, { PropTypes } from 'react'
 
-import { CloseIcon } from '../icons'
-import UnstyledButton from './UnstyledButton'
+import { CloseIcon } from '../../icons'
+import { UnstyledButton } from '../UnstyledButton'
 
-import { colors } from '../variables'
+import { colors } from '../../variables'
+
 const defaultWrapperStyle = {
   position: 'relative',
   background: colors.pacificBlue,
@@ -21,6 +22,9 @@ const defaultCloseStyle = {
   right: '1rem'
 }
 
+/**
+ * Header section of a dialog
+ */
 const DialogHeader = (props) => {
   let close = (
     <div style={ defaultCloseStyle }>

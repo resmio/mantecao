@@ -20,6 +20,9 @@ const large = {
   width: '3.5rem'
 }
 
+/**
+ * Renders SVGs and applies some transforms (mirrorX/Y) - Small and large
+ */
 const Icon = (props) => {
   let componentStyle = Object.assign({}, defaultStyle)
   // assign new values from any styles passed as props

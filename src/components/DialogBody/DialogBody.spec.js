@@ -7,7 +7,7 @@ setupDOM()
 
 import { hexToRgb } from '../../utils/colorUtils'
 
-import DialogBody from '../DialogBody'
+import DialogBody from './DialogBody'
 
 const testProps = {
   backgroundColor: '#111111'

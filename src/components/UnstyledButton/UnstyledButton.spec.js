@@ -5,7 +5,7 @@ import { shallow, mount } from 'enzyme'
 import { setupDOM } from '../../utils/testUtils'
 setupDOM()
 
-import UnstyledButton from '../UnstyledButton'
+import UnstyledButton from './UnstyledButton'
 
 const testChildren = <h1 className='unique'>I am a child</h1>
 

@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 
-import { colors } from '../variables'
+import { colors } from '../../variables'
 
 const defaultStyle = {
   width: '80%',
@@ -9,6 +9,9 @@ const defaultStyle = {
 }
 const defaultBackgroundColor = colors.white
 
+/**
+ * Body section of a dialog
+ */
 const DialogBody = (props) => (
   <div style={{ backgroundColor: props.backgroundColor || defaultBackgroundColor }}>
     <div style={ defaultStyle }>

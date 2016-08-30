@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 
-import { colors } from '../variables'
-import { colorLuminance } from '../utils/colorUtils'
+import { colors } from '../../variables'
+import { colorLuminance } from '../../utils/colorUtils'
 
 const defaultStyle = {
   padding: '0.8rem 1.5rem',
@@ -19,6 +19,9 @@ const defaultHoverStyle = {
   backgroundColor: colorLuminance(defaultStyle.backgroundColor, -0.1)
 }
 
+/**
+ * Normal Button - onClick and disabled props, and can have styles applied
+ */
 class Button extends Component {
   constructor (props) {
     super(props)

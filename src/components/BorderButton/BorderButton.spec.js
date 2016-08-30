@@ -5,7 +5,7 @@ import { shallow, mount } from 'enzyme'
 import { setupDOM } from '../../utils/testUtils'
 setupDOM()
 
-import BorderButton from '../BorderButton'
+import BorderButton from './BorderButton'
 
 const testProps = {
   color: '#111111'
