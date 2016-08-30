@@ -1,7 +1,9 @@
 import React, { PropTypes } from 'react'
+
 import DateInput from './DateInput'
 
-import { colors } from '../styles/variables'
+import { colors } from '../variables'
+
 const defaultDatepickerStyle = {}
 const defaultCalendarStyle = {
   backgroundColor: colors.alto,

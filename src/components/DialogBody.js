@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react'
 
-import { colors } from '../styles/variables'
+import { colors } from '../variables'
+
 const defaultStyle = {
   width: '80%',
   margin: '0rem auto',

@@ -1,9 +1,9 @@
 import React, { PropTypes } from 'react'
 
-import CloseIcon from '../icons/CloseIcon'
+import { CloseIcon } from '../icons'
 import UnstyledButton from './UnstyledButton'
 
-import { colors } from '../styles/variables'
+import { colors } from '../variables'
 const defaultWrapperStyle = {
   position: 'relative',
   background: colors.pacificBlue,

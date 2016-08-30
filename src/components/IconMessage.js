@@ -1,7 +1,9 @@
 import React, { Component, PropTypes } from 'react'
+
 import * as Icons from '../icons'
 
-import { colors } from '../styles/variables'
+import { colors } from '../variables'
+
 const defaultIconStyle = { position: 'absolute' }
 const defaultContainerStyle = { position: 'relative' }
 

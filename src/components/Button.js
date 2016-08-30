@@ -1,7 +1,8 @@
 import React, { Component, PropTypes } from 'react'
 
-import { colors } from '../styles/variables'
+import { colors } from '../variables'
 import { colorLuminance } from '../utils/colorUtils'
+
 const defaultStyle = {
   padding: '0.8rem 1.5rem',
   color: colors.white,
