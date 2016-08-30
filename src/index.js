@@ -1,2 +1,15 @@
-export TestComponent from './TestComponent'
-export TestComponentBis from './TestComponentBis'
+// components
+export Alert from './components/Alert'
+export BorderButton from './components/BorderButton'
+export Button from './components/Button'
+export Calendar from './components/Calendar'
+export DateInput from './components/DateInput'
+export DialogBody from './components/DialogBody'
+export DialogHeader from './components/DialogHeader'
+export IconMessage from './components/IconMessage'
+export Icon from './components/Icon'
+export LoadMore from './components/LoadMore'
+export UnstyledButton from './components/UnstyledButton'
+
+// icons
+export * from './icons'

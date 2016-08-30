@@ -13,7 +13,7 @@ const PORTS = {
 const PATHS = {
   build: path.join(__dirname, 'dist'),
   modules: path.join(__dirname, 'node_modules'),
-  publicPath: `http://localhost:${PORTS.devServer}/`,
+  publicPath: `http://0.0.0.0:${PORTS.devServer}/`,
   src: path.join(__dirname, 'src'),
   devServer: path.join(__dirname, 'src', 'index.dev')
 }
@@ -106,7 +106,7 @@ switch (process.env.npm_lifecycle_event) {
         ]
       },
       parts.devServer({
-        host: 'localhost',
+        host: '0.0.0.0',
         port: PORTS.devServer
       })
     )
