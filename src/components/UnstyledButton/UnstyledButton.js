@@ -17,7 +17,6 @@ const UnstyledButton = (props) => (
 )
 
 UnstyledButton.propTypes = {
-  children: PropTypes.object.isRequired,
   onClick: PropTypes.func
 }
 

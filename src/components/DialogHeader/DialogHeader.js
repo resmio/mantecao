@@ -42,8 +42,7 @@ const DialogHeader = (props) => {
 }
 
 DialogHeader.propTypes = {
-  close: PropTypes.func,
-  children: PropTypes.oneOfType([PropTypes.string, PropTypes.object])
+  close: PropTypes.func
 }
 
 export default DialogHeader

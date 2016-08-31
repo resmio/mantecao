@@ -38,7 +38,6 @@ class IconMessage extends Component {
 }
 
 IconMessage.propTypes = {
-  children: PropTypes.array,
   icon: PropTypes.string,
   right: PropTypes.bool,
   small: PropTypes.bool,

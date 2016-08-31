@@ -53,8 +53,7 @@ const Icon = (props) => {
 Icon.propTypes = {
   small: PropTypes.bool,
   large: PropTypes.bool,
-  mirrorX: PropTypes.bool,
-  children: PropTypes.object.isRequired
+  mirrorX: PropTypes.bool
 }
 
 export default Icon
