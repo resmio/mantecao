@@ -2,10 +2,10 @@
 logs
 *.log
 npm-debug.log*
+webpack-stats.json
 
 # Build folder
-# dist/
-webpack-stats.json
+dist/
 
 # Code coverage
 coverage/
