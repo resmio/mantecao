@@ -1,8 +1,8 @@
 import React, { PropTypes } from 'react'
 
-import DateInput from './DateInput'
+import DateInput from '../DateInput'
 
-import { colors } from '../variables'
+import { colors } from '../../variables'
 
 const defaultDatepickerStyle = {}
 const defaultCalendarStyle = {
@@ -10,6 +10,9 @@ const defaultCalendarStyle = {
   fontSize: '1em'
 }
 
+/**
+ * Calendar coming soon :)
+ */
 const Calendar = (props) => (
   <div style={ defaultDatepickerStyle } >
     <DateInput />

@@ -40,3 +40,9 @@ export const containers = {
     border: '1px solid ' + colors.gallery
   }
 }
+
+export const iconSizes = {
+  small: '2.1rem',
+  medium: '2.75rem',
+  large: '3.5rem'
+}

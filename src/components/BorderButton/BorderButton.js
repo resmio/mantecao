@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react'
-import Button from '../Button'
+import { Button } from '../Button'
 
 import { colors } from '../../variables'
 
@@ -8,6 +8,9 @@ const defaultStyle = {
   bgColor: colors.white
 }
 
+/**
+ * A button with a border - color and bgColor set with props
+ */
 const BorderButton = (props) => {
   const color = props.color || defaultStyle.color
   const bgColor = props.bgColor || defaultStyle.bgColor
@@ -29,7 +32,6 @@ const BorderButton = (props) => {
 BorderButton.propTypes = {
   color: PropTypes.string,
   bgColor: PropTypes.string,
-  children: PropTypes.object.isRequired,
   onClick: PropTypes.func
 }
 

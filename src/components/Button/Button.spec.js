@@ -7,7 +7,7 @@ setupDOM()
 
 import { hexToRgb } from '../../utils/colorUtils'
 
-import Button from '../Button'
+import Button from './Button'
 
 const testProps = {
   textColor: '#ABCDEF',

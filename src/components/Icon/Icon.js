@@ -1,25 +1,30 @@
 import React, { PropTypes } from 'react'
 
+import { iconSizes } from '../../variables'
+
 const defaultStyle = {
   display: 'inline-block',
   strokeWidth: 1.5,
   fill: 'none',
   stroke: 'currentColor',
-  height: '2.75rem',
-  width: '2.75rem',
+  height: iconSizes.medium,
+  width: iconSizes.medium,
   verticalAlign: 'middle'
 }
 
 const small = {
-  height: '2.1rem',
-  width: '2.1rem'
+  height: iconSizes.small,
+  width: iconSizes.small
 }
 
 const large = {
-  height: '3.5rem',
-  width: '3.5rem'
+  height: iconSizes.large,
+  width: iconSizes.large
 }
 
+/**
+ * Renders SVGs and applies some transforms (mirrorX/Y) - Small and large
+ */
 const Icon = (props) => {
   let componentStyle = Object.assign({}, defaultStyle)
   // assign new values from any styles passed as props
@@ -50,8 +55,7 @@ const Icon = (props) => {
 Icon.propTypes = {
   small: PropTypes.bool,
   large: PropTypes.bool,
-  mirrorX: PropTypes.bool,
-  children: PropTypes.object.isRequired
+  mirrorX: PropTypes.bool
 }
 
 export default Icon

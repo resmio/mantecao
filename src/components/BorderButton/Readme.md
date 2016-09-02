@@ -1,3 +1,3 @@
 Example:
 
-    <BorderButton><p>some children</p></BorderButton>
+    <BorderButton>a border button</BorderButton>

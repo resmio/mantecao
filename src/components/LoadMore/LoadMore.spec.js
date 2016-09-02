@@ -5,7 +5,7 @@ import { shallow, mount } from 'enzyme'
 import { setupDOM } from '../../utils/testUtils'
 setupDOM()
 
-import LoadMore from '../LoadMore'
+import LoadMore from './LoadMore'
 
 const testFetch = spy()
 

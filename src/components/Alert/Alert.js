@@ -46,7 +46,7 @@ const defaultAlertIcons = {
 }
 
 /**
- * Alert component (types: alert, error, info, success) with a large icon display, heading, message and body
+ * (types: alert, error, info, success) with a large icon display, heading, message and body
  */
 class Alert extends Component {
   constructor (props) {
