@@ -8,7 +8,6 @@ export { DialogBody } from './components/DialogBody'
 export { DialogHeader } from './components/DialogHeader'
 export { IconMessage } from './components/IconMessage'
 export { Icon } from './components/Icon'
-export { LoadMore } from './components/LoadMore'
 export { UnstyledButton } from './components/UnstyledButton'
 
 // icons

@@ -10,7 +10,7 @@ import { hexToRgb } from '../../utils/colorUtils'
 import DialogBody from './DialogBody'
 
 const testProps = {
-  backgroundColor: '#111111'
+  bgColor: '#111111'
 }
 
 const testChildren = <h1 className='unique'>I am a child</h1>
@@ -30,13 +30,20 @@ test('DialogBody renders children', function (t) {
 test('DialogBody changes backgroundColor with prop', function (t) {
   const component = mount(
     <DialogBody
-      backgroundColor={ testProps.backgroundColor }
+      bgColor={ testProps.bgColor }
     />
   )
 
-  t.deepEqual(component.props().backgroundColor, testProps.backgroundColor)
+  t.deepEqual(component.props().bgColor, testProps.bgColor)
 
   let div = component.find('div').get(0)
-  t.equal(div.style.backgroundColor, hexToRgb(testProps.backgroundColor))
+  t.equal(div.style.backgroundColor, hexToRgb(testProps.bgColor))
+  t.end()
+})
+
+test('DialogBody aligns right with prop', function (t) {
+  const component = shallow(<DialogBody right>{testChildren}</DialogBody>)
+  let div = component.find('div').get(1)
+  t.equal(div.props.style.textAlign, 'right')
   t.end()
 })
