@@ -7,21 +7,27 @@ const defaultStyle = {
   margin: '0rem auto',
   padding: '3rem 0rem'
 }
-const defaultBackgroundColor = colors.white
+const defaultBgColor = colors.white
 
 /**
  * Body section of a dialog
  */
-const DialogBody = (props) => (
-  <div style={{ backgroundColor: props.backgroundColor || defaultBackgroundColor }}>
-    <div style={ defaultStyle }>
-      { props.children }
+const DialogBody = (props) => {
+  let addedStyle = { textAlign: props.right ? 'right' : 'left' }
+  const style = Object.assign({}, defaultStyle, addedStyle, props.style)
+  return (
+    <div style={{ backgroundColor: props.bgColor || defaultBgColor }}>
+      <div style={ style }>
+        { props.children }
+      </div>
     </div>
-  </div>
-)
+  )
+}
 
 DialogBody.propTypes = {
-  backgroundColor: PropTypes.string
+  bgColor: PropTypes.string,
+  right: PropTypes.bool,
+  style: PropTypes.object
 }
 
 export default DialogBody

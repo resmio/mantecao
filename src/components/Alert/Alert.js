@@ -77,8 +77,8 @@ class Alert extends Component {
 }
 
 Alert.propTypes = {
-  isOpen: PropTypes.bool.isRequired,
   heading: PropTypes.string,
+  isOpen: PropTypes.bool.isRequired,
   message: PropTypes.string,
   type: PropTypes.string.isRequired
 }

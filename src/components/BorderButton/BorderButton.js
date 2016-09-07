@@ -30,8 +30,8 @@ const BorderButton = (props) => {
 }
 
 BorderButton.propTypes = {
-  color: PropTypes.string,
   bgColor: PropTypes.string,
+  color: PropTypes.string,
   onClick: PropTypes.func
 }
 

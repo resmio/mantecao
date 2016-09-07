@@ -11,7 +11,8 @@
     "node": true
   },
   "rules": {
-    "no-unused-vars": 0
+    "no-unused-vars": 0,
+    "react/sort-prop-types": 1
   },
   // Enable custom plugin known as eslint-plugin-react
   "plugins": [

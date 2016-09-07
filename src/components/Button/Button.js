@@ -74,15 +74,15 @@ class Button extends Component {
 }
 
 Button.propTypes = {
-  style: PropTypes.object,
-  textColor: PropTypes.string,
-  hoverTextColor: PropTypes.string,
   bgColor: PropTypes.string,
-  hoverBgColor: PropTypes.string,
   borderColor: PropTypes.string,
-  hoverBorderColor: PropTypes.string,
   disabled: PropTypes.bool,
-  onClick: PropTypes.func
+  hoverBgColor: PropTypes.string,
+  hoverBorderColor: PropTypes.string,
+  hoverTextColor: PropTypes.string,
+  onClick: PropTypes.func,
+  style: PropTypes.object,
+  textColor: PropTypes.string
 }
 
 export default Button
