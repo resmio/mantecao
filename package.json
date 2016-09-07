@@ -1,11 +1,11 @@
 {
   "name": "mantecao",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "description": "A react UI library for resmio",
   "main": "dist/index.js",
   "scripts": {
     "build": "webpack",
-    "build:production" : "npm run build --production",
+    "build:production": "npm run build --production",
     "lint": "eslint . --ext .js --ext .jsx || true",
     "lint:fix": "eslint . --ext .js --ext .jsx --fix || true",
     "prepublish": "npm run build:production",
