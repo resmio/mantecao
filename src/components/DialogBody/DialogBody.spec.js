@@ -10,7 +10,7 @@ import { hexToRgb } from '../../utils/colorUtils'
 import DialogBody from './DialogBody'
 
 const testProps = {
-  bgColor: '#111111'
+  bgColor: '#111'
 }
 
 const testChildren = <h1 className='unique'>I am a child</h1>

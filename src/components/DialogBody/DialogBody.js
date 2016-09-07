@@ -26,8 +26,8 @@ const DialogBody = (props) => {
 
 DialogBody.propTypes = {
   bgColor: PropTypes.string,
-  style: PropTypes.object,
-  right: PropTypes.bool
+  right: PropTypes.bool,
+  style: PropTypes.object
 }
 
 export default DialogBody

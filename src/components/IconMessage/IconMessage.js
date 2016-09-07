@@ -48,8 +48,8 @@ class IconMessage extends Component {
 
 IconMessage.propTypes = {
   icon: PropTypes.string,
-  small: PropTypes.bool,
-  large: PropTypes.bool
+  large: PropTypes.bool,
+  small: PropTypes.bool
 }
 
 export default IconMessage
