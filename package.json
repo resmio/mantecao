@@ -1,20 +1,17 @@
 {
   "name": "mantecao",
-  "version": "0.0.5",
+  "version": "0.3.0-0",
   "description": "A react UI library for resmio",
   "main": "dist/index.js",
   "scripts": {
-    "build": "webpack",
-    "build:production" : "npm run build --production",
+    "build": "NODE_ENV=production webpack",
     "lint": "eslint . --ext .js --ext .jsx || true",
     "lint:fix": "eslint . --ext .js --ext .jsx --fix || true",
-    "prepublish": "npm run build:production",
-    "preversion": "npm run styleguide-build --production",
     "start": "webpack-dev-server",
-    "styleguide-build": "styleguidist build",
+    "styleguide-build": "NODE_ENV=production styleguidist build",
     "styleguide-server": "styleguidist server",
-    "test": "npm run lint && npm run test:only --production",
-    "test:only": "tape -r babel-register ./src/components/**/*.spec.js | faucet || true"
+    "test": "npm run lint && npm run test:only",
+    "test:only": "NODE_ENV=production tape -r babel-register ./src/components/**/*.spec.js | faucet || true"
   },
   "repository": {
     "type": "git",
