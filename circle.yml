@@ -1,6 +1,9 @@
 machine:
   node:
     version: "6.5"
+dependencies:
+  override:
+    - npm install semantic-release -g && npm install
 test:
   override:
     - npm test
