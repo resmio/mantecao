@@ -1,5 +1,5 @@
 {
-  "name": "mantecao",
+  "name": "@resmio/mantecao",
   "version": "0.3.0",
   "description": "A react UI library for resmio",
   "main": "dist/index.js",
@@ -70,5 +70,9 @@
     "webpack-merge": "^0.14.0",
     "webpack-node-externals": "^1.2.0",
     "webpack-validator": "^2.2.7"
-  }
+  },
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {}
 }
