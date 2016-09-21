@@ -1,13 +1,12 @@
 {
   "name": "@resmio/mantecao",
-  "version": "0.0.0-semantically-released",
+  "version": "0.3.2",
   "description": "A react UI library for resmio",
   "main": "dist/index.js",
   "scripts": {
     "build": "NODE_ENV=production webpack",
     "lint": "eslint . --ext .js --ext .jsx || true",
     "lint:fix": "eslint . --ext .js --ext .jsx --fix || true",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "start": "webpack-dev-server",
     "styleguide-build": "NODE_ENV=production styleguidist build",
     "styleguide-server": "styleguidist server",

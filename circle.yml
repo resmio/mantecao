@@ -3,9 +3,7 @@ machine:
     version: "6.5"
 dependencies:
   override:
-    - npm install semantic-release -g && npm install
+    - npm install
 test:
   override:
     - npm test
-  post:
-    - npm run semantic-release || true
