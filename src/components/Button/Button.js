@@ -15,9 +15,6 @@ const defaultStyle = {
   boxSizing: 'border-box',
   verticalAlign: 'middle'
 }
-const defaultHoverStyle = {
-  backgroundColor: colorLuminance(defaultStyle.backgroundColor, -0.1)
-}
 
 /**
  * Normal Button - onClick and disabled props, and can have styles applied
@@ -43,8 +40,14 @@ class Button extends Component {
     if (props.hoverBorderColor) { addedHoverStyle.border = '1px solid ' + props.hoverBorderColor }
     this.hoverStyle = Object.assign({},
       defaultStyle,
-      defaultHoverStyle, // <-- overrides with the default hover styles
+      {backgroundColor: colorLuminance(this.componentStyle.backgroundColor, -0.1)}, // <-- overrides with the default hover styles
       addedHoverStyle // <-- overrides (highest priority) with any special hover props
+    )
+
+    // build the disabled styles
+    this.disabledStyle = Object.assign({},
+      this.componentStyle,
+      {opacity: 0.4, cursor: 'not-allowed'}
     )
 
     this.state = { style: this.componentStyle }
@@ -55,7 +58,8 @@ class Button extends Component {
     return (
       <button
         type='button'
-        style={ this.state.style }
+        className={ this.props.className }
+        style={ this.props.disabled ? this.disabledStyle : this.state.style }
         onMouseEnter={ this._onMouseEnter }
         onMouseLeave={ this._onMouseLeave }
         disabled={ this.props.disabled }
@@ -76,6 +80,7 @@ class Button extends Component {
 Button.propTypes = {
   bgColor: PropTypes.string,
   borderColor: PropTypes.string,
+  className: PropTypes.string,
   disabled: PropTypes.bool,
   hoverBgColor: PropTypes.string,
   hoverBorderColor: PropTypes.string,
