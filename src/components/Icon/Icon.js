@@ -34,7 +34,7 @@ const Icon = (props) => {
   let componentStyle = Object.assign({}, defaultStyle)
   // assign new values from any styles passed as props
   Object.assign(componentStyle, props.style)
-  // handle sizes
+  // handle width
   if (props.xsmall) {
     Object.assign(componentStyle, xsmall)
   } else if (props.small) {
@@ -42,6 +42,15 @@ const Icon = (props) => {
   } else if (props.large) {
     Object.assign(componentStyle, large)
   }
+
+  // handle explicit width/height
+  if (props.width) {
+    Object.assign(componentStyle, {width: props.width})
+  }
+  if (props.height) {
+    Object.assign(componentStyle, {height: props.height})
+  }
+
   // handle mirroring
   let transform = ''
   if (props.mirrorX) {
