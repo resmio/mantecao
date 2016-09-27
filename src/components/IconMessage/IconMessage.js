@@ -16,7 +16,9 @@ class IconMessage extends Component {
     super(props)
     // compute style
     let iconSpacing = iconSizes.medium
-    if (props.small) {
+    if (props.xsmall) {
+      iconSpacing = iconSizes.xsmall
+    } else if (props.small) {
       iconSpacing = iconSizes.small
     } else if (props.large) {
       iconSpacing = iconSizes.large
@@ -32,7 +34,7 @@ class IconMessage extends Component {
     this.icon = props.icon ? Icons[props.icon] : defaultIcon
   }
   render () {
-    let Icon = <this.icon small={ this.props.small } large={ this.props.large } style={ this.iconStyle } />
+    let Icon = <this.icon {...this.props} style={ this.iconStyle } />
     return (
       <div style={ this.wrapperStyle }>
         { Icon }

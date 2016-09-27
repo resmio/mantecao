@@ -12,6 +12,11 @@ const defaultStyle = {
   verticalAlign: 'middle'
 }
 
+const xsmall = {
+  height: iconSizes.xsmall,
+  width: iconSizes.xsmall
+}
+
 const small = {
   height: iconSizes.small,
   width: iconSizes.small
@@ -30,7 +35,9 @@ const Icon = (props) => {
   // assign new values from any styles passed as props
   Object.assign(componentStyle, props.style)
   // handle sizes
-  if (props.small) {
+  if (props.xsmall) {
+    Object.assign(componentStyle, xsmall)
+  } else if (props.small) {
     Object.assign(componentStyle, small)
   } else if (props.large) {
     Object.assign(componentStyle, large)
