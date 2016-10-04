@@ -42,6 +42,7 @@ export const containers = {
 }
 
 export const iconSizes = {
+  xsmall: '1.6rem',
   small: '2.1rem',
   medium: '2.75rem',
   large: '3.5rem'
