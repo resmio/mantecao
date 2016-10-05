@@ -34,7 +34,7 @@ class Button extends Component {
     )
 
     // build the hover styles
-    let addedHoverStyle = {}
+    let addedHoverStyle = addedStyle
     if (props.hoverTextColor) { addedHoverStyle.color = props.hoverTextColor }
     if (props.hoverBgColor) { addedHoverStyle.backgroundColor = props.hoverBgColor }
     if (props.hoverBorderColor) { addedHoverStyle.border = '1px solid ' + props.hoverBorderColor }
