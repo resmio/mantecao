@@ -40,6 +40,7 @@ class Button extends Component {
     if (props.hoverBorderColor) { addedHoverStyle.border = '1px solid ' + props.hoverBorderColor }
     this.hoverStyle = Object.assign({},
       defaultStyle,
+      props.style, // <-- lets prop styles propagate to hover
       {backgroundColor: colorLuminance(this.componentStyle.backgroundColor, -0.1)}, // <-- overrides with the default hover styles
       addedHoverStyle // <-- overrides (highest priority) with any special hover props
     )
