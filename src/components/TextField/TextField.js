@@ -33,8 +33,12 @@ const TextField = (props) => {
 
   const inputField = (
     <input
+      className={props.className}
       defaultValue={props.defaultValue}
       disabled={props.disabled}
+      id={props.id}
+      maxLength={props.maxLength}
+      minLength={props.minLength}
       onBlur={props.onBlur}
       onChange={props.onChange}
       onFocus={props.onFocus}
@@ -47,8 +51,12 @@ const TextField = (props) => {
   )
   const textAreaField = (
     <textarea
+      className={props.className}
       defaultValue={props.defaultValue}
       disabled={props.disabled}
+      id={props.id}
+      maxlength={props.maxLength}
+      minlength={props.minLength}
       onBlur={props.onBlur}
       onChange={props.onChange}
       onFocus={props.onFocus}
@@ -66,22 +74,34 @@ const TextField = (props) => {
   )
 }
 
+const {
+  bool,
+  func,
+  number,
+  string,
+  object
+} = PropTypes
+
 TextField.propTypes = {
-  defaultValue: PropTypes.string,
-  disabled: PropTypes.bool,
-  error: PropTypes.bool,
-  hint: PropTypes.string,
-  label: PropTypes.string,
-  multiLine: PropTypes.bool,
-  onBlur: PropTypes.func,
-  onChange: PropTypes.func,
-  onFocus: PropTypes.func,
-  placeHolder: PropTypes.string,
-  required: PropTypes.bool,
-  style: PropTypes.object,
-  type: PropTypes.string,
-  value: PropTypes.string,
-  warning: PropTypes.bool
+  className: string,
+  defaultValue: string,
+  disabled: bool,
+  error: bool,
+  hint: string,
+  id: string,
+  label: string,
+  maxLength: number,
+  minLength: number,
+  multiLine: bool,
+  onBlur: func,
+  onChange: func,
+  onFocus: func,
+  placeHolder: string,
+  required: bool,
+  style: object,
+  type: string,
+  value: string,
+  warning: bool
 }
 
 export default TextField
