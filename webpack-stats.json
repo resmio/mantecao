@@ -1,1 +1,1 @@
-{"status":"compiling","publicPath":"http://0.0.0.0:3000/"}
+{"status":"error","error":"ModuleNotFoundError","message":"Module not found: Error: Cannot resolve 'file' or 'directory' /Users/menor/Work/mantecao/src/index.dev in /Users/menor/Work/mantecao","publicPath":"http://0.0.0.0:3003/"}
