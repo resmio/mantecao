@@ -1,30 +1,41 @@
 #mantecao
-[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg?style=flat-square)](https://github.com/semantic-release/semantic-release)  
-resmio UI Library powered by react components
+resmio UI Library powered by react components :muscle:
 
 ##Cool, how does it work?
 Do you really care? This is what you need to know
 
-###To develop:
- - from the root folder run `npm install` (takes a while the first time)
- - Code the element (you can mimic `src/TestComponent`)
- - Require and instantiate the react element in `src/index.dev.js`
- - Then run `npm start` to start the dev server
- - In your browser go to http://localhost:3000
+###Create dev environment
+ - From the root folder, run `npm start` (takes a while the first time)
+ - In your browser go to http://localhost:3002
+ - :boom: Elements can be live edited in the browser (props, children, etc.)
+
+###Coding components
+ - Code the element (you can mimic `src/components/TextField`)
+ - Require and export the react element in `src/index.js`
+  - (so it is available with `import {YourElement} from '@resmio/mantecao'`)
+
+###Coding Icons
+ - Insert the optimized svg innards into an <Icon> component
+ - Require and export the icon in `src/icons/index.js`
 
 ###To run the tests:
-  - Write the tests inside the component folder (check src/TestComponent)
-  - Import the test in `src/tests.js`
+  - Write the tests inside the component folder (i.e. `src/components/TestComponent`)
+  - Add `.spec.js` to the test so it is recognized by the testing scripts
   - Now you have two options:
     - `npm test` -> runs the js linter and the tests
     - `npm test:only` -> runs only the tests
 
 ###To publish:
   - Run the tests, if they fail fix the code
-  - Once the tests are passing commit your code
-  - From the root folder run `npm version patch` (or check [this](https://docs.npmjs.com/cli/version) for version types)
-  - If you haven't do `npm adduser resmio` and ask someone for the password
-  - Run `npm publish` it will build the lib and push it to npm
+  - Once the tests are passing commit your code with appropriate comment
+  - Create a pull request and have your changes reviewed (but not merged)
+  - Bump the version in `package.json` manually (or check [this](https://docs.npmjs.com/cli/version) for version types)
+  - If you haven't do so, ask someone to add you to the npm publisher list for @resmio/mantecao
+  - Run `npm publish`
+   - (this will build the library, push it to npm and create the styleguide)
+  - `git add -A` and make a new commit with the version number (i.e. `git commit -m '1.0.0'`) and push to github
+  - Merge pull request
 
-###I hate those linting errors, I want to express myself with my code.
+
+###I hate those linting errors, I want to express myself with my code. :trollface:
 We are all artists, I know. You can run `npm run lint:fix` to have the linter fix the errors automatically
