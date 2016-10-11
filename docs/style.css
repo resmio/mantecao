@@ -1,4 +1,8 @@
 /* custom styles for the styleguide */
+html {
+  font-size: 10px; /* allows `rems`s to work properly for sizing */
+}
+
 .ReactStyleguidist-Layout__sidebar {
   background-color: #333B4E;
   overflow: auto;
