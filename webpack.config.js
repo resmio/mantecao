@@ -7,7 +7,7 @@ const parts = require('./webpack.parts')
 const nodeExternals = require('webpack-node-externals')
 
 const PORTS = {
-  devServer: 3000
+  devServer: 3002
 }
 
 const PATHS = {
