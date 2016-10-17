@@ -19,6 +19,7 @@ const BorderButton = (props) => {
       borderColor={color}
       hoverBorderColor={color}
       bgColor={bgColor}
+      disabled={props.disabled}
       hoverBgColor={color}
       textColor={color}
       hoverTextColor={bgColor}
@@ -31,6 +32,7 @@ const BorderButton = (props) => {
 
 BorderButton.propTypes = {
   bgColor: PropTypes.string,
+  disabled: PropTypes.bool,
   color: PropTypes.string,
   onClick: PropTypes.func
 }
