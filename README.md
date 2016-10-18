@@ -28,13 +28,12 @@ Do you really care? This is what you need to know
 ###To publish:
   - Run the tests, if they fail fix the code
   - Once the tests are passing commit your code with appropriate comment
-  - Create a pull request and have your changes reviewed (but not merged)
+  - Create a pull request and have your changes reviewed
   - Bump the version in `package.json` manually (or check [this](https://docs.npmjs.com/cli/version) for version types)
   - If you haven't do so, ask someone to add you to the npm publisher list for @resmio/mantecao
   - Run `npm publish`
    - (this will build the library, push it to npm and create the styleguide)
   - `git add -A` and make a new commit with the version number (i.e. `git commit -m '1.0.0'`) and push to github
-  - Merge pull request
 
 
 ###I hate those linting errors, I want to express myself with my code. :trollface:
