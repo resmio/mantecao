@@ -37,16 +37,16 @@ const Checkbox = (props) => {
     defaultCheckboxStyle,
     props.checked ? {color: colors.white, backgroundColor: colors.pacificBlue, borderColor: colors.pacificBlue} : {}
   )
-  let inputId = 'checkbox_' + (Math.floor(Math.random()*10000)+1)
+  let inputId = 'checkbox_' + (Math.floor(Math.random() * 10000) + 1)
 
   return (
     <div style={{display: 'flex'}}>
       <div style={{flex: '0 1 auto', marginRight: '2rem'}}>
         <label htmlFor={inputId} style={computedCheckboxStyle}>
-          {props.checked ? <CheckIcon style={{strokeWidth:'3.5px', width: '1.4rem', height: '1.4rem', verticalAlign:'none'}} /> : null}
+          {props.checked ? <CheckIcon style={{strokeWidth: '3.5px', width: '1.4rem', height: '1.4rem', verticalAlign: 'none'}} /> : null}
           <input
             id={inputId}
-            style={{visibility: 'hidden', position: 'absolute', left:0}}
+            style={{visibility: 'hidden', position: 'absolute', left: 0}}
             type='checkbox'
             disabled={props.disabled}
             checked={props.checked}

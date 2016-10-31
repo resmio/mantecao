@@ -21,7 +21,7 @@ const defaultLabelStyle = {
  */
 const SelectField = (props) => {
   let {optionValues, options} = props
-  if (!optionValues) {optionValues = options}
+  if (!optionValues) { optionValues = options }
 
   let borderColorStyle = Object.assign({},
     props.warning ? {borderColor: colors.goldenTainoi} : {},
@@ -71,8 +71,8 @@ SelectField.propTypes = {
   hint: PropTypes.string,
   label: PropTypes.string,
   onChange: PropTypes.func,
-  options: PropTypes.array.isRequired,
   optionValues: PropTypes.array,
+  options: PropTypes.array.isRequired,
   required: PropTypes.bool,
   warning: PropTypes.bool
 }

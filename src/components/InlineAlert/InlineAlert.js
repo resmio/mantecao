@@ -68,8 +68,8 @@ class InlineAlert extends Component {
 }
 
 InlineAlert.propTypes = {
-  type: PropTypes.string.isRequired,
-  children: PropTypes.node
+  children: PropTypes.node,
+  type: PropTypes.string.isRequired
 }
 
 export default InlineAlert
