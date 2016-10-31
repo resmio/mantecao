@@ -2,6 +2,7 @@
 // here -- something like:
 // import { SuccessIcon, WarningIcon, InfoIcon, ErrorIcon } from './icons'
 export AddIcon from './AddIcon'
+export CheckIcon from './CheckIcon'
 export CloseIcon from './CloseIcon'
 export CreditIcon from './CreditIcon'
 export EditIcon from './EditIcon'

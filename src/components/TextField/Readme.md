@@ -6,6 +6,6 @@ Example:
       hint='this is a hint'
       id='testId'
       label='this is a label'
-      maxLength='22'
-      minLength='3'
+      maxLength={22}
+      minLength={3}
     />
