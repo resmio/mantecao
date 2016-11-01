@@ -85,7 +85,7 @@ const {
 
 TextField.propTypes = {
   className: string,
-  defaultValue: string,
+  defaultValue: oneOfType([string, number]),
   disabled: bool,
   error: bool,
   hint: string,
