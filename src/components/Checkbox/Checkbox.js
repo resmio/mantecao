@@ -49,6 +49,7 @@ const Checkbox = (props) => {
             style={{visibility: 'hidden', position: 'absolute', left: 0}}
             type='checkbox'
             disabled={props.disabled}
+            defaultChecked={props.defaultChecked}
             checked={props.checked}
             onChange={props.onChange}
           />
@@ -64,6 +65,8 @@ const Checkbox = (props) => {
 }
 
 Checkbox.propTypes = {
+  checked: PropTypes.bool,
+  defaultChecked: PropTypes.bool,
   disabled: PropTypes.bool,
   error: PropTypes.bool,
   hint: PropTypes.string,
