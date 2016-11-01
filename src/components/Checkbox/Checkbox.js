@@ -15,13 +15,15 @@ const defaultLabelStyle = {
 const defaultCheckboxStyle = {
   display: 'block',
   border: '1px solid',
+  boxSizing: 'border-box',
   padding: '0.1rem',
   borderRadius: '4px',
   cursor: 'pointer',
   borderColor: 'currentColor',
   position: 'relative',
-  height: '1.4rem',
-  width: '1.4rem'
+  height: '1.8rem',
+  width: '1.8rem',
+  margin: '0.2rem 0 0 0'
 }
 
 /**

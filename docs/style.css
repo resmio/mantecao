@@ -1,6 +1,14 @@
 /* custom styles for the styleguide */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600');
+
 html {
   font-size: 10px; /* allows `rems`s to work properly for sizing */
+  font-family: "Open Sans", sans-serif;
+}
+
+.ReactStyleguidist-ReactComponent__root {
+  /* overrides to make it look like the app */
+  font-size: 14px;
 }
 
 .ReactStyleguidist-Layout__sidebar {
