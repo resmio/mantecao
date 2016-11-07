@@ -79,12 +79,13 @@ const {
   func,
   number,
   string,
-  object
+  object,
+  oneOfType
 } = PropTypes
 
 TextField.propTypes = {
   className: string,
-  defaultValue: string,
+  defaultValue: oneOfType([string, number]),
   disabled: bool,
   error: bool,
   hint: string,
@@ -100,7 +101,7 @@ TextField.propTypes = {
   required: bool,
   style: object,
   type: string,
-  value: string,
+  value: oneOfType([string, number]),
   warning: bool
 }
 
