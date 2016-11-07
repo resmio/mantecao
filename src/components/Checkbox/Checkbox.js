@@ -3,8 +3,8 @@ import React, {PropTypes, Component} from 'react'
 import {colors, iconSizes} from '../../variables'
 import {CheckIcon} from '../../icons'
 
-const defaultStyle = {
-  cursor: 'pointer'
+const defaultContainerStyle = {
+  display: 'flex'
 }
 const defaultLabelStyle = {
   display: 'block',
@@ -23,7 +23,9 @@ const defaultCheckboxStyle = {
   position: 'relative',
   height: '1.8rem',
   width: '1.8rem',
-  margin: '0.2rem 0 0 0'
+  margin: '0.2rem 0 0 0',
+  fontSize: '0px', // fixes weird white-space issues
+  userSelect: 'none' // fixes text select on multi-click
 }
 const checkedStyle = {
   color: colors.white,
@@ -37,24 +39,26 @@ const checkedStyle = {
 class Checkbox extends Component {
   constructor (props) {
     super(props)
-    this.state = {
-      checked: props.defaultChecked === undefined
-        ? props.checked
-        : props.defaultChecked
+    this.state = {}
+    // we need a state for this because it can be controlled or non-controlled
+    // i.e. - given a 'checked' or 'defaultChecked' (or both - 'checked' wins)
+    if (props.checked !== undefined) {
+      this.state.checked = props.checked
+    } else if (props.defaultChecked !== undefined) {
+      this.state.checked = props.defaultChecked
+    } else {
+      this.state.checked = false
     }
   }
-  componentDidUpdate (nextProps) {
+  componentWillReceiveProps (nextProps) {
     if (nextProps.checked !== undefined) {
-      this.setState({checked: nextProps.checked},
-        () => {
-          this.props.onChange(this.state.checked)
-        }
-      )
+      this.setState({checked: nextProps.checked})
     }
   }
   render () {
-    const {error, labelStyle, disabled, label, description, hint} = this.props
+    const {error, labelStyle, disabled, label, description, hint, style} = this.props
 
+    let computerContainerStyle = Object.assign({}, defaultContainerStyle, style)
     let textColorStyle = Object.assign({},
       error ? {color: colors.amaranth} : {}
     )
@@ -66,7 +70,7 @@ class Checkbox extends Component {
     )
 
     return (
-      <div style={{display: 'flex'}}>
+      <div style={computerContainerStyle}>
         <div style={{flex: '0 1 auto', marginRight: '2rem'}}>
           <label
             onClick={this._toggleCheckbox}
@@ -104,7 +108,8 @@ class Checkbox extends Component {
       </div>
     )
   }
-  _toggleCheckbox = () => {
+  _toggleCheckbox = (e) => {
+    e.preventDefault()
     this.setState(
       {checked: !this.state.checked},
       () => {
