@@ -51,13 +51,13 @@ class ButtonGroupItem extends Component {
 
 const {bool, func, number, string, oneOfType} = PropTypes
 ButtonGroupItem.propTypes = {
-  text: oneOfType([string, number]),
-  value: oneOfType([string, number]),
+  disabled: bool,
   first: bool,
   last: bool,
+  onSelect: func,
   selected: bool,
-  disabled: bool,
-  onSelect: func
+  text: oneOfType([string, number]),
+  value: oneOfType([string, number])
 }
 
 export default ButtonGroupItem

@@ -48,8 +48,8 @@ class ButtonGroup extends Component {
 ButtonGroup.propTypes = {
   disabled: PropTypes.array,
   onChange: PropTypes.func,
-  options: PropTypes.array.isRequired,
   optionValues: PropTypes.array.isRequired,
+  options: PropTypes.array.isRequired,
   selected: PropTypes.array.isRequired
 }
 
