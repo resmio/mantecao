@@ -2,6 +2,7 @@
 export {Alert} from './components/Alert'
 export {BorderButton} from './components/BorderButton'
 export {Button} from './components/Button'
+export {ButtonGroup} from './components/ButtonGroup'
 export {Calendar} from './components/Calendar'
 export {Checkbox} from './components/Checkbox'
 export {DateInput} from './components/DateInput'

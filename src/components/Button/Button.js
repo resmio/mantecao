@@ -1,7 +1,7 @@
-import React, { Component, PropTypes } from 'react'
+import React, {Component, PropTypes} from 'react'
 
-import { colors } from '../../variables'
-import { colorLuminance } from '../../utils/colorUtils'
+import {colors} from '../../variables'
+import {colorLuminance} from '../../utils/colorUtils'
 
 const defaultStyle = {
   padding: '0.8rem 1.5rem',
@@ -22,59 +22,83 @@ const defaultStyle = {
 class Button extends Component {
   constructor (props) {
     super(props)
-    // build the styles for the button
-    let addedStyle = {}
-    if (props.textColor) { addedStyle.color = props.textColor }
-    if (props.bgColor) { addedStyle.backgroundColor = props.bgColor }
-    if (props.borderColor) { addedStyle.border = '1px solid ' + props.borderColor }
-    this.componentStyle = Object.assign({},
-      defaultStyle, // <-- adds any additional styles sent as props
-      props.style, // <-- overrides with any additional styles sent with 'style' prop
-      addedStyle // <-- overrides (highest priority) with any special props
-    )
-
-    // build the hover styles
-    let addedHoverStyle = {}
-    if (props.hoverTextColor) { addedHoverStyle.color = props.hoverTextColor }
-    if (props.hoverBgColor) { addedHoverStyle.backgroundColor = props.hoverBgColor }
-    if (props.hoverBorderColor) { addedHoverStyle.border = '1px solid ' + props.hoverBorderColor }
-    this.hoverStyle = Object.assign({},
-      defaultStyle,
-      props.style, // <-- lets prop styles propagate to hover
-      {backgroundColor: colorLuminance(this.componentStyle.backgroundColor, -0.1)}, // <-- overrides with the default hover styles
-      addedHoverStyle // <-- overrides (highest priority) with any special hover props
-    )
-
-    // build the disabled styles
-    this.disabledStyle = Object.assign({},
-      this.componentStyle,
-      {opacity: 0.4, cursor: 'not-allowed'}
-    )
-
-    this.state = { style: this.componentStyle }
-    this._onMouseEnter = this._onMouseEnter.bind(this)
-    this._onMouseLeave = this._onMouseLeave.bind(this)
+    let componentStyle = this._getComponentStyle(props.style)
+    let hoverStyle = this._getHoverStyle(componentStyle)
+    let disabledStyle = this._getDisabledStyle(componentStyle)
+    this.state = {
+      componentStyle,
+      hoverStyle,
+      disabledStyle,
+      hover: false
+    }
+  }
+  componentWillReceiveProps (nextProps) {
+    if (nextProps.style || nextProps.disabled) {
+      // recompute the styles when props dictate
+      let componentStyle = this._getComponentStyle(nextProps.style)
+      let hoverStyle = this._getHoverStyle(componentStyle)
+      let disabledStyle = this._getDisabledStyle(componentStyle)
+      this.setState({
+        componentStyle,
+        hoverStyle,
+        disabledStyle
+      })
+    }
   }
   render () {
+    let style = {}
+    if (this.props.disabled) {
+      style = this.state.disabledStyle
+    } else if (this.state.hover) {
+      style = this.state.hoverStyle
+    } else {
+      style = this.state.componentStyle
+    }
     return (
       <button
         type='button'
-        className={ this.props.className }
-        style={ this.props.disabled ? this.disabledStyle : this.state.style }
-        onMouseEnter={ this._onMouseEnter }
-        onMouseLeave={ this._onMouseLeave }
-        disabled={ this.props.disabled }
-        onClick={ this.props.onClick }
+        className={this.props.className}
+        style={style}
+        onMouseEnter={this._onMouseEnter}
+        onMouseLeave={this._onMouseLeave}
+        disabled={this.props.disabled}
+        onClick={this.props.onClick}
       >
-        { this.props.children }
+        {this.props.children}
       </button>
     )
   }
-  _onMouseEnter () {
-    this.setState({ style: this.hoverStyle })
+  _onMouseEnter = () => {
+    this.setState({hover: true})
   }
-  _onMouseLeave () {
-    this.setState({ style: this.componentStyle })
+  _onMouseLeave = () => {
+    this.setState({hover: false})
+  }
+  _getComponentStyle = (customStyle = {}) => {
+    const {textColor, bgColor, borderColor} = this.props
+    return Object.assign({},
+      defaultStyle,
+      customStyle,
+      textColor ? {color: textColor} : {},
+      bgColor ? {backgroundColor: bgColor} : {},
+      borderColor ? {border: '1px solid ' + borderColor} : {}
+    )
+  }
+  _getHoverStyle = (componentStyle) => {
+    const {hoverTextColor, hoverBgColor, hoverBorderColor} = this.props
+    return Object.assign({},
+      componentStyle,
+      {backgroundColor: colorLuminance(componentStyle.backgroundColor, -0.1)},
+      hoverTextColor ? {color: hoverTextColor} : {},
+      hoverBgColor ? {backgroundColor: hoverBgColor} : {},
+      hoverBorderColor ? {border: '1px solid ' + hoverBorderColor} : {}
+    )
+  }
+  _getDisabledStyle = (componentStyle) => {
+    return Object.assign({},
+      componentStyle,
+      {opacity: 0.4, cursor: 'not-allowed'}
+    )
   }
 }
 
