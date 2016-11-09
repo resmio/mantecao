@@ -46,6 +46,7 @@ const SelectField = (props) => {
         style={computedInputStyle}
         required={props.required}
         defaultValue={props.defaultValue}
+        value={props.value}
       >
         {props.options.map((option, index) => {
           return (
@@ -74,6 +75,7 @@ SelectField.propTypes = {
   optionValues: PropTypes.array,
   options: PropTypes.array.isRequired,
   required: PropTypes.bool,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   warning: PropTypes.bool
 }
 

@@ -3,14 +3,8 @@ import React, {PropTypes, Component} from 'react'
 import ButtonGroupItem from './_ButtonGroupItem'
 
 class ButtonGroup extends Component {
-  constructor (props) {
-    super(props)
-    this.state = {
-      selected: props.selected || []
-    }
-  }
   render () {
-    const {options, optionValues, disabled} = this.props
+    const {options, optionValues, disabled, selected} = this.props
     return (
       <div style={{display: 'flex', flexWrap: 'wrap'}}>
         {
@@ -22,7 +16,7 @@ class ButtonGroup extends Component {
                 last={index === (options.length - 1)}
                 value={option}
                 text={optionValues[index]}
-                selected={this.state.selected.indexOf(option) > -1}
+                selected={selected.indexOf(option) > -1}
                 onSelect={this._toggleOption}
                 disabled={disabled ? disabled.indexOf(option) > -1 : undefined}
               />
@@ -33,15 +27,15 @@ class ButtonGroup extends Component {
     )
   }
   _toggleOption = (option) => {
-    const {onChange} = this.props
-    let newArray = this.state.selected.slice()
-    let index = this.state.selected.indexOf(option)
+    const {onChange, selected} = this.props
+    let newArray = selected.slice()
+    let index = selected.indexOf(option)
     if (index > -1) {
       newArray.splice(index, 1)
     } else {
       newArray.push(option)
     }
-    this.setState({selected: newArray}, () => onChange(this.state.selected))
+    onChange(newArray)
   }
 }
 
