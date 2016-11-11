@@ -2,6 +2,9 @@ import React, {PropTypes, Component} from 'react'
 
 import ButtonGroupItem from './_ButtonGroupItem'
 
+/**
+ * Button group out of the mantecao buttons
+ */
 class ButtonGroup extends Component {
   render () {
     const {options, optionValues, disabled, selected} = this.props
