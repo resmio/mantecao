@@ -28,11 +28,16 @@ const SelectField = (props) => {
     props.error ? {borderColor: colors.amaranth} : {}
   )
   let textColorStyle = Object.assign({},
+    props.disabled ? {color: colors.dustyGray} : {},
     props.warning ? {color: colors.goldenTainoi} : {},
     props.error ? {color: colors.amaranth} : {}
   )
 
-  let computedInputStyle = Object.assign({}, defaultStyle, borderColorStyle)
+  let computedInputStyle = Object.assign({},
+    defaultStyle,
+    borderColorStyle,
+    props.disabled ? {backgroundColor: colors.gallery} : {}
+  )
   let computedLabelStyle = Object.assign({}, defaultLabelStyle, textColorStyle)
   let computedContainerStyle = Object.assign({marginBottom: '1rem'}, props.style)
   let computedHintStyle = Object.assign({marginTop: '0.5rem'}, textColorStyle)
@@ -75,7 +80,7 @@ SelectField.propTypes = {
   optionValues: PropTypes.array,
   options: PropTypes.array.isRequired,
   required: PropTypes.bool,
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.bool]),
   warning: PropTypes.bool
 }
 
