@@ -37,7 +37,9 @@ const TextField = (props) => {
       defaultValue={props.defaultValue}
       disabled={props.disabled}
       id={props.id}
+      max={props.max}
       maxLength={props.maxLength}
+      min={props.min}
       minLength={props.minLength}
       onBlur={props.onBlur}
       onChange={props.onChange}
@@ -63,6 +65,7 @@ const TextField = (props) => {
       placeholder={props.placeHolder}
       required={props.required}
       style={computedInputStyle}
+      value={props.value}
     />
   )
   return (
@@ -91,7 +94,9 @@ TextField.propTypes = {
   hint: string,
   id: string,
   label: string,
+  max: number,
   maxLength: number,
+  min: number,
   minLength: number,
   multiLine: bool,
   onBlur: func,

@@ -14,6 +14,7 @@ const defaultLabelStyle = {
 }
 const defaultCheckboxStyle = {
   display: 'block',
+  backgroundColor: colors.white,
   border: '1px solid',
   boxSizing: 'border-box',
   padding: '0.1rem',
