@@ -43,6 +43,7 @@ const TextField = (props) => {
       minLength={props.minLength}
       onBlur={props.onBlur}
       onChange={props.onChange}
+      onClick={props.onClick}
       onFocus={props.onFocus}
       placeholder={props.placeHolder}
       required={props.required}
@@ -61,9 +62,11 @@ const TextField = (props) => {
       minlength={props.minLength}
       onBlur={props.onBlur}
       onChange={props.onChange}
+      onClick={props.onClick}
       onFocus={props.onFocus}
       placeholder={props.placeHolder}
       required={props.required}
+      rows={props.rows}
       style={computedInputStyle}
       value={props.value}
     />
@@ -101,9 +104,11 @@ TextField.propTypes = {
   multiLine: bool,
   onBlur: func,
   onChange: func,
+  onClick: func,
   onFocus: func,
   placeHolder: string,
   required: bool,
+  rows: number,
   style: object,
   type: string,
   value: oneOfType([string, number]),

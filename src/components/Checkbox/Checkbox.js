@@ -33,6 +33,11 @@ const checkedStyle = {
   backgroundColor: colors.pacificBlue,
   borderColor: colors.pacificBlue
 }
+const disabledStyle = {
+  color: colors.white,
+  cursor: 'not-allowed',
+  borderColor: colors.silver
+}
 
 /**
  * with label, description and hint
@@ -67,7 +72,9 @@ class Checkbox extends Component {
     let computedHintStyle = Object.assign({}, textColorStyle)
     let computedCheckboxStyle = Object.assign({},
       defaultCheckboxStyle,
-      this.state.checked ? checkedStyle : {}
+      this.state.checked ? checkedStyle : {},
+      disabled ? disabledStyle : {},
+      this.state.checked && disabled ? {backgroundColor: colors.silver} : {}
     )
 
     return (
