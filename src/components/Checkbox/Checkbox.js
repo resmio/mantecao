@@ -118,12 +118,14 @@ class Checkbox extends Component {
   }
   _toggleCheckbox = (e) => {
     e.preventDefault()
-    this.setState(
-      {checked: !this.state.checked},
-      () => {
-        this.props.onChange(this.state.checked)
-      }
-    )
+    if (!this.props.disabled) {
+      this.setState(
+        {checked: !this.state.checked},
+        () => {
+          this.props.onChange(this.state.checked)
+        }
+      )
+    }
   }
   _onChange = (e) => {
     // with a controlled input, react requires an onchange handler - do nothing
