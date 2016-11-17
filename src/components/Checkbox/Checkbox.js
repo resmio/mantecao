@@ -62,10 +62,11 @@ class Checkbox extends Component {
     }
   }
   render () {
-    const {error, labelStyle, disabled, label, description, hint, style} = this.props
+    const {error, warning, labelStyle, disabled, label, description, hint, style} = this.props
 
     let computerContainerStyle = Object.assign({}, defaultContainerStyle, style)
     let textColorStyle = Object.assign({},
+      warning ? {color: colors.goldenTainoi} : {},
       error ? {color: colors.amaranth} : {}
     )
     let computedLabelStyle = Object.assign({}, defaultLabelStyle, labelStyle)
@@ -137,10 +138,11 @@ Checkbox.propTypes = {
   defaultChecked: PropTypes.bool,
   disabled: PropTypes.bool,
   error: PropTypes.bool,
-  hint: PropTypes.string,
+  hint: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   label: PropTypes.string,
   labelStyle: PropTypes.object,
-  onChange: PropTypes.func.isRequired
+  onChange: PropTypes.func.isRequired,
+  warning: PropTypes.bool
 }
 
 export default Checkbox
