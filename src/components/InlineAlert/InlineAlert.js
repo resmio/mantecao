@@ -23,7 +23,7 @@ const defaultAlertColors = {
   'alert': colors.goldenTainoi,
   'error': colors.amaranth,
   'info': colors.pacificBlue,
-  'success': colors.niagara
+  'success': colors.java
 }
 const defaultAlertIcons = {
   'alert': <WarningIcon />,
