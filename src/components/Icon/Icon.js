@@ -60,7 +60,7 @@ const Icon = (props) => {
   }
 
   return (
-    <svg viewBox='0 0 32 32' style={ componentStyle }>
+    <svg viewBox='0 0 32 32' style={ componentStyle } className={props.className}>
       <g transform={ transform || props.transform }>
         { props.children }
       </g>
@@ -69,6 +69,7 @@ const Icon = (props) => {
 }
 
 Icon.propTypes = {
+  className: PropTypes.string,
   large: PropTypes.bool,
   mirrorX: PropTypes.bool,
   small: PropTypes.bool,

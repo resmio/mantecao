@@ -33,6 +33,11 @@ const checkedStyle = {
   backgroundColor: colors.pacificBlue,
   borderColor: colors.pacificBlue
 }
+const disabledStyle = {
+  color: colors.white,
+  cursor: 'not-allowed',
+  borderColor: colors.silver
+}
 
 /**
  * with label, description and hint
@@ -57,17 +62,20 @@ class Checkbox extends Component {
     }
   }
   render () {
-    const {error, labelStyle, disabled, label, description, hint, style} = this.props
+    const {error, warning, labelStyle, disabled, label, description, hint, style} = this.props
 
     let computerContainerStyle = Object.assign({}, defaultContainerStyle, style)
     let textColorStyle = Object.assign({},
+      warning ? {color: colors.goldenTainoi} : {},
       error ? {color: colors.amaranth} : {}
     )
     let computedLabelStyle = Object.assign({}, defaultLabelStyle, labelStyle)
     let computedHintStyle = Object.assign({}, textColorStyle)
     let computedCheckboxStyle = Object.assign({},
       defaultCheckboxStyle,
-      this.state.checked ? checkedStyle : {}
+      this.state.checked ? checkedStyle : {},
+      disabled ? disabledStyle : {},
+      this.state.checked && disabled ? {backgroundColor: colors.silver} : {}
     )
 
     return (
@@ -111,12 +119,14 @@ class Checkbox extends Component {
   }
   _toggleCheckbox = (e) => {
     e.preventDefault()
-    this.setState(
-      {checked: !this.state.checked},
-      () => {
-        this.props.onChange(this.state.checked)
-      }
-    )
+    if (!this.props.disabled) {
+      this.setState(
+        {checked: !this.state.checked},
+        () => {
+          this.props.onChange(this.state.checked)
+        }
+      )
+    }
   }
   _onChange = (e) => {
     // with a controlled input, react requires an onchange handler - do nothing
@@ -128,10 +138,11 @@ Checkbox.propTypes = {
   defaultChecked: PropTypes.bool,
   disabled: PropTypes.bool,
   error: PropTypes.bool,
-  hint: PropTypes.string,
+  hint: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   label: PropTypes.string,
   labelStyle: PropTypes.object,
-  onChange: PropTypes.func.isRequired
+  onChange: PropTypes.func.isRequired,
+  warning: PropTypes.bool
 }
 
 export default Checkbox

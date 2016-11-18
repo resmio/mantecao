@@ -46,7 +46,9 @@ const SelectField = (props) => {
     <div style={computedContainerStyle}>
       <label style={computedLabelStyle}>{props.label}</label>
       <select
+        className={props.className}
         disabled={props.disabled}
+        onBlur={props.onBlur}
         onChange={props.onChange}
         style={computedInputStyle}
         required={props.required}
@@ -76,6 +78,7 @@ SelectField.propTypes = {
   error: PropTypes.bool,
   hint: PropTypes.string,
   label: PropTypes.string,
+  onBlur: PropTypes.func,
   onChange: PropTypes.func,
   optionValues: PropTypes.array,
   options: PropTypes.array.isRequired,
