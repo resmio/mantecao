@@ -15,6 +15,10 @@ const defaultLabelStyle = {
   marginBottom: '0.5rem',
   maxWidth: '100%'
 }
+const disabledStyle = {
+  cursor: 'not-allowed',
+  backgroundColor: colors.gallery
+}
 
 const TextField = (props) => {
   let borderColorStyle = Object.assign({},
@@ -26,7 +30,11 @@ const TextField = (props) => {
     props.error ? {color: colors.amaranth} : {}
   )
 
-  let computedInputStyle = Object.assign({}, defaultStyle, borderColorStyle)
+  let computedInputStyle = Object.assign({},
+    defaultStyle,
+    borderColorStyle,
+    props.disabled ? disabledStyle : {}
+  )
   let computedLabelStyle = Object.assign({}, defaultLabelStyle, textColorStyle)
   let computedHintStyle = Object.assign({marginTop: '0.5rem'}, textColorStyle)
   let computedContainerStyle = Object.assign({marginBottom: '1rem'}, props.style)
