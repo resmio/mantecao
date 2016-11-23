@@ -80,7 +80,7 @@ class Checkbox extends Component {
 
     return (
       <div style={computerContainerStyle}>
-        <div style={{flex: '0 1 auto', marginRight: '2rem'}}>
+        <div style={{flex: '0 1 auto', marginRight: '1rem'}}>
           <label
             onClick={this._toggleCheckbox}
             htmlFor={this.refs.checkboxInput}
