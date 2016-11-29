@@ -18,7 +18,7 @@ const defaultCheckboxStyle = {
   border: '1px solid',
   boxSizing: 'border-box',
   padding: '0.1rem',
-  borderRadius: '4px',
+  borderRadius: '2px',
   cursor: 'pointer',
   borderColor: 'currentColor',
   position: 'relative',
@@ -80,7 +80,7 @@ class Checkbox extends Component {
 
     return (
       <div style={computerContainerStyle}>
-        <div style={{flex: '0 1 auto', marginRight: '2rem'}}>
+        <div style={{flex: '0 1 auto', marginRight: '0.7rem'}}>
           <label
             onClick={this._toggleCheckbox}
             htmlFor={this.refs.checkboxInput}

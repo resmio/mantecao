@@ -15,6 +15,10 @@ const defaultLabelStyle = {
   marginBottom: '0.5rem',
   maxWidth: '100%'
 }
+const disabledStyle = {
+  cursor: 'not-allowed',
+  backgroundColor: colors.gallery
+}
 
 /**
  * Can be given options to list in the select dropdown (assigned as optionValues)
@@ -36,7 +40,7 @@ const SelectField = (props) => {
   let computedInputStyle = Object.assign({},
     defaultStyle,
     borderColorStyle,
-    props.disabled ? {backgroundColor: colors.gallery} : {}
+    props.disabled ? disabledStyle : {}
   )
   let computedLabelStyle = Object.assign({}, defaultLabelStyle, textColorStyle)
   let computedContainerStyle = Object.assign({marginBottom: '1rem'}, props.style)
