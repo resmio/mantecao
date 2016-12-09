@@ -2,7 +2,6 @@ const webpack = require('webpack')
 const path = require('path')
 const validate = require('webpack-validator')
 const merge = require('webpack-merge')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 const parts = require('./webpack.parts')
 const nodeExternals = require('webpack-node-externals')
 
@@ -100,11 +99,6 @@ switch (process.env.npm_lifecycle_event) {
       { entry: ENTRIES.dev },
       { devtool: 'eval-source-map' },
       parts.CSS(PATHS.src),
-      {
-        plugins: [
-          new HtmlWebpackPlugin({})
-        ]
-      },
       parts.devServer({
         host: '0.0.0.0',
         port: PORTS.devServer

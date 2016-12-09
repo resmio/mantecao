@@ -1,7 +1,11 @@
 import React, {PropTypes} from 'react'
-import {colors} from '../../variables'
+import {colors, iconSizes} from '../../variables'
+import {CalendarIcon} from '../../icons'
 
-const defaultStyle = {
+const defaultContainerStyle = {
+  marginBottom: '1rem'
+}
+const defaultInputStyle = {
   width: '100%',
   borderRadius: '0.4rem',
   border: '1px solid',
@@ -15,9 +19,23 @@ const defaultLabelStyle = {
   marginBottom: '0.5rem',
   maxWidth: '100%'
 }
+const defaultHintStyle = {
+  marginTop: '0.5rem'
+}
 const disabledStyle = {
   cursor: 'not-allowed',
   backgroundColor: colors.gallery
+}
+const iconInputStyle = {
+  paddingLeft: '3.5rem'
+}
+const defaultIconContainerStyle = {
+  position: 'relative'
+}
+const defaultIconStyle = {
+  padding: '0.4rem 0.7rem',
+  position: 'absolute',
+  width: '2.1rem'
 }
 
 const TextField = (props) => {
@@ -30,14 +48,19 @@ const TextField = (props) => {
     props.error ? {color: colors.amaranth} : {}
   )
 
+  let computedContainerStyle = Object.assign({},
+    defaultContainerStyle,
+    props.style
+  )
   let computedInputStyle = Object.assign({},
-    defaultStyle,
+    defaultInputStyle,
     borderColorStyle,
+    true ? iconInputStyle : {},
     props.disabled ? disabledStyle : {}
   )
+  let computedIconContainerStyle = Object.assign({}, defaultIconContainerStyle)
   let computedLabelStyle = Object.assign({}, defaultLabelStyle, textColorStyle)
-  let computedHintStyle = Object.assign({marginTop: '0.5rem'}, textColorStyle)
-  let computedContainerStyle = Object.assign({marginBottom: '1rem'}, props.style)
+  let computedHintStyle = Object.assign({}, defaultHintStyle, textColorStyle)
 
   const inputField = (
     <input
@@ -82,15 +105,19 @@ const TextField = (props) => {
   return (
     <div style={computedContainerStyle}>
       <label style={computedLabelStyle}>{props.label}</label>
-      {props.multiLine ? textAreaField : inputField}
+      <div style={computedIconContainerStyle}>
+        <div style={defaultIconStyle}><CalendarIcon width='100%' height='100%' /></div>
+        {props.multiLine ? textAreaField : inputField}
+      </div>
       {props.hint ? <div style={computedHintStyle}>{props.hint}</div> : null}
     </div>
   )
 }
-
+//        {props.icon ? <div style={defaultIconStyle}>props.icon</div> : null}
 const {
   bool,
   func,
+  node,
   number,
   string,
   object,
@@ -103,6 +130,7 @@ TextField.propTypes = {
   disabled: bool,
   error: bool,
   hint: string,
+  icon: node,
   id: string,
   label: string,
   max: number,

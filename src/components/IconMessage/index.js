@@ -1,1 +1,0 @@
-export IconMessage from './IconMessage'
