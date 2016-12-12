@@ -1,6 +1,5 @@
 import React, {PropTypes} from 'react'
 import {colors, iconSizes} from '../../variables'
-import {CalendarIcon} from '../../icons'
 
 const defaultContainerStyle = {
   marginBottom: '1rem'
@@ -33,9 +32,9 @@ const defaultIconContainerStyle = {
   position: 'relative'
 }
 const defaultIconStyle = {
-  padding: '0.4rem 0.7rem',
+  padding: '0.6rem 0.7rem',
   position: 'absolute',
-  width: '2.1rem'
+  width: '3.5rem'
 }
 
 const TextField = (props) => {
