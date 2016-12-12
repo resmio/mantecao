@@ -55,7 +55,7 @@ const TextField = (props) => {
   let computedInputStyle = Object.assign({},
     defaultInputStyle,
     borderColorStyle,
-    true ? iconInputStyle : {},
+    props.icon ? iconInputStyle : {},
     props.disabled ? disabledStyle : {}
   )
   let computedIconContainerStyle = Object.assign({}, defaultIconContainerStyle)
@@ -106,14 +106,13 @@ const TextField = (props) => {
     <div style={computedContainerStyle}>
       <label style={computedLabelStyle}>{props.label}</label>
       <div style={computedIconContainerStyle}>
-        <div style={defaultIconStyle}><CalendarIcon width='100%' height='100%' /></div>
+        {props.icon ? <div style={defaultIconStyle}>{props.icon}</div> : null}
         {props.multiLine ? textAreaField : inputField}
       </div>
       {props.hint ? <div style={computedHintStyle}>{props.hint}</div> : null}
     </div>
   )
 }
-//        {props.icon ? <div style={defaultIconStyle}>props.icon</div> : null}
 const {
   bool,
   func,
