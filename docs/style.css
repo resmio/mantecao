@@ -6,6 +6,9 @@ html {
   font-family: "Open Sans", sans-serif;
 }
 
+input { font-size: 14px; line-height: 2.1rem; }
+select { font-size: 14px; }
+
 .ReactStyleguidist-ReactComponent__root {
   /* overrides to make it look like the app */
   font-size: 14px;

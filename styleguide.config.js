@@ -1,5 +1,6 @@
 var path = require('path')
 var glob = require('glob')
+var version = require('./package.json').version
 
 const PATHS = {
   modules: path.join(__dirname, 'node_modules'),
@@ -30,6 +31,7 @@ module.exports = {
       }
     }
   ],
+  title:'v' + version,
   updateWebpackConfig: function (webpackConfig, env) {
     webpackConfig.module.loaders.push(
       {
