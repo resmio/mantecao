@@ -1,6 +1,6 @@
 {
   "name": "@resmio/mantecao",
-  "version": "1.0.0-beta.1",
+  "version": "1.0.0-beta.6",
   "description": "A react UI library for resmio",
   "main": "dist/index.js",
   "scripts": {
@@ -72,7 +72,7 @@
     "sinon": "^1.17.5",
     "style-loader": "^0.13.1",
     "tape": "^4.6.0",
-    "webpack": "^1.13.1",
+    "webpack": "1.13.2",
     "webpack-bundle-tracker": "0.0.93",
     "webpack-dev-server": "^1.14.1",
     "webpack-merge": "^0.14.0",
