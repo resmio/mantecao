@@ -100,7 +100,7 @@ class Checkbox extends Component {
             />
           </label>
         </div>
-        <div style={{flex: '1 1 auto'}}>
+        <div style={{flex: '1 1'}}>
           {label
             ? <label style={computedLabelStyle}>{label}</label>
             : null
