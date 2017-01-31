@@ -4,7 +4,7 @@ import {colors} from '../../variables'
 import {colorLuminance} from '../../utils/colorUtils'
 
 const defaultStyle = {
-  padding: '0.8rem 1.5rem',
+  padding: '0.8rem 2rem',
   color: colors.white,
   backgroundColor: colors.alto,
   fontSize: '1.5rem',
