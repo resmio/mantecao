@@ -57,7 +57,7 @@ ButtonGroupItem.propTypes = {
   onSelect: func,
   selected: bool,
   text: oneOfType([string, number]),
-  value: oneOfType([string, number])
+  value: oneOfType([string, number, func])
 }
 
 export default ButtonGroupItem
