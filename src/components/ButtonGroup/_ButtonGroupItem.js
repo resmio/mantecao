@@ -5,6 +5,8 @@ import {colors} from '../../variables'
 
 const itemStyle = {
   display: 'inline-block',
+  fontSize: '1.4rem',
+  padding: '0.3rem 2rem',
   borderRadius: '0px',
   border: '1px solid',
   boxShadow: 'inset 0 1px rgba(0,0,0,.05)'
