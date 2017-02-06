@@ -9,7 +9,6 @@ const PATHS = {
 }
 
 module.exports = {
-  title: 'styleguide',
   defaultExample: true,
   serverPort: 3002,
   styleguideDir: 'docs', // default for gh-pages on master is /docs - so we use this as the build destination
@@ -31,7 +30,7 @@ module.exports = {
       }
     }
   ],
-  title:'v' + version,
+  title: 'v' + version,
   updateWebpackConfig: function (webpackConfig, env) {
     webpackConfig.module.loaders.push(
       {

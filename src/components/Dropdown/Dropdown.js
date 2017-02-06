@@ -54,10 +54,10 @@ class Dropdown extends Component {
 Dropdown.propTypes = {
   children: PropTypes.node.isRequired,
   closeDropdown: PropTypes.func.isRequired,
-  openDropdown: PropTypes.func.isRequired,
   disabled: PropTypes.bool,
   isOpen: PropTypes.bool.isRequired,
   keepOpenOnOutsideClick: PropTypes.bool,
+  openDropdown: PropTypes.func.isRequired,
   triggerNode: PropTypes.node.isRequired
 }
 
