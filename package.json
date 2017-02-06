@@ -1,6 +1,6 @@
 {
   "name": "@resmio/mantecao",
-  "version": "1.0.1-beta.7",
+  "version": "1.0.1-beta.6",
   "description": "A react UI library for resmio",
   "main": "dist/index.js",
   "scripts": {
@@ -38,8 +38,7 @@
   },
   "peerDependencies": {
     "react": "^15.1.0",
-    "react-dom": "^15.1.0",
-    "react-event-listener": "^0.4.1"
+    "react-dom": "^15.1.0"
   },
   "devDependencies": {
     "babel-core": "^6.10.4",
@@ -68,7 +67,6 @@
     "react": "^15.3.1",
     "react-addons-test-utils": "^15.3.1",
     "react-dom": "^15.3.1",
-    "react-event-listener": "^0.4.1",
     "react-styleguidist": "^3.1.1",
     "sass-loader": "^4.0.0",
     "semantic-release": "^4.3.5",
