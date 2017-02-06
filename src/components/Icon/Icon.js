@@ -51,12 +51,17 @@ const Icon = (props) => {
     Object.assign(componentStyle, {height: props.height})
   }
 
-  // handle mirroring
+  // handle mirroring (done at path group level)
   let transform = ''
   if (props.mirrorX) {
     transform = 'translate(0, 32) scale(1, -1)'
   } else if (props.mirrorY) {
     transform = 'translate(32) scale(-1, 1)'
+  }
+
+  // handle rotation (done at svg level)
+  if (props.rotate) {
+    Object.assign(componentStyle, {transform: 'rotate(' + props.rotate + 'deg)'})
   }
 
   return (
