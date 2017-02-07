@@ -30,7 +30,7 @@ class Dropdown extends Component {
 
     const computedChildrenStyle = Object.assign({},
       defaultChildrenStyle,
-      left ? leftChilren : {},
+      left ? leftChildren : {},
       right ? rightChildren : {},
       center ? centerChildren : {}
     )
