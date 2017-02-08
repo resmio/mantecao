@@ -101,7 +101,7 @@ class Dropdown extends Component {
         <div onClick={computedToggleFunc} style={computedTriggerStyle}>
           {triggerNode}
         </div>
-        {arrow ? ArrowThing : null}
+        {arrow && isOpen ? ArrowThing : null}
         {isOpen
           ? <div style={computedChildrenStyle}>{children}</div>
           : null
