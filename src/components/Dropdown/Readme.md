@@ -2,7 +2,7 @@ Example:
 
     <Dropdown
       triggerNode={<button>open dropdown</button>}
-      isOpen={true}
+      isOpen={false}
       openDropdown={() => console.log('open dropdown')}
       closeDropdown={() => console.log('close dropdown')}
     >

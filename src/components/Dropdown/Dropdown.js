@@ -101,11 +101,10 @@ class Dropdown extends Component {
           {triggerNode}
         </div>
         {arrow ? ArrowThing : null}
-        <div style={computedChildrenStyle}>
-          {/* remount the children when openning */
-            isOpen ? children : null
-          }
-        </div>
+        {isOpen
+          ? <div style={computedChildrenStyle}>{children}</div>
+          : null
+        }
       </div>
     )
   }
