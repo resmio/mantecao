@@ -12,6 +12,7 @@ const defaultChildrenStyle = {
   background: colors.white,
   border: '1px solid',
   borderColor: colors.pacificBlue,
+  minWidth: '100%',
   zIndex: 1000
 }
 const centerChildren = {left: '50%', transform: 'translate(-50%, 0)'}
