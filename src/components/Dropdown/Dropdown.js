@@ -1,5 +1,6 @@
 import React, {Component, PropTypes} from 'react'
 import EventListener from 'react-event-listener'
+import {colors} from '../../variables'
 
 const defaultContainerStyle = {
   position: 'relative',
@@ -8,7 +9,9 @@ const defaultContainerStyle = {
 
 const defaultChildrenStyle = {
   position: 'absolute',
-  background: 'white',
+  background: colors.white,
+  border: '1px solid',
+  borderColor: colors.pacificBlue,
   zIndex: 1000
 }
 const centerChildren = {left: '50%', transform: 'translate(-50%, 0)'}
@@ -19,9 +22,39 @@ const defaultTriggerStyle = {
   width: '100%'
 }
 
+const defaultBorderArrow = {
+  bottom: '-6px',
+  left: '50%',
+  border: 'solid transparent',
+  content: ' ',
+  height: '0px',
+  width: '0px',
+  position: 'absolute',
+  pointerEvents: 'none',
+  borderBottomColor: colors.pacificBlue,
+  borderWidth: '6px',
+  marginLeft: '-6px',
+  zIndex: 1001
+}
+
+const defaultBackgroundArrow = {
+  bottom: '-6px',
+  left: '50%',
+  border: 'solid transparent',
+  content: ' ',
+  height: '0px',
+  width: '0px',
+  position: 'absolute',
+  pointerEvents: 'none',
+  borderBottomColor: colors.white,
+  borderWidth: '5px',
+  marginLeft: '-5px',
+  zIndex: 1002
+}
+
 class Dropdown extends Component {
   render () {
-    const {openDropdown, closeDropdown, isOpen, children, triggerNode, keepOpenOnOutsideClick, disabled, left, right, center} = this.props
+    const {openDropdown, closeDropdown, isOpen, children, triggerNode, keepOpenOnOutsideClick, disabled, left, right, center, arrow, borderColor, backgroundColor} = this.props
 
     const computedTriggerStyle = Object.assign({},
       defaultTriggerStyle,
@@ -30,9 +63,29 @@ class Dropdown extends Component {
 
     const computedChildrenStyle = Object.assign({},
       defaultChildrenStyle,
+      borderColor ? {borderColor} : {},
+      backgroundColor ? {backgroundColor} : {},
+      arrow ? {marginTop: '5px'} : {},
       left ? leftChildren : {},
       right ? rightChildren : {},
       center ? centerChildren : {}
+    )
+
+    const computedBackgroundArrow = Object.assign({},
+      defaultBackgroundArrow,
+      backgroundColor ? {borderBottomColor: backgroundColor} : {},
+    )
+
+    const computedBorderArrow = Object.assign({},
+      defaultBorderArrow,
+      borderColor ? {borderBottomColor: borderColor} : {},
+    )
+
+    const ArrowThing = (
+      <div>
+        <div style={computedBorderArrow}></div>
+        <div style={computedBackgroundArrow}></div>
+      </div>
     )
 
     const toggleFunc = isOpen ? closeDropdown : openDropdown
@@ -47,6 +100,7 @@ class Dropdown extends Component {
         <div onClick={computedToggleFunc} style={computedTriggerStyle}>
           {triggerNode}
         </div>
+        {arrow ? ArrowThing : null}
         <div style={computedChildrenStyle}>
           {/* remount the children when openning */
             isOpen ? children : null
@@ -62,6 +116,9 @@ class Dropdown extends Component {
 }
 
 Dropdown.propTypes = {
+  arrow: PropTypes.bool,
+  backgroundColor: PropTypes.string,
+  borderColor: PropTypes.string,
   center: PropTypes.bool,
   children: PropTypes.node.isRequired,
   closeDropdown: PropTypes.func.isRequired,
