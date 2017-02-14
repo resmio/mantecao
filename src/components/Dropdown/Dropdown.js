@@ -17,8 +17,17 @@ const defaultTriggerStyle = {
 }
 
 class Dropdown extends Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      isOpen: false,
+      openDropdown: () => this.setState({isOpen: true}),
+      closeDropdown: () => this.setState({isOpen: false})
+    }
+  }
   render () {
-    const {openDropdown, closeDropdown, isOpen, children, triggerNode, keepOpenOnOutsideClick, disabled} = this.props
+    const {children, triggerNode, keepOpenOnOutsideClick, disabled} = this.props
+    const {openDropdown, closeDropdown, isOpen} = this[this.hasExternalControls() ? 'props' : 'state']
 
     const computedTriggerStyle = Object.assign({},
       defaultTriggerStyle,
@@ -46,18 +55,22 @@ class Dropdown extends Component {
     )
   }
   onOutsideClick = (e) => {
-    const {closeDropdown} = this.props
+    const {closeDropdown} = this[this.hasExternalControls() ? 'props' : 'state']
     if (!e.target.closest('.dropdown__bubble')) { closeDropdown() }
+  }
+  hasExternalControls = () => {
+    const {openDropdown, closeDropdown, isOpen} = this.props
+    return (openDropdown !== undefined && closeDropdown !== undefined && openDropdown !== undefined)
   }
 }
 
 Dropdown.propTypes = {
-  children: PropTypes.node.isRequired,
-  closeDropdown: PropTypes.func.isRequired,
+  children: PropTypes.node.isRequred,
+  closeDropdown: PropTypes.func,
   disabled: PropTypes.bool,
-  isOpen: PropTypes.bool.isRequired,
+  isOpen: PropTypes.bool,
   keepOpenOnOutsideClick: PropTypes.bool,
-  openDropdown: PropTypes.func.isRequired,
+  openDropdown: PropTypes.func,
   triggerNode: PropTypes.node.isRequired
 }
 
