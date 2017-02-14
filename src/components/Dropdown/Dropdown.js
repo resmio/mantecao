@@ -132,12 +132,12 @@ Dropdown.propTypes = {
   borderColor: PropTypes.string,
   center: PropTypes.bool,
   children: PropTypes.node.isRequired,
-  closeDropdown: PropTypes.func.isRequired,
+  closeDropdown: PropTypes.func,
   disabled: PropTypes.bool,
   isOpen: PropTypes.bool,
   keepOpenOnOutsideClick: PropTypes.bool,
   left: PropTypes.bool,
-  openDropdown: PropTypes.func.isRequired,
+  openDropdown: PropTypes.func,
   right: PropTypes.bool,
   triggerNode: PropTypes.node.isRequired
 }
