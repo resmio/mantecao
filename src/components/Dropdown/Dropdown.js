@@ -122,7 +122,7 @@ class Dropdown extends Component {
   }
   hasExternalControls = () => {
     const {openDropdown, closeDropdown, isOpen} = this.props
-    return (openDropdown !== undefined && closeDropdown !== undefined && openDropdown !== undefined)
+    return (openDropdown !== undefined && closeDropdown !== undefined && isOpen !== undefined)
   }
 }
 
