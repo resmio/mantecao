@@ -12,6 +12,7 @@ const defaultChildrenStyle = {
   background: colors.white,
   border: '1px solid',
   borderColor: colors.pacificBlue,
+  boxShadow: '0px 2px 7px rgba(0,0,0,.25)',
   minWidth: '100%',
   zIndex: 1000
 }
