@@ -88,8 +88,8 @@ const TextField = (props) => {
       defaultValue={props.defaultValue}
       disabled={props.disabled}
       id={props.id}
-      maxlength={props.maxLength}
-      minlength={props.minLength}
+      maxLength={props.maxLength}
+      minLength={props.minLength}
       onBlur={props.onBlur}
       onChange={props.onChange}
       onClick={props.onClick}
