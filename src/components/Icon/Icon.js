@@ -7,6 +7,7 @@ const defaultStyle = {
   strokeWidth: 1.5,
   fill: 'none',
   stroke: 'currentColor',
+  pointerEvents: 'none',
   height: iconSizes.medium,
   width: iconSizes.medium,
   verticalAlign: 'middle'
