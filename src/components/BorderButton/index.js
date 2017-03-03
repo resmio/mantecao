@@ -1,1 +1,1 @@
-export BorderButton from './BorderButton'
+export { BorderButton } from './BorderButton'

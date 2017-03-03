@@ -1,1 +1,1 @@
-export KeyCodeListener from './KeyCodeListener'
+export { KeyCodeListener } from './KeyCodeListener'

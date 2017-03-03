@@ -1,1 +1,1 @@
-export DialogHeader from './DialogHeader'
+export { DialogHeader } from './DialogHeader'

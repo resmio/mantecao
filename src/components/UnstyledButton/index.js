@@ -1,1 +1,1 @@
-export UnstyledButton from './UnstyledButton'
+export { UnstyledButton } from './UnstyledButton'

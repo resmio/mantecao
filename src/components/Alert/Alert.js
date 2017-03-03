@@ -1,7 +1,11 @@
-import React, {Component, PropTypes} from 'react'
-import ReactDOM from 'react-dom'
-
-import {SuccessIcon, ErrorIcon, WarningIcon, InfoIcon, CloseIcon} from '../../icons'
+import React, { Component, PropTypes } from 'react'
+import {
+  SuccessIcon,
+  ErrorIcon,
+  WarningIcon,
+  InfoIcon,
+  CloseIcon
+} from '../../icons'
 
 import {colors} from '../../variables'
 

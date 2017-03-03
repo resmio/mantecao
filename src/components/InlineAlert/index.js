@@ -1,1 +1,1 @@
-export InlineAlert from './InlineAlert'
+export { InlineAlert } from './InlineAlert'
