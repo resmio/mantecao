@@ -12,6 +12,9 @@ storiesOf('Welcome', module)
 storiesOf('Badge', module)
   .add('with some text', () => (
     <Badge>Hola</Badge>
+  ))
+  .add('a red one', () => (
+    <Badge color='red'>Hola</Badge>
   ));
 
 // storiesOf('Alert', module)
