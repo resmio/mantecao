@@ -3,6 +3,10 @@ import styled from 'styled-components';
 
 import {colors} from '../../variables'
 
+const types = {
+  warning: colors.metallicGold
+}
+
 const Badge = styled.span`
   display: inline-block;
   min-width: 10px;
@@ -13,7 +17,7 @@ const Badge = styled.span`
   vertical-align: bottom;
   white-space: nowrap;
   text-align: center;
-  background-color: ${ props => props.color || colors.dustyGray };
+  background-color: ${ props => types[props.type] || colors.dustyGray };
   border-radius: 10px;
 `
 
