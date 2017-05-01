@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import styles from './DateSelector.styles'
 import Select from './Select'
+import '@resmio/rollico'
 
 import {
   isValidDate,
@@ -9,7 +10,7 @@ import {
   getPastYears,
   getYearFromDate,
   MONTH_NAMES
-} from '../libs/dates'
+} from '../../utils/dates'
 
 // Date Generation
 const days = [...Array(31+1).keys()].slice(1)

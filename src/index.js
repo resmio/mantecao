@@ -14,6 +14,7 @@ export {KeyCodeListener} from './components/KeyCodeListener'
 export {Label} from './components/Label'
 export {SelectField} from './components/SelectField'
 export {TextField} from './components/TextField'
+export {ThreeFieldDate} from './components/ThreeFieldDate'
 export {UnstyledButton} from './components/UnstyledButton'
 
 // icons
