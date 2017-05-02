@@ -24,8 +24,8 @@ export const getYearFromDate = date => new Date(date).getFullYear()
 export const isValidDate = date => {
   const testDate = new Date(date.year, date.month - 1, date.day)
   return (
-    testDate.getDate() === date.day
-    && testDate.getMonth() === date.month - 1
-    && testDate.getFullYear() === date.year
+    testDate.getDate() === date.day &&
+    testDate.getMonth() === date.month - 1 &&
+    testDate.getFullYear() === date.year
   )
 }

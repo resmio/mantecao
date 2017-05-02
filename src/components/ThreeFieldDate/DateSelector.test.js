@@ -1,3 +1,5 @@
+// Uncomment file once mantecao runs jest tests
+/*
 import React from 'react'
 import renderer from 'react-test-renderer'
 import DateSelector from './DateSelector'
@@ -35,3 +37,4 @@ describe('Date Selector', () => {
   it('returns errors onChange if the date is invalid')
   it('highlights the field that contain errors')
 })
+*/

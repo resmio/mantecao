@@ -13,7 +13,7 @@ import {
 } from '../../utils/dates'
 
 // Date Generation
-const days = [...Array(31+1).keys()].slice(1)
+const days = [...Array(31 + 1).keys()].slice(1)
 const actualYear = getYearFromDate(new Date())
 const years = getPastYears(120, actualYear)
 
@@ -52,7 +52,7 @@ class DateSelector extends Component {
   }
 
 // If we get a date as a prop we assign it to the state
-  componentWillMount() {
+  componentWillMount () {
     this.props.date && this.setState({
       date: {
         day: getDayFromDate(this.props.date),
@@ -64,11 +64,11 @@ class DateSelector extends Component {
   }
 
   // // Emit the state up after it changes
-  componentDidUpdate() {
+  componentDidUpdate () {
     this.props.onChange(this.state)
   }
 
-  render() {
+  render () {
     const day = (
       <Select
         name='Day'
@@ -108,7 +108,7 @@ class DateSelector extends Component {
         </div>
         <div {...styles.error}>{ this.state.errors.invalid && 'Please provide a valid date' }</div>
       </div>
-    );
+    )
   }
 }
 

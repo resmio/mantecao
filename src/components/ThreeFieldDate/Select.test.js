@@ -1,3 +1,6 @@
+// Uncomment file once mantecao runs jest tests
+/*
+
 import React from 'react'
 import renderer from 'react-test-renderer'
 
@@ -68,3 +71,4 @@ describe('Select', () => {
     expect(ON_OPTION_CHANGE).toBeCalled()
   })
 })
+*/

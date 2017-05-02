@@ -36,7 +36,7 @@ Select.propTypes = {
   name: string,
   onOptionChange: func.isRequired,
   options: arrayOf(oneOfType([string, number])).isRequired,
-  selected: oneOfType([string,number]),
+  selected: oneOfType([string, number]),
   values: arrayOf(oneOfType([string, number]))
 }
 
