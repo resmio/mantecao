@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import styles from './DateSelector.styles'
 import Select from './Select'
-import '@resmio/rollico'
+// import '@resmio/rollico'
 
 import {
   isValidDate,
