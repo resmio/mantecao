@@ -37,6 +37,7 @@ class DateSelector extends Component {
   static propTypes = {
     date: t.string,
     monthBeforeDay: t.bool,
+    monthNames: t.array,
     onChange: t.func.isRequired
   }
 
@@ -85,7 +86,7 @@ class DateSelector extends Component {
       <Select
         name='Month'
         id='month'
-        options={MONTH_NAMES}
+        options={this.props.monthNames || MONTH_NAMES}
         values={[...Array(13).keys()].slice(1)}
         selected={this.state.date.month}
         onOptionChange={this.handleInputChange}

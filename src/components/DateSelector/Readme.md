@@ -9,3 +9,10 @@ Month before day:
 No prop date:
 
     <DateSelector onChange={()=>{}}/>
+
+Custom month names:
+
+    <DateSelector
+      onChange={()=>{}}
+      monthNames={['Gener', 'Febrer', 'Març', 'Abril', 'Maig', 'Juny', 'Juliol', 'Agost', 'Setembre', 'Octubre', 'Novembre', 'Desembre']}
+    />
