@@ -1,0 +1,113 @@
+exports[`Select renders correctly 1`] = `
+<select
+  data-css-8zqqrv=""
+  id="testId"
+  name="testName"
+  onChange={[Function]}
+  value="3">
+  <option
+    value={0}>
+    testName
+  </option>
+  <option
+    value="1">
+    1
+  </option>
+  <option
+    value="2">
+    2
+  </option>
+  <option
+    value="3">
+    3
+  </option>
+  <option
+    value="4">
+    4
+  </option>
+</select>
+`;
+
+exports[`Select renders differently if it has an error 1`] = `
+<select
+  data-css-pmxpya=""
+  id={undefined}
+  name={undefined}
+  onChange={[Function]}
+  value="3">
+  <option
+    value={0} />
+  <option
+    value="1">
+    1
+  </option>
+  <option
+    value="2">
+    2
+  </option>
+  <option
+    value="3">
+    3
+  </option>
+  <option
+    value="4">
+    4
+  </option>
+</select>
+`;
+
+exports[`Select renders values if those are passed as props 1`] = `
+<select
+  data-css-8zqqrv=""
+  id={undefined}
+  name={undefined}
+  onChange={[Function]}
+  value="3">
+  <option
+    value={0} />
+  <option
+    value="value1">
+    1
+  </option>
+  <option
+    value="value2">
+    2
+  </option>
+  <option
+    value="value3">
+    3
+  </option>
+  <option
+    value="value4">
+    4
+  </option>
+</select>
+`;
+
+exports[`Select should fire the onOptionChange prop passing the value selected 1`] = `
+<select
+  data-css-8zqqrv=""
+  id={undefined}
+  name={undefined}
+  onChange={[Function]}
+  value="3">
+  <option
+    value={0} />
+  <option
+    value="1">
+    1
+  </option>
+  <option
+    value="2">
+    2
+  </option>
+  <option
+    value="3">
+    3
+  </option>
+  <option
+    value="4">
+    4
+  </option>
+</select>
+`;
