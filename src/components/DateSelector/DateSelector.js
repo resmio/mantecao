@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, PropTypes as t } from 'react'
 import styles from './DateSelector.styles'
 import Select from './Select'
 // import '@resmio/rollico'
@@ -29,19 +29,33 @@ const validate = date => {
 
 // Component
 //  - Props:
-//      - date :Date
+//      - date :DateString (date='2017-05-03')
 //      - monthBeforeDay :Boolean
 //      - onChange :Func
 
 class DateSelector extends Component {
-  state = {
+  static propTypes = {
+    date: t.string,
+    monthBeforeDay: t.bool,
+    onChange: t.func.isRequired
+  }
+
+  static defaultProps = {
     date: {
       month: -1,
       day: 0,
       year: 0
-    },
-    errors: {
     }
+  }
+
+  state = {
+    date: {
+      day: getDayFromDate(this.props.date),
+      // Month is 0 based so we need to add 1 here
+      month: getMonthFromDate(this.props.date) + 1,
+      year: getYearFromDate(this.props.date)
+    },
+    errors: {}
   }
 
   handleInputChange = evt => {
@@ -49,18 +63,6 @@ class DateSelector extends Component {
     date[evt.target.id] = parseInt(evt.target.value, 10)
     const errors = validate(date)
     this.setState({date, errors})
-  }
-
-// If we get a date as a prop we assign it to the state
-  componentWillMount () {
-    this.props.date && this.setState({
-      date: {
-        day: getDayFromDate(this.props.date),
-        // Month is 0 based so we need to add 1 here
-        month: getMonthFromDate(this.props.date) + 1,
-        year: getYearFromDate(this.props.date)
-      }
-    })
   }
 
   // // Emit the state up after it changes
