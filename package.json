@@ -1,6 +1,6 @@
 {
   "name": "@resmio/mantecao",
-  "version": "1.0.2-beta.1",
+  "version": "1.0.2-beta.3",
   "description": "A react UI library for resmio",
   "main": "dist/index.js",
   "scripts": {
