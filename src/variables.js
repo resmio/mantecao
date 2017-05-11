@@ -2,6 +2,7 @@ export const colors = { // http://veli.ee/colorpedia/
   // blues
   pacificBlue: '#00A7C4',
   deepCerulean: '#018EA6',
+  blueBayoux: '#556285',
   oxfordBlue: '#333B4F',
   ebonyClay: '#293140',
   midnightExpress: '#1E2532',
@@ -33,12 +34,10 @@ export const colors = { // http://veli.ee/colorpedia/
   white: '#FFFFFF'
 }
 
-export const containers = {
-  section: {
-    backgroundColor: colors.white,
-    padding: '2rem',
-    border: '1px solid ' + colors.gallery
-  }
+export const breakpoints = {
+  medium: '480px',
+  mediumHigh: '680px',
+  mediumDesktop: '1100px'
 }
 
 export const iconSizes = {
