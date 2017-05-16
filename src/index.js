@@ -23,4 +23,4 @@ export {UnstyledButton} from './components/UnstyledButton'
 export * from './icons'
 
 // variables
-export {colors} from './variables'
+export {colors, breakpoints} from './variables'
