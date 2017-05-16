@@ -42,11 +42,7 @@ class DateSelector extends Component {
   }
 
   static defaultProps = {
-    date: {
-      month: -1,
-      day: 0,
-      year: 0
-    }
+    date: '1999-12-31'
   }
 
   state = {
