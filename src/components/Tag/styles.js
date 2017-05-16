@@ -20,7 +20,7 @@ export const styles = {
     }
   }),
 
- hover: css({
+  hover: css({
     background: 'rgba(188, 33, 63, 0.2)',
     color: colors.emperor,
     border: '1px solid rgba(188, 33, 63, 0.3)',

@@ -22,7 +22,7 @@ class Tag extends Component {
     hovered: false
   }
 
-  render() {
+  render () {
     const {name, onClickAction} = this.props
 
     return (
