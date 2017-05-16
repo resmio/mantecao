@@ -7,10 +7,10 @@ const TagCloud = ({names, onClickAction}) => (
   <div>
     {
       names.map((name, i) => (
-       <div {...styles.item}>
+       <div {...styles.item} key={i}>
          {onClickAction
-           ? <Tag key={i} name={name} onClickAction={(name) => onClickAction(name)} />
-           : <Tag key={i} name={name} />
+           ? <Tag name={name} onClickAction={(name) => onClickAction(name)} />
+           : <Tag name={name} />
          }
        </div>
       ))
