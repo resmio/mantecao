@@ -58,10 +58,8 @@ class Dropdown extends Component {
     onMouseLeave: () => this.setState({mouseIsOver: false}),
     onMouseEnter: () => this.setState({mouseIsOver: true}),
     isOpen: false,
-    openDropdown: (e) => {
-      e.stopPropagation() // <-- stop the event from propagating to the window
-      this.setState({isOpen: true})
-    },
+    stillPropagating: false,
+    openDropdown: (e) => this.setState({isOpen: true, stillPropagating: true}),
     closeDropdown: () => this.setState({isOpen: false})
   }
   render () {
@@ -125,8 +123,12 @@ class Dropdown extends Component {
   }
   _onWindowClick = () => {
     const {closeOnClick} = this.props
-    const {mouseIsOver, closeDropdown} = this.state
-    if (!mouseIsOver || closeOnClick) { closeDropdown() }
+    const {mouseIsOver, closeDropdown, isOpen, stillPropagating} = this.state
+    if (closeOnClick && stillPropagating) {
+      this.setState({stillPropagating: false}) // <-- bug fix for the synthetic event propagation... wow
+    } else if (!mouseIsOver || closeOnClick) {
+      closeDropdown()
+    }
   }
 }
 
