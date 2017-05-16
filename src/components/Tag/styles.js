@@ -24,6 +24,6 @@ export const styles = {
     background: 'rgba(188, 33, 63, 0.2)',
     color: colors.emperor,
     border: '1px solid rgba(188, 33, 63, 0.3)',
-    borderLeft: `4px solid rgba(188, 33, 63, 1)`,
+    borderLeft: '4px solid rgba(188, 33, 63, 1)'
   })
 }
