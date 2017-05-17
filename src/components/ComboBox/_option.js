@@ -1,35 +1,25 @@
 import React, {Component, PropTypes} from 'react'
-import {colors} from '@resmio/rollico/dist'
-import {css} from 'glamor'
 
 import {CheckIcon, BlankIcon} from '../../icons'
-
-const styles = {
-  container: css({
-    padding: '0.5rem 1rem',
-    overflow: 'hidden',
-    textOverflow: 'ellipsis',
-    whiteSpace: 'nowrap',
-    ':hover': {
-      cursor: 'pointer',
-      backgroundColor: colors.silver
-    }
-  }),
-  text: css({
-    paddingLeft: '0.75rem'
-  })
-}
+import {styles} from './styles'
 
 class ComboBoxOption extends Component {
   render () {
-    const {text, selected, pseudoSelected, onClick} = this.props
+    const {text, selected, focused, onClick} = this.props
     return (
-      <div {...styles.container}>
+      <div
+        {...Object.assign(
+          {},
+          styles.option.wrapper,
+          focused ? styles.option.focused : {}
+        )}
+        onClick={onClick}
+      >
         {selected
-          ? <CheckIcon xsmall style={{strokeWidth: '3px', color: colors.pacificBlue}} />
+          ? <CheckIcon xsmall style={styles.option.checkIcon} />
           : <BlankIcon xsmall />
         }
-        <span {...styles.text}>{text}</span>
+        <span {...styles.option.text}>{text}</span>
       </div>
     )
   }
@@ -37,8 +27,8 @@ class ComboBoxOption extends Component {
 
 ComboBoxOption.propTypes = {
   onClick: PropTypes.func,
-  pseudoSelected: PropTypes.bool,
-  selected: PropTypes.func.isRequired,
+  focused: PropTypes.bool,
+  selected: PropTypes.bool,
   text: PropTypes.string.isRequired
 }
 

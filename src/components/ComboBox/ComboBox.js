@@ -2,24 +2,36 @@ import React, {Component, PropTypes} from 'react'
 
 import {TextField} from '../TextField'
 import {Dropdown} from '../Dropdown'
+import {KeyCodeListener} from '../KeyCodeListener'
 
 import ComboBoxOptions from './_options'
+import ComboBoxEmpty from './_empty'
 
 class ComboBox extends Component {
   state = {
     filterText: '',
     isOpen: false,
-    openDropdown: (e) => this.setState({isOpen: true}),
-    closeDropdown: () => this.setState({isOpen: false})
+    openDropdown: () => this.setState({isOpen: true}),
+    closeDropdown: () => this.setState({isOpen: false, focusedIndex: -1}),
+    focusedIndex: -1
   }
   render () {
-    const {selectedOptions, onSelect, placeHolder} = this.props
-    const {isOpen, openDropdown, closeDropdown} = this.state
+    const {selectedOptions, onSelect, placeHolder, emptyResultString} = this.props
+    const {isOpen, openDropdown, closeDropdown, focusedIndex} = this.state
     const TriggerNode = (
       <TextField
         placeHolder={placeHolder}
         onChange={(e) => this.setState({filterText: e.target.value})}
         value={this.state.filterText}
+      />
+    )
+    const Listener = (
+      <KeyCodeListener
+        onEsc={closeDropdown}
+        onTab={closeDropdown}
+        onUp={this._decFocusedIndex}
+        onDown={this._incFocusedIndex}
+        onEnter={this._selectFocusedOption}
       />
     )
     const filteredOptions = this._getFilteredOptions()
@@ -30,26 +42,54 @@ class ComboBox extends Component {
         closeDropdown={closeDropdown}
         openDropdown={openDropdown}
       >
-        <ComboBoxOptions
-          options={filteredOptions}
-          selectedOptions={selectedOptions}
-          pseudoSelectedIndex={undefined}
-          onSelect={onSelect}
-        />
+        {isOpen && Listener}
+        {this._shouldShowEmptyResults()
+          ? <ComboBoxEmpty emptyResultString={emptyResultString} />
+          : <ComboBoxOptions
+              emptyResultString={emptyResultString}
+              options={filteredOptions}
+              selectedOptions={selectedOptions}
+              focusedIndex={focusedIndex}
+              onSelect={onSelect}
+            />
+        }
       </Dropdown>
     )
+  }
+  _shouldShowEmptyResults = () => {
+    const filteredOptions = this._getFilteredOptions()
+    const {options} = this.props
+    return filteredOptions.length === 0 && options.length !== 0
+  }
+  _incFocusedIndex = () => {
+    const filteredOptions = this._getFilteredOptions()
+    if (this.state.focusedIndex < filteredOptions.length - 1) {
+      this.setState({focusedIndex: this.state.focusedIndex + 1})
+    }
+  }
+  _decFocusedIndex = () => {
+    if (this.state.focusedIndex > 0) {
+      this.setState({focusedIndex: this.state.focusedIndex - 1})
+    }
+  }
+  _selectFocusedOption = () => {
+    const {onSelect} = this.props
+    const {focusedIndex} = this.state
+    const filteredOptions = this._getFilteredOptions()
+    onSelect(filteredOptions[focusedIndex])
   }
   _getFilteredOptions = () => {
     const {options} = this.props
     const {filterText} = this.state
-    return options.filter((option) => {
+    const filteredOptions = options.filter((option) => {
       return option.toLowerCase().includes(filterText.toLowerCase())
     })
+    return filteredOptions.length ? filteredOptions : []
   }
-}
+ }
 
 ComboBox.propTypes = {
-  emptyResults: PropTypes.string,
+  emptyResultString: PropTypes.string,
   onSelect: PropTypes.func.isRequired,
   options: PropTypes.array.isRequired,
   placeHolder: PropTypes.string,

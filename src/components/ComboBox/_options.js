@@ -1,12 +1,13 @@
 import React, {Component, PropTypes} from 'react'
 
 import Option from './_option'
+import {styles} from './styles'
 
 class ComboBoxOptions extends Component {
   render () {
-    const {options, selectedOptions, pseudoSelectedIndex, onSelect} = this.props
+    const {options, selectedOptions, focusedIndex, onSelect} = this.props
     return (
-      <div>
+      <div {...styles.options.wrapper}>
         {
           options.map((option, i) => {
             return (
@@ -14,7 +15,7 @@ class ComboBoxOptions extends Component {
                 key={i}
                 selected={selectedOptions.includes(option)}
                 onClick={() => onSelect(option)}
-                psuedoSelected={i === pseudoSelectedIndex}
+                focused={i === focusedIndex}
                 text={option}
               />
             )
@@ -28,7 +29,7 @@ class ComboBoxOptions extends Component {
 ComboBoxOptions.propTypes = {
   onSelect: PropTypes.func.isRequired,
   options: PropTypes.array.isRequired,
-  pseudoSelectedIndex: PropTypes.number,
+  focusedIndex: PropTypes.number,
   selectedOptions: PropTypes.array.isRequired
 }
 

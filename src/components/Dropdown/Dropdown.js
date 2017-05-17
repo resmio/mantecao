@@ -60,7 +60,7 @@ class Dropdown extends Component {
     onMouseEnter: () => this.setState({mouseIsOver: true}),
     isOpen: false,
     stillPropagating: false,
-    openDropdown: (e) => this.setState({isOpen: true, stillPropagating: true}),
+    openDropdown: () => this.setState({isOpen: true, stillPropagating: true}),
     closeDropdown: () => this.setState({isOpen: false})
   }
   render () {
