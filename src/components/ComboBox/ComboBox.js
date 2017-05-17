@@ -3,12 +3,18 @@ import React, {Component, PropTypes} from 'react'
 import {TextField} from '../TextField'
 import {Dropdown} from '../Dropdown'
 
+import ComboBoxOptions from './_options'
+
 class ComboBox extends Component {
   state = {
-    filterText: ''
+    filterText: '',
+    isOpen: false,
+    openDropdown: (e) => this.setState({isOpen: true}),
+    closeDropdown: () => this.setState({isOpen: false})
   }
   render () {
-    const {options, selected, onSelect, placeHolder} = this.props
+    const {selectedOptions, onSelect, placeHolder} = this.props
+    const {isOpen, openDropdown, closeDropdown} = this.state
     const TriggerNode = (
       <TextField
         placeHolder={placeHolder}
@@ -16,19 +22,29 @@ class ComboBox extends Component {
         value={this.state.filterText}
       />
     )
+    const filteredOptions = this._getFilteredOptions()
     return (
-      <Dropdown triggerNode={TriggerNode}>
-        {
-          options.filter((option) => {
-            return option.toLowerCase().includes(this.state.filterText.toLowerCase())
-          }).map((option, i) => {
-            return selected.includes(option)
-              ? <div key={i} onClick={() => onSelect(option)}>{option} selected</div>
-              : <div key={i} onClick={() => onSelect(option)}>{option} not selected</div>
-          })
-        }
+      <Dropdown
+        triggerNode={TriggerNode}
+        isOpen={isOpen}
+        closeDropdown={closeDropdown}
+        openDropdown={openDropdown}
+      >
+        <ComboBoxOptions
+          options={filteredOptions}
+          selectedOptions={selectedOptions}
+          pseudoSelectedIndex={undefined}
+          onSelect={onSelect}
+        />
       </Dropdown>
     )
+  }
+  _getFilteredOptions = () => {
+    const {options} = this.props
+    const {filterText} = this.state
+    return options.filter((option) => {
+      return option.toLowerCase().includes(filterText.toLowerCase())
+    })
   }
 }
 
@@ -37,7 +53,7 @@ ComboBox.propTypes = {
   onSelect: PropTypes.func.isRequired,
   options: PropTypes.array.isRequired,
   placeHolder: PropTypes.string,
-  selected: PropTypes.array.isRequired
+  selectedOptions: PropTypes.array.isRequired
 }
 
 export default ComboBox

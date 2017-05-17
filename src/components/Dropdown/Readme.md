@@ -19,10 +19,10 @@ With arrow:
 Prop controlled:
 
     <Dropdown
-      triggerNode={<button>open dropdown</button>}
-      isOpen
-      closeDropdown={() => console.log('close function still called so outside controls can manage state')}
-      openDropdown={() => false}
+      triggerNode={<button>always closed</button>}
+      isOpen={false}
+      closeDropdown={() => console.log('open/close functions still called so outside controls can manage state')}
+      openDropdown={() => console.log('open/close functions still called so outside controls can manage state')}
     >
       <span>keepOpen</span>
     </Dropdown>

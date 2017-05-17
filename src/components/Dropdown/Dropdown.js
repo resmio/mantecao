@@ -14,6 +14,7 @@ const defaultChildrenStyle = {
   borderColor: colors.pacificBlue,
   boxShadow: '0px 2px 7px rgba(0,0,0,.25)',
   minWidth: '100%',
+  maxWidth: '100%',
   zIndex: 1000
 }
 const centerChildren = {left: '50%', transform: 'translate(-50%, 0)'}
