@@ -27,9 +27,9 @@ class ComboBoxOptions extends Component {
 }
 
 ComboBoxOptions.propTypes = {
+  focusedIndex: PropTypes.number,
   onSelect: PropTypes.func.isRequired,
   options: PropTypes.array.isRequired,
-  focusedIndex: PropTypes.number,
   selectedOptions: PropTypes.array.isRequired
 }
 

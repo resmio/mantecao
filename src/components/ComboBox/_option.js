@@ -26,8 +26,8 @@ class ComboBoxOption extends Component {
 }
 
 ComboBoxOption.propTypes = {
-  onClick: PropTypes.func,
   focused: PropTypes.bool,
+  onClick: PropTypes.func,
   selected: PropTypes.bool,
   text: PropTypes.string.isRequired
 }
