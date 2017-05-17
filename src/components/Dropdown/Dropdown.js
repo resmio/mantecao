@@ -14,6 +14,7 @@ const defaultChildrenStyle = {
   borderColor: colors.pacificBlue,
   boxShadow: '0px 2px 7px rgba(0,0,0,.25)',
   minWidth: '100%',
+  maxWidth: '100%',
   zIndex: 1000
 }
 const centerChildren = {left: '50%', transform: 'translate(-50%, 0)'}
@@ -53,17 +54,19 @@ const defaultBackgroundArrow = {
 }
 
 class Dropdown extends Component {
-  constructor (props) {
-    super(props)
-    this.state = {
-      isOpen: false,
-      openDropdown: () => this.setState({isOpen: true}),
-      closeDropdown: () => this.setState({isOpen: false})
-    }
+  state = {
+    mouseIsOver: false,
+    onMouseLeave: () => this.setState({mouseIsOver: false}),
+    onMouseEnter: () => this.setState({mouseIsOver: true}),
+    isOpen: false,
+    stillPropagating: false,
+    openDropdown: () => this.setState({isOpen: true, stillPropagating: true}),
+    closeDropdown: () => this.setState({isOpen: false})
   }
   render () {
-    const {children, triggerNode, keepOpenOnOutsideClick, disabled, left, right, center, arrow, borderColor, backgroundColor} = this.props
-    const {openDropdown, closeDropdown, isOpen} = this[this.hasExternalControls() ? 'props' : 'state']
+    const {children, triggerNode, disabled, left, right, center, arrow, borderColor, backgroundColor} = this.props
+    const {onMouseLeave, onMouseEnter, mouseIsOver} = this.state
+    const {isOpen, openDropdown} = this._getControls()
 
     const computedTriggerStyle = Object.assign({},
       defaultTriggerStyle,
@@ -97,13 +100,16 @@ class Dropdown extends Component {
       </div>
     )
 
-    const toggleFunc = isOpen ? closeDropdown : openDropdown
+    const toggleFunc = isOpen ? () => false : openDropdown
     const computedToggleFunc = disabled ? () => false : toggleFunc
-
     return (
-      <div className='dropdown__bubble' style={defaultContainerStyle}>
-        {isOpen && !keepOpenOnOutsideClick
-          ? <EventListener target={window} onClick={this.onOutsideClick} />
+      <div
+        onMouseEnter={onMouseEnter}
+        onMouseLeave={onMouseLeave}
+        style={defaultContainerStyle}
+      >
+        {isOpen
+          ? <EventListener target={window} onClick={this._onWindowClick} />
           : null
         }
         <div onClick={computedToggleFunc} style={computedTriggerStyle}>
@@ -117,11 +123,22 @@ class Dropdown extends Component {
       </div>
     )
   }
-  onOutsideClick = (e) => {
-    const {closeDropdown} = this[this.hasExternalControls() ? 'props' : 'state']
-    if (!e.target.closest('.dropdown__bubble')) { closeDropdown() }
+  _onWindowClick = () => {
+    const {closeOnClick} = this.props
+    const {mouseIsOver, stillPropagating} = this.state
+    const {isOpen, closeDropdown} = this._getControls()
+    if (closeOnClick && stillPropagating) {
+      this.setState({stillPropagating: false}) // <-- bug fix for the synthetic event propagation... wow
+    } else if (!mouseIsOver || closeOnClick) {
+      closeDropdown()
+    }
   }
-  hasExternalControls = () => {
+  _getControls = () => {
+    const {openDropdown, closeDropdown, isOpen} = this[this._hasExternalControls() ? 'props' : 'state']
+    return {openDropdown, isOpen, closeDropdown}
+  }
+  _hasExternalControls = () => {
+    // only if we have full controll from outside can use use props
     const {openDropdown, closeDropdown, isOpen} = this.props
     return (openDropdown !== undefined && closeDropdown !== undefined && isOpen !== undefined)
   }
@@ -133,12 +150,9 @@ Dropdown.propTypes = {
   borderColor: PropTypes.string,
   center: PropTypes.bool,
   children: PropTypes.node.isRequired,
-  closeDropdown: PropTypes.func,
+  closeOnClick: PropTypes.bool,
   disabled: PropTypes.bool,
-  isOpen: PropTypes.bool,
-  keepOpenOnOutsideClick: PropTypes.bool,
   left: PropTypes.bool,
-  openDropdown: PropTypes.func,
   right: PropTypes.bool,
   triggerNode: PropTypes.node.isRequired
 }
