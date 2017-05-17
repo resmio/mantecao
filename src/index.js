@@ -14,6 +14,8 @@ export {InlineAlert} from './components/InlineAlert'
 export {KeyCodeListener} from './components/KeyCodeListener'
 export {Label} from './components/Label'
 export {SelectField} from './components/SelectField'
+export {Tag} from './components/Tag'
+export {TagCloud} from './components/TagCloud'
 export {TextField} from './components/TextField'
 export {UnstyledButton} from './components/UnstyledButton'
 
@@ -21,4 +23,4 @@ export {UnstyledButton} from './components/UnstyledButton'
 export * from './icons'
 
 // variables
-export {colors} from './variables'
+export {colors, breakpoints} from './variables'
