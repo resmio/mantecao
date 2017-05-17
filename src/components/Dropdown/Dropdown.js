@@ -64,7 +64,8 @@ class Dropdown extends Component {
   }
   render () {
     const {children, triggerNode, disabled, left, right, center, arrow, borderColor, backgroundColor} = this.props
-    const {onMouseLeave, onMouseEnter, mouseIsOver, openDropdown, isOpen} = this.state
+    const {onMouseLeave, onMouseEnter, mouseIsOver} = this.state
+    const {isOpen, openDropdown} = this._getControls()
 
     const computedTriggerStyle = Object.assign({},
       defaultTriggerStyle,
@@ -123,12 +124,22 @@ class Dropdown extends Component {
   }
   _onWindowClick = () => {
     const {closeOnClick} = this.props
-    const {mouseIsOver, closeDropdown, isOpen, stillPropagating} = this.state
+    const {mouseIsOver, stillPropagating} = this.state
+    const {isOpen, closeDropdown} = this._getControls()
     if (closeOnClick && stillPropagating) {
       this.setState({stillPropagating: false}) // <-- bug fix for the synthetic event propagation... wow
     } else if (!mouseIsOver || closeOnClick) {
       closeDropdown()
     }
+  }
+  _getControls = () => {
+    const {openDropdown, closeDropdown, isOpen} = this[this._hasExternalControls() ? 'props' : 'state']
+    return {openDropdown, isOpen, closeDropdown}
+  }
+  _hasExternalControls = () => {
+    // only if we have full controll from outside can use use props
+    const {openDropdown, closeDropdown, isOpen} = this.props
+    return (openDropdown !== undefined && closeDropdown !== undefined && isOpen !== undefined)
   }
 }
 
