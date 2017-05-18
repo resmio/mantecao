@@ -80,7 +80,7 @@ class Dropdown extends Component {
       left ? leftChildren : {},
       right ? rightChildren : {},
       center ? centerChildren : {},
-      lockWidth ? {maxWidth: '100%'}: {}
+      lockWidth ? {maxWidth: '100%'} : {}
     )
 
     const computedBackgroundArrow = Object.assign({},
