@@ -81,7 +81,7 @@ const TextField = (props) => {
       required={props.required}
       style={computedInputStyle}
       type={props.type}
-      value={props.value || ''}
+      value={props.value}
     />
   )
   const textAreaField = (
