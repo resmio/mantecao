@@ -63,7 +63,7 @@ class Dropdown extends Component {
     closeDropdown: () => this.setState({isOpen: false})
   }
   render () {
-    const {children, triggerNode, disabled, left, right, center, arrow, borderColor, backgroundColor} = this.props
+    const {children, triggerNode, disabled, left, right, center, arrow, lockWidth, borderColor, backgroundColor} = this.props
     const {onMouseLeave, onMouseEnter, mouseIsOver} = this.state
     const {isOpen, openDropdown} = this._getControls()
 
@@ -79,7 +79,8 @@ class Dropdown extends Component {
       arrow ? {marginTop: '5px'} : {},
       left ? leftChildren : {},
       right ? rightChildren : {},
-      center ? centerChildren : {}
+      center ? centerChildren : {},
+      lockWidth ? {maxWidth: '100%'}: {}
     )
 
     const computedBackgroundArrow = Object.assign({},
@@ -152,6 +153,7 @@ Dropdown.propTypes = {
   closeOnClick: PropTypes.bool,
   disabled: PropTypes.bool,
   left: PropTypes.bool,
+  lockWidth: PropTypes.bool,
   right: PropTypes.bool,
   triggerNode: PropTypes.node.isRequired
 }

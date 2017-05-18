@@ -50,6 +50,7 @@ class ComboBox extends Component {
         isOpen={isOpen}
         closeDropdown={closeDropdown}
         openDropdown={openDropdown}
+        lockWidth
       >
         {isOpen && Listener}
         {this._shouldShowEmptyResults()
