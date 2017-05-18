@@ -30,7 +30,7 @@ class Tag extends Component {
         <span {...styles.text}>{name}</span>
         <span
           {...styles.close}
-          onClick={() => onClickAction()}
+          onClick={() => onClickAction(name)}
           onMouseEnter={() => { this.setState({hovered: true}) }}
           onMouseLeave={() => { this.setState({hovered: false}) }}
         >
