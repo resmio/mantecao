@@ -13,6 +13,7 @@ Example textarea:
       className='testClass'
       placeHolder='this is a multiLine TextField'
       maxLength={22}
+      value={undefined}
       minLength={3}
       multiLine
     />

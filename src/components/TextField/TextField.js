@@ -1,3 +1,6 @@
+// we should remove the 'type' prop here and make specific fields for other types (like number)
+// this component should only be type='text'
+
 import React, {PropTypes} from 'react'
 import {colors, iconSizes} from '../../variables'
 
@@ -78,7 +81,7 @@ const TextField = (props) => {
       required={props.required}
       style={computedInputStyle}
       type={props.type}
-      value={props.value}
+      value={props.value || ''}
     />
   )
   const textAreaField = (
