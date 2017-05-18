@@ -16,7 +16,7 @@ class ComboBox extends Component {
     closeDropdown: () => this.setState({isOpen: false, focusedIndex: -1}),
     focusedIndex: -1
   }
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate (prevProps, prevState) {
     const {focusedIndex} = this.state
     // only scroll into view if the focusedItem item changed last render
     if (focusedIndex !== prevState.focusedIndex) {
