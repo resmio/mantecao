@@ -48,7 +48,7 @@ const SelectField = (props) => {
 
   return (
     <div style={computedContainerStyle}>
-      <label style={computedLabelStyle}>{props.label}</label>
+      {props.label && <label style={computedLabelStyle}>{props.label}</label>}
       <select
         className={props.className}
         disabled={props.disabled}
@@ -70,7 +70,7 @@ const SelectField = (props) => {
           )
         })}
       </select>
-      {props.hint ? <div style={computedHintStyle}>{props.hint}</div> : null}
+      {props.hint && <div style={computedHintStyle}>{props.hint}</div>}
     </div>
   )
 }

@@ -32,9 +32,8 @@ const defaultIconContainerStyle = {
   position: 'relative'
 }
 const defaultIconStyle = {
-  padding: '0.6rem 0.7rem',
-  position: 'absolute',
-  width: '3.5rem'
+  padding: '0.7rem',
+  position: 'absolute'
 }
 
 const TextField = (props) => {
@@ -103,12 +102,12 @@ const TextField = (props) => {
   )
   return (
     <div style={computedContainerStyle}>
-      <label style={computedLabelStyle}>{props.label}</label>
+      {props.label && <label style={computedLabelStyle}>{props.label}</label>}
       <div style={computedIconContainerStyle}>
         {props.icon ? <div style={defaultIconStyle}>{props.icon}</div> : null}
         {props.multiLine ? textAreaField : inputField}
       </div>
-      {props.hint ? <div style={computedHintStyle}>{props.hint}</div> : null}
+      {props.hint && <div style={computedHintStyle}>{props.hint}</div>}
     </div>
   )
 }
