@@ -63,9 +63,14 @@ class Dropdown extends Component {
     closeDropdown: () => this.setState({isOpen: false})
   }
   render () {
-    const {children, triggerNode, disabled, left, right, center, arrow, lockWidth, borderColor, backgroundColor} = this.props
+    const {children, triggerNode, disabled, left, right, center, arrow, lockWidth, fullWidth, borderColor, backgroundColor} = this.props
     const {onMouseLeave, onMouseEnter, mouseIsOver} = this.state
     const {isOpen, openDropdown} = this._getControls()
+
+    const computedContainerStyle = Object.assign({},
+      defaultContainerStyle,
+      fullWidth ? {width: '100%'} : {}
+    )
 
     const computedTriggerStyle = Object.assign({},
       defaultTriggerStyle,
@@ -106,7 +111,7 @@ class Dropdown extends Component {
       <div
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
-        style={defaultContainerStyle}
+        style={computedContainerStyle}
       >
         {isOpen
           ? <EventListener target={window} onClick={this._onWindowClick} />
@@ -152,6 +157,7 @@ Dropdown.propTypes = {
   children: PropTypes.node.isRequired,
   closeOnClick: PropTypes.bool,
   disabled: PropTypes.bool,
+  fullWidth: PropTypes.bool,
   left: PropTypes.bool,
   lockWidth: PropTypes.bool,
   right: PropTypes.bool,

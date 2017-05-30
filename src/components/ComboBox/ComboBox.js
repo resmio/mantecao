@@ -46,6 +46,7 @@ class ComboBox extends Component {
     const filteredOptions = this._getFilteredOptions()
     return (
       <Dropdown
+        fullWidth
         triggerNode={TriggerNode}
         isOpen={isOpen}
         closeDropdown={closeDropdown}
