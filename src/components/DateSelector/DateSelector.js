@@ -1,6 +1,7 @@
 import React, { Component, PropTypes as t } from 'react'
 import styles from './DateSelector.styles'
 import Select from './Select'
+import {TrashIcon} from '../../icons'
 // import '@resmio/rollico'
 
 import {
@@ -38,6 +39,7 @@ const validate = date => {
 
 class DateSelector extends Component {
   static propTypes = {
+    allowReset: t.bool,
     date: t.string,
     dayString: t.string,
     errorString: t.string,
@@ -67,6 +69,13 @@ class DateSelector extends Component {
     date[evt.target.id] = parseInt(evt.target.value, 10)
     const errors = validate(date)
     this.setState({date, errors})
+  }
+
+  resetDate = () => {
+    this.setState({
+      date: {day: 0, month: 0, year: 0},
+      errors: {}
+    })
   }
 
   // // Emit the state up after it changes
@@ -111,6 +120,11 @@ class DateSelector extends Component {
             hasError={this.state.errors.year}
             optionsAsValues
           />
+          {this.props.allowReset && (
+            <span {...styles.trash} onClick={this.resetDate}>
+              <TrashIcon />
+            </span>
+          )}
         </div>
         {this.state.errors.invalid && (
           <div {...styles.error}>
