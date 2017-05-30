@@ -68,20 +68,21 @@ class DateSelector extends Component {
     const date = this.state.date
     date[evt.target.id] = parseInt(evt.target.value, 10)
     const errors = validate(date)
-    this.setState({date, errors})
+    this.setState({date, errors}, () => this.props.onChange(this.state))
   }
 
   resetDate = () => {
     this.setState({
       date: {day: 0, month: 0, year: 0},
       errors: {}
-    })
+    }, () => this.props.onChange(this.state))
   }
 
-  // // Emit the state up after it changes
-  componentDidUpdate () {
-    this.props.onChange(this.state)
-  }
+  // doing the onchange in the component lifecycle was causing some strange behavior
+  // when the values changed - so we do it with the methods that change the date
+  // componentDidUpdate () {
+  //   this.props.onChange(this.state)
+  // }
 
   render () {
     const day = (
