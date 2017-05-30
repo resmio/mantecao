@@ -24,7 +24,11 @@ const styles = {
   }),
   trash: css({
     cursor: 'pointer',
-    paddingTop: '.3em'
+    color: colors.dustyGray,
+    paddingTop: '.2em',
+    ':hover': {
+      color: colors.emperor
+    }
   })
 }
 
