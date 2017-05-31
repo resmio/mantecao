@@ -1,3 +1,6 @@
+// we should remove the 'type' prop here and make specific fields for other types (like number)
+// this component should only be type='text'
+
 import React, {PropTypes} from 'react'
 import {colors, iconSizes} from '../../variables'
 
@@ -32,9 +35,8 @@ const defaultIconContainerStyle = {
   position: 'relative'
 }
 const defaultIconStyle = {
-  padding: '0.6rem 0.7rem',
-  position: 'absolute',
-  width: '3.5rem'
+  padding: '0.7rem',
+  position: 'absolute'
 }
 
 const TextField = (props) => {
@@ -103,12 +105,12 @@ const TextField = (props) => {
   )
   return (
     <div style={computedContainerStyle}>
-      <label style={computedLabelStyle}>{props.label}</label>
+      {props.label && <label style={computedLabelStyle}>{props.label}</label>}
       <div style={computedIconContainerStyle}>
         {props.icon ? <div style={defaultIconStyle}>{props.icon}</div> : null}
         {props.multiLine ? textAreaField : inputField}
       </div>
-      {props.hint ? <div style={computedHintStyle}>{props.hint}</div> : null}
+      {props.hint && <div style={computedHintStyle}>{props.hint}</div>}
     </div>
   )
 }

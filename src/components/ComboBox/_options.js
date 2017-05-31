@@ -13,6 +13,7 @@ class ComboBoxOptions extends Component {
             return (
               <Option
                 key={i}
+                ref={i}
                 selected={selectedOptions.includes(option)}
                 onClick={() => onSelect(option)}
                 focused={i === focusedIndex}

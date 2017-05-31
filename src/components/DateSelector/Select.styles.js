@@ -8,7 +8,7 @@ const styles = {
     fontSize: '1em',
     height: '2.4em',
     color: colors.dustyGray,
-    borderColor: hasError ? colors.amaranth : colors.dustyGray,
+    borderColor: hasError ? colors.amaranth : colors.silver,
     ':focus': {
       outlineColor: hasError && colors.amaranth
     }

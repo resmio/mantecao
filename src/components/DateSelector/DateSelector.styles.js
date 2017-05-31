@@ -21,6 +21,14 @@ const styles = {
   error: css({
     fontSize: '0.9em',
     color: colors.amaranth
+  }),
+  trash: css({
+    cursor: 'pointer',
+    color: colors.dustyGray,
+    paddingTop: '.2em',
+    ':hover': {
+      color: colors.emperor
+    }
   })
 }
 

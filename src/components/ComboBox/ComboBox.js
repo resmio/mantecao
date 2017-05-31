@@ -1,4 +1,5 @@
 import React, {Component, PropTypes} from 'react'
+import ReactDOM from 'react-dom'
 
 import {TextField} from '../TextField'
 import {Dropdown} from '../Dropdown'
@@ -15,11 +16,19 @@ class ComboBox extends Component {
     closeDropdown: () => this.setState({isOpen: false, focusedIndex: -1}),
     focusedIndex: -1
   }
+  componentDidUpdate (prevProps, prevState) {
+    const {focusedIndex} = this.state
+    // only scroll into view if the focusedItem item changed last render
+    if (focusedIndex !== prevState.focusedIndex) {
+      this._scrollFocusedIntoView()
+    }
+  }
   render () {
     const {selectedOptions, onSelect, placeHolder, emptyResultString} = this.props
     const {isOpen, openDropdown, closeDropdown, focusedIndex} = this.state
     const TriggerNode = (
       <TextField
+        style={{margin: '0rem'}}
         placeHolder={placeHolder}
         onChange={(e) => this.setState({filterText: e.target.value})}
         value={this.state.filterText}
@@ -37,15 +46,18 @@ class ComboBox extends Component {
     const filteredOptions = this._getFilteredOptions()
     return (
       <Dropdown
+        fullWidth
         triggerNode={TriggerNode}
         isOpen={isOpen}
         closeDropdown={closeDropdown}
         openDropdown={openDropdown}
+        lockWidth
       >
         {isOpen && Listener}
         {this._shouldShowEmptyResults()
           ? <ComboBoxEmpty emptyResultString={emptyResultString} />
           : <ComboBoxOptions
+              ref={'comboBoxOptions'}
               emptyResultString={emptyResultString}
               options={filteredOptions}
               selectedOptions={selectedOptions}
@@ -77,6 +89,22 @@ class ComboBox extends Component {
     const {focusedIndex} = this.state
     const filteredOptions = this._getFilteredOptions()
     onSelect(filteredOptions[focusedIndex])
+  }
+  _scrollFocusedIntoView = () => {
+    const {focusedIndex} = this.state
+    const options = this.refs.comboBoxOptions
+    const optionsNode = ReactDOM.findDOMNode(options)
+    const node = options && ReactDOM.findDOMNode(options.refs[focusedIndex])
+    if (node && optionsNode) {
+      const optionPos = node.offsetTop + node.clientHeight
+      const height = optionsNode.clientHeight
+      const scrollHeight = optionsNode.scrollHeight
+      if (optionPos > height) {
+        optionsNode.scrollTop = optionPos - height
+      } else if (scrollHeight > height) {
+        optionsNode.scrollTop = 0
+      }
+    }
   }
   _getFilteredOptions = () => {
     const {options} = this.props

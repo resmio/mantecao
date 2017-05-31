@@ -1,6 +1,7 @@
 import React, { Component, PropTypes as t } from 'react'
 import styles from './DateSelector.styles'
 import Select from './Select'
+import {TrashIcon} from '../../icons'
 // import '@resmio/rollico'
 
 import {
@@ -19,6 +20,9 @@ const years = getPastYears(120, actualYear)
 
 // Validation
 const validate = date => {
+  if (date.day === 0 && date.month === 0 && date.year === 0) {
+    return {} // <-- need a way to clear the errors since it is maintained in this component's state - we can fix this somehow later
+  }
   const errors = {}
   if (date.day === 0) { errors.day = true }
   if (date.month === 0) { errors.month = true }
@@ -35,10 +39,15 @@ const validate = date => {
 
 class DateSelector extends Component {
   static propTypes = {
+    allowReset: t.bool,
     date: t.string,
+    dayString: t.string,
+    errorString: t.string,
     monthBeforeDay: t.bool,
     monthNames: t.array,
-    onChange: t.func.isRequired
+    monthString: t.string,
+    onChange: t.func.isRequired,
+    yearString: t.string
   }
 
   static defaultProps = {
@@ -59,18 +68,26 @@ class DateSelector extends Component {
     const date = this.state.date
     date[evt.target.id] = parseInt(evt.target.value, 10)
     const errors = validate(date)
-    this.setState({date, errors})
+    this.setState({date, errors}, () => this.props.onChange(this.state))
   }
 
-  // // Emit the state up after it changes
-  componentDidUpdate () {
-    this.props.onChange(this.state)
+  resetDate = () => {
+    this.setState({
+      date: {day: 0, month: 0, year: 0},
+      errors: {}
+    }, () => this.props.onChange(this.state))
   }
+
+  // doing the onchange in the component lifecycle was causing some strange behavior
+  // when the values changed - so we do it with the methods that change the date
+  // componentDidUpdate () {
+  //   this.props.onChange(this.state)
+  // }
 
   render () {
     const day = (
       <Select
-        name='Day'
+        name={this.props.dayString || 'Day'}
         id='day'
         options={days}
         selected={this.state.date.day}
@@ -80,7 +97,7 @@ class DateSelector extends Component {
     )
     const month = (
       <Select
-        name='Month'
+        name={this.props.monthString || 'Month'}
         id='month'
         options={this.props.monthNames || MONTH_NAMES}
         values={[...Array(13).keys()].slice(1)}
@@ -96,7 +113,7 @@ class DateSelector extends Component {
           { this.props.monthBeforeDay ? month : day }
           { this.props.monthBeforeDay ? day : month }
           <Select
-            name='Year'
+            name={this.props.yearString || 'Year'}
             id='year'
             options={years}
             selected={this.state.date.year}
@@ -104,8 +121,17 @@ class DateSelector extends Component {
             hasError={this.state.errors.year}
             optionsAsValues
           />
+          {this.props.allowReset && (
+            <span {...styles.trash} onClick={this.resetDate}>
+              <TrashIcon />
+            </span>
+          )}
         </div>
-        <div {...styles.error}>{ this.state.errors.invalid && 'Please provide a valid date' }</div>
+        {this.state.errors.invalid && (
+          <div {...styles.error}>
+            { this.props.errorString || 'Please provide a valid date' }
+          </div>
+        )}
       </div>
     )
   }

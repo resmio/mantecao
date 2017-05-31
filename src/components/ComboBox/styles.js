@@ -26,8 +26,9 @@ export const styles = {
   },
   options: {
     wrapper: css({
-      maxHeight: '20rem',
-      overflow: 'hidden'
+      maxHeight: '16rem',
+      overflowX: 'hidden',
+      overflowY: 'scroll'
     }),
     empty: css({
       padding: '0.5rem 1rem',

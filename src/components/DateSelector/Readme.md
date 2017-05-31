@@ -1,6 +1,6 @@
-Example:
+Example (allowReset):
 
-    <DateSelector date='2017-07-31' onChange={()=>{}}/>
+    <DateSelector date='2017-07-31' allowReset onChange={()=>{}}/>
 
 Month before day:
 

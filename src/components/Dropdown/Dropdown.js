@@ -14,7 +14,6 @@ const defaultChildrenStyle = {
   borderColor: colors.pacificBlue,
   boxShadow: '0px 2px 7px rgba(0,0,0,.25)',
   minWidth: '100%',
-  maxWidth: '100%',
   zIndex: 1000
 }
 const centerChildren = {left: '50%', transform: 'translate(-50%, 0)'}
@@ -64,9 +63,14 @@ class Dropdown extends Component {
     closeDropdown: () => this.setState({isOpen: false})
   }
   render () {
-    const {children, triggerNode, disabled, left, right, center, arrow, borderColor, backgroundColor} = this.props
+    const {children, triggerNode, disabled, left, right, center, arrow, lockWidth, fullWidth, borderColor, backgroundColor} = this.props
     const {onMouseLeave, onMouseEnter, mouseIsOver} = this.state
     const {isOpen, openDropdown} = this._getControls()
+
+    const computedContainerStyle = Object.assign({},
+      defaultContainerStyle,
+      fullWidth ? {width: '100%'} : {}
+    )
 
     const computedTriggerStyle = Object.assign({},
       defaultTriggerStyle,
@@ -80,7 +84,8 @@ class Dropdown extends Component {
       arrow ? {marginTop: '5px'} : {},
       left ? leftChildren : {},
       right ? rightChildren : {},
-      center ? centerChildren : {}
+      center ? centerChildren : {},
+      lockWidth ? {maxWidth: '100%'} : {}
     )
 
     const computedBackgroundArrow = Object.assign({},
@@ -106,7 +111,7 @@ class Dropdown extends Component {
       <div
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
-        style={defaultContainerStyle}
+        style={computedContainerStyle}
       >
         {isOpen
           ? <EventListener target={window} onClick={this._onWindowClick} />
@@ -152,7 +157,9 @@ Dropdown.propTypes = {
   children: PropTypes.node.isRequired,
   closeOnClick: PropTypes.bool,
   disabled: PropTypes.bool,
+  fullWidth: PropTypes.bool,
   left: PropTypes.bool,
+  lockWidth: PropTypes.bool,
   right: PropTypes.bool,
   triggerNode: PropTypes.node.isRequired
 }
