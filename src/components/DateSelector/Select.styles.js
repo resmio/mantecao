@@ -10,7 +10,7 @@ const styles = {
     color: colors.dustyGray,
     borderColor: hasError ? colors.amaranth : colors.silver,
     ':focus': {
-      outline: 'none'
+      outlineColor: hasError && colors.amaranth
     }
   })
 }
