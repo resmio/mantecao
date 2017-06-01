@@ -14,9 +14,9 @@ export const styles = {
   }),
 
   close: css({
+    cursor: 'pointer',
     ':hover': {
-      color: 'rgba(188, 33, 63, 1)',
-      cursor: 'pointer'
+      color: 'rgba(188, 33, 63, 1)'
     }
   }),
 

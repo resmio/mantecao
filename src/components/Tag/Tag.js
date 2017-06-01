@@ -28,14 +28,18 @@ class Tag extends Component {
     return (
       <div {...merge(styles.tag, this.state.hovered && styles.hover)}>
         <span {...styles.text}>{name}</span>
-        <span
-          {...styles.close}
-          onClick={() => onClickAction(name)}
-          onMouseEnter={() => { this.setState({hovered: true}) }}
-          onMouseLeave={() => { this.setState({hovered: false}) }}
-        >
-          {onClickAction && AdjustedCloseIcon}
-        </span>
+        {onClickAction &&
+          (
+            <span
+              {...styles.close}
+              onClick={() => onClickAction(name)}
+              onMouseEnter={() => { this.setState({hovered: true}) }}
+              onMouseLeave={() => { this.setState({hovered: false}) }}
+            >
+               {AdjustedCloseIcon}
+            </span>
+          )
+        }
       </div>
     )
   }
