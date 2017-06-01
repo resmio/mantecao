@@ -11,8 +11,7 @@ const AdjustedCloseIcon = (
       height: '1.3rem',
       width: '1.3rem',
       strokeWidth: '2.5px',
-      marginBottom: '0.2rem',
-      marginLeft: '0.75rem'
+      marginBottom: '0.2rem'
     }}
   />
 )

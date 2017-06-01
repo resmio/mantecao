@@ -15,6 +15,8 @@ export const styles = {
 
   close: css({
     cursor: 'pointer',
+    display: 'inline-block',
+    marginLeft: '0.75rem',
     ':hover': {
       color: 'rgba(188, 33, 63, 1)'
     }
