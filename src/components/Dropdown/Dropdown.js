@@ -54,17 +54,12 @@ const defaultBackgroundArrow = {
 
 class Dropdown extends Component {
   state = {
-    mouseIsOver: false,
-    onMouseLeave: () => this.setState({mouseIsOver: false}),
-    onMouseEnter: () => this.setState({mouseIsOver: true}),
     isOpen: false,
-    stillPropagating: false,
-    openDropdown: () => this.setState({isOpen: true, stillPropagating: true}),
+    openDropdown: () => this.setState({isOpen: true}),
     closeDropdown: () => this.setState({isOpen: false})
   }
   render () {
-    const {children, triggerNode, disabled, left, right, center, arrow, lockWidth, fullWidth, borderColor, backgroundColor} = this.props
-    const {onMouseLeave, onMouseEnter, mouseIsOver} = this.state
+    const {children, triggerNode, disabled, left, right, center, arrow, lockWidth, fullWidth, borderColor, backgroundColor, closeOnClick} = this.props
     const {isOpen, openDropdown} = this._getControls()
 
     const computedContainerStyle = Object.assign({},
@@ -104,20 +99,16 @@ class Dropdown extends Component {
         <div style={computedBackgroundArrow}></div>
       </div>
     )
-
-    const toggleFunc = isOpen ? () => false : openDropdown
-    const computedToggleFunc = disabled ? () => false : toggleFunc
     return (
       <div
-        onMouseEnter={onMouseEnter}
-        onMouseLeave={onMouseLeave}
+        onClick={this._onContainerClick}
         style={computedContainerStyle}
       >
         {isOpen
           ? <EventListener target={window} onClick={this._onWindowClick} />
           : null
         }
-        <div onClick={computedToggleFunc} style={computedTriggerStyle}>
+        <div style={computedTriggerStyle}>
           {triggerNode}
         </div>
         {arrow && isOpen ? ArrowThing : null}
@@ -128,14 +119,20 @@ class Dropdown extends Component {
       </div>
     )
   }
-  _onWindowClick = () => {
-    const {closeOnClick} = this.props
-    const {mouseIsOver, stillPropagating} = this.state
-    const {isOpen, closeDropdown} = this._getControls()
-    if (closeOnClick && stillPropagating) {
-      this.setState({stillPropagating: false}) // <-- bug fix for the synthetic event propagation... wow
-    } else if (!mouseIsOver || closeOnClick) {
+  _onWindowClick = (e) => {
+    const {closeDropdown} = this._getControls()
+    closeDropdown()
+  }
+  _onContainerClick = (e) => {
+    const {closeOnClick, disabled} = this.props
+    const {isOpen, openDropdown, closeDropdown} = this._getControls()
+    // we need to stop this event from propagating
+    e.stopPropagation()
+    // then explicitly call an action based on state/prop conditions
+    if (isOpen && (closeOnClick || disabled)) {
       closeDropdown()
+    } else if (!isOpen && !disabled) {
+      openDropdown()
     }
   }
   _getControls = () => {
