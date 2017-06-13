@@ -10,7 +10,8 @@ const PATHS = {
 
 module.exports = {
   defaultExample: true,
-  serverPort: 3002,
+  serverHost: '0.0.0.0',
+  serverPort: 3003,
   styleguideDir: 'docs', // default for gh-pages on master is /docs - so we use this as the build destination
   sections: [
     {
