@@ -1,15 +1,10 @@
 {
   "presets": [
+    "./tools/mantecao-babel-preset-es2015",
     "es2015",
-    "stage-1",
     "react"
   ],
-  "plugins": ["transform-object-assign"],
-  "env": {
-    "development": {
-      "presets": [
-        "react-hmre"
-      ]
-    }
-  }
+  "plugins": [
+    "transform-export-extensions"
+  ]
 }
