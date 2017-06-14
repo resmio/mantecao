@@ -1,1 +1,1 @@
-export UnstyledButton from './UnstyledButton'
+export default from './UnstyledButton'

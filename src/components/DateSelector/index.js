@@ -1,1 +1,1 @@
-export DateSelector from './DateSelector'
+export default from './DateSelector'
