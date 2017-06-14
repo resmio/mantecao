@@ -1,1 +1,1 @@
-export DialogBody from './DialogBody'
+export default from './DialogBody'

@@ -1,1 +1,1 @@
-export ComboBox from './ComboBox'
+export default from './ComboBox'

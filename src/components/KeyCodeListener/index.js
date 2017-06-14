@@ -1,1 +1,1 @@
-export KeyCodeListener from './KeyCodeListener'
+export default from './KeyCodeListener'

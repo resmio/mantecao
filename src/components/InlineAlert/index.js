@@ -1,1 +1,1 @@
-export InlineAlert from './InlineAlert'
+export default from './InlineAlert'

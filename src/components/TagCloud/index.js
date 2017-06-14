@@ -1,1 +1,1 @@
-export TagCloud from './TagCloud'
+export default from './TagCloud'
