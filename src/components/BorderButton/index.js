@@ -1,1 +1,1 @@
-export BorderButton from './BorderButton'
+export default from './BorderButton'

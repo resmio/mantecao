@@ -1,7 +1,7 @@
 // components
-export {Alert} from './components/Alert'
-// export {Badge} from './components/Badge'
-// export {BorderButton} from './components/BorderButton'
+export Alert from './Alert'
+export Badge from './Badge'
+export BorderButton from './BorderButton'
 // export {Button} from './components/Button'
 // export {ButtonGroup} from './components/ButtonGroup'
 // export {Checkbox} from './components/Checkbox'
