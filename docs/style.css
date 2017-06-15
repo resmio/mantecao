@@ -4,6 +4,7 @@
 html {
   font-size: 10px; /* allows `rems`s to work properly for sizing */
   font-family: "Open Sans", sans-serif;
+  cursor: pointer;
 }
 
 input, textarea { font-size: 14px; line-height: 2.1rem; }
