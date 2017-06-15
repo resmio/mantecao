@@ -21,7 +21,7 @@ export TextField from './components/TextField'
 export UnstyledButton from './components/UnstyledButton'
 
 // icons
-export * from './icons'
+// export * from './icons'
 
 // variables
 export {colors, breakpoints} from './variables'
