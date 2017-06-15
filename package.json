@@ -1,6 +1,6 @@
 {
   "name": "@resmio/mantecao",
-  "version": "2.0.0-beta",
+  "version": "0.0.0-semantically-released",
   "description": "A react UI library for resmio",
   "main": "dist/index.js",
   "scripts": {
@@ -10,11 +10,12 @@
     "build:icon-index": "babel-node ./scripts/icon-index-generator.js",
     "clean:build": "rimraf dist",
     "lint": "eslint ./src",
-    "test": ""
+    "test": "",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/resmio/mantecao.git"
+    "url": "https://github.com/resmio/mantecao.git"
   },
   "keywords": [
     "react",
@@ -53,7 +54,8 @@
     "eslint-plugin-jsx-a11y": "^5.0.3",
     "eslint-plugin-react": "^7.1.0",
     "recursive-readdir-sync": "^1.0.6",
-    "rimraf": "^2.6.1"
+    "rimraf": "^2.6.1",
+    "semantic-release": "^6.3.6"
   },
   "directories": {
     "doc": "docs"
