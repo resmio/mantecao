@@ -5,8 +5,10 @@
   "main": "dist/index.js",
   "scripts": {
     "prebuild": "yarn run clean:build",
-    "build": "yarn run build:icon-index && yarn run build:babel",
-    "build:babel": "NODE_ENV=release babel ./src --out-dir ./dist --ignore spec.js",
+    "build": "yarn run build:icon-index && yarn run build:babel && yarn build:copy-files && yarn run build:es",
+    "build:babel": "cross-env BABEL_ENV=release babel ./src --out-dir ./dist --ignore spec.js",
+    "build:es": "cross-env BABEL_ENV=es babel ./src/index.js --out-file ./dist/index.es.js --ignore spec.js",
+    "build:copy-files": "babel-node ./scripts/copy-files.js",
     "build:icon-index": "babel-node ./scripts/icon-index-generator.js",
     "clean:build": "rimraf dist",
     "test": ""
@@ -34,17 +36,19 @@
   },
   "peerDependencies": {
     "react": "^15.1.0",
-    "react-dom": "^15.1.0",
-    "react-event-listener": "^0.4.1"
+    "react-dom": "^15.1.0"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-core": "^6.25.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-export-extensions": "^6.22.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.5.2",
     "babel-preset-react": "^6.24.1",
     "recursive-readdir-sync": "^1.0.6",
+    "cross-env": "^5.0.1",
+    "fs-extra": "^3.0.1",
     "rimraf": "^2.6.1"
   },
   "directories": {

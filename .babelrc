@@ -1,11 +1,17 @@
 {
   "presets": [
     "./tools/mantecao-babel-preset-es2015",
-    "es2015",
     "react"
   ],
   "plugins": [
     "transform-export-extensions",
     "transform-class-properties"
-  ]
+  ],
+  "env": {
+    "release": {
+      "plugins": [
+        "transform-runtime"
+      ]
+    }
+  }
 }
