@@ -11,7 +11,7 @@
     "build:icon-index": "babel-node ./scripts/icon-index-generator.js",
     "clean:build": "rimraf dist",
     "lint": "eslint ./src",
-    "test": "",
+    "test": "npm help",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
