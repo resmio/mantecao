@@ -4,6 +4,7 @@
   "description": "A react UI library for resmio",
   "main": "dist/index.js",
   "scripts": {
+    "commit": "git cz",
     "prebuild": "yarn run clean:build",
     "build": "yarn run build:icon-index && yarn run build:babel",
     "build:babel": "NODE_ENV=release babel ./src --out-dir ./dist --ignore spec.js",
@@ -63,7 +64,17 @@
   "dependencies": {
     "@resmio/rollico": "^3.0.0",
     "babel-preset-es2015": "^6.24.1",
+    "commitizen": "^2.9.6",
+    "cz-conventional-changelog": "^2.0.0",
     "glamor": "^2.20.25",
     "react-event-listener": "^0.4.5"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
+  },
+  "release": {
+    "verifyConditions": "condition-circle"
   }
 }
