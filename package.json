@@ -9,6 +9,7 @@
     "build:babel": "NODE_ENV=release babel ./src --out-dir ./dist --ignore spec.js",
     "build:icon-index": "babel-node ./scripts/icon-index-generator.js",
     "clean:build": "rimraf dist",
+    "lint": "eslint ./src",
     "test": ""
   },
   "repository": {
@@ -40,10 +41,17 @@
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-core": "^6.25.0",
+    "babel-eslint": "^7.2.3",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-export-extensions": "^6.22.0",
     "babel-preset-env": "^1.5.2",
     "babel-preset-react": "^6.24.1",
+    "eslint": "^4.0.0",
+    "eslint-config-react-app": "^1.0.4",
+    "eslint-plugin-flowtype": "^2.34.0",
+    "eslint-plugin-import": "^2.3.0",
+    "eslint-plugin-jsx-a11y": "^5.0.3",
+    "eslint-plugin-react": "^7.1.0",
     "recursive-readdir-sync": "^1.0.6",
     "rimraf": "^2.6.1"
   },
