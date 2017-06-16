@@ -1,4 +1,5 @@
-export const colorLuminance = (hex, lum) => {
+// @flow
+export const colorLuminance = (hex: string, lum?: number): string => {
   // validate hex string or default to white
   hex = String(hex).replace(/[^0-9a-f]/gi, '') || 'FFFFFF'
   if (hex.length < 6) {
@@ -18,7 +19,7 @@ export const colorLuminance = (hex, lum) => {
   return hexColor
 }
 
-export const hexToRgb = (hex) => {
+export const hexToRgb = (hex: string): string => {
   // Expand shorthand form (e.g. "03F") to full form (e.g. "0033FF")
   var shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i
   hex = hex.replace(shorthandRegex, function (m, r, g, b) {
@@ -27,5 +28,5 @@ export const hexToRgb = (hex) => {
   let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex)
   return result
     ? 'rgb(' + parseInt(result[1], 16) + ', ' + parseInt(result[2], 16) + ', ' + parseInt(result[3], 16) + ')'
-    : null
+    : ''
 }
