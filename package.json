@@ -13,9 +13,9 @@
     "lint": "eslint ./src",
     "test": "npm help",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "start" :"yarn run storybook:dev",
     "storybook:dev": "start-storybook -p 9001 -c .storybook",
     "storybook:build": "rimraf docs && build-storybook -c .storybook -o docs",
-    "test": ""
   },
   "repository": {
     "type": "git",
