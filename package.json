@@ -7,7 +7,7 @@
     "commit": "git cz",
     "prebuild": "yarn run clean:build",
     "build": "yarn run build:icon-index && yarn run build:babel",
-    "build:babel": "NODE_ENV=release babel ./src --out-dir ./dist --ignore spec.js",
+    "build:babel": "NODE_ENV=release babel ./src --out-dir ./dist --ignore stories.js --ignore spec.js",
     "build:icon-index": "babel-node ./scripts/icon-index-generator.js",
     "clean:build": "rimraf dist",
     "lint": "eslint ./src",
