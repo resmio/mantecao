@@ -1,2 +1,3 @@
 dist/**/*.js
 docs/build/**/*.js
+src/**/*.spec.js
