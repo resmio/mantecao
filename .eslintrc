@@ -1,25 +1,6 @@
+# We extend the config used on create-react-app
+# Check here to see the rules
+# https://github.com/facebookincubator/create-react-app/tree/master/packages/eslint-config-react-app
 {
-  // Extend existing configuration
-  // from ESlint and eslint-plugin-react defaults.
-  "extends": "standard",
-  // Enable ES6 support. If you want to use custom Babel
-  // features, you will need to enable a custom parser
-  // as described in a section below.
-  "parser": "babel-eslint",
-  "env": {
-    "browser": true,
-    "node": true
-  },
-  "rules": {
-    "no-unused-vars": 0,
-    "react/sort-prop-types": 1
-  },
-  // Enable custom plugin known as eslint-plugin-react
-  "plugins": [
-    "react"
-  ],
-  "globals": {
-    "React": true
-   },
-   "ecmaFeatures": {"jsx": true}
+  "extends": "react-app"
 }
