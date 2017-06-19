@@ -11,12 +11,13 @@
     "build:icon-index": "babel-node ./scripts/icon-index-generator.js",
     "clean:build": "rimraf dist",
     "lint": "eslint ./src",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "start" :"yarn run storybook:dev",
     "storybook:dev": "start-storybook -p 9001 -c .storybook",
     "storybook:build": "rimraf docs && build-storybook -c .storybook -o docs",
     "test": "jest",
-    "prettier": "prettier --single-quote --no-semi \"src/**/*.js\""
+    "prettier": "prettier --single-quote --no-semi \"src/**/*.js\" --write",
+    "prettier:test": "prettier --single-quote --no-semi \"src/**/*.js\"",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
     "type": "git",

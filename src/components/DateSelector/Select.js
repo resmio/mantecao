@@ -10,25 +10,21 @@ const Select = ({
   selected,
   values,
   hasError
-}) => (
-  <select {...styles.field(hasError)} name={name} value={selected} onChange={onOptionChange} id={id} >
+}) =>
+  <select
+    {...styles.field(hasError)}
+    name={name}
+    value={selected}
+    onChange={onOptionChange}
+    id={id}
+  >
     <option value={0}>{name}</option>
-    {
-      options.map((option, i) => (
-        <option key={i} value={values ? values[i] : option}>{option}</option>
-      ))
-    }
+    {options.map((option, i) =>
+      <option key={i} value={values ? values[i] : option}>{option}</option>
+    )}
   </select>
-)
 
-const {
-  arrayOf,
-  bool,
-  func,
-  number,
-  oneOfType,
-  string
-} = PropTypes
+const { arrayOf, bool, func, number, oneOfType, string } = PropTypes
 
 Select.propTypes = {
   hasError: bool,

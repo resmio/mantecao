@@ -1,5 +1,5 @@
-import React, {PropTypes} from 'react'
-import {colors} from '../../variables'
+import React, { PropTypes } from 'react'
+import { colors } from '../../variables'
 
 const defaultStyle = {
   display: 'inline',
@@ -16,19 +16,20 @@ const defaultStyle = {
 }
 
 const defaultAlertColors = {
-  'alert': colors.goldenTainoi,
-  'error': colors.amaranth,
-  'info': colors.pacificBlue,
-  'success': colors.java
+  alert: colors.goldenTainoi,
+  error: colors.amaranth,
+  info: colors.pacificBlue,
+  success: colors.java
 }
 
 /**
 * small label - we can update this later
 */
-const Label = (props) => {
-  const computedStyle = Object.assign({},
+const Label = props => {
+  const computedStyle = Object.assign(
+    {},
     defaultStyle,
-    props.type ? {backgroundColor: defaultAlertColors[props.type]} : {}
+    props.type ? { backgroundColor: defaultAlertColors[props.type] } : {}
   )
   return (
     <span style={computedStyle}>

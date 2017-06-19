@@ -1,27 +1,25 @@
-import React, {Component, PropTypes} from 'react'
+import React, { Component, PropTypes } from 'react'
 
 import Option from './_option'
-import {styles} from './styles'
+import { styles } from './styles'
 
 class ComboBoxOptions extends Component {
-  render () {
-    const {options, selectedOptions, focusedIndex, onSelect} = this.props
+  render() {
+    const { options, selectedOptions, focusedIndex, onSelect } = this.props
     return (
       <div {...styles.options.wrapper}>
-        {
-          options.map((option, i) => {
-            return (
-              <Option
-                key={i}
-                ref={i}
-                selected={selectedOptions.includes(option)}
-                onClick={() => onSelect(option)}
-                focused={i === focusedIndex}
-                text={option}
-              />
-            )
-          })
-        }
+        {options.map((option, i) => {
+          return (
+            <Option
+              key={i}
+              ref={i}
+              selected={selectedOptions.includes(option)}
+              onClick={() => onSelect(option)}
+              focused={i === focusedIndex}
+              text={option}
+            />
+          )
+        })}
       </div>
     )
   }

@@ -1,4 +1,5 @@
-export const colors = { // http://veli.ee/colorpedia/
+export const colors = {
+  // http://veli.ee/colorpedia/
   // blues
   pacificBlue: '#00A7C4',
   deepCerulean: '#018EA6',

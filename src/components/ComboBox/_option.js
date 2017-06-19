@@ -1,11 +1,11 @@
-import React, {Component, PropTypes} from 'react'
+import React, { Component, PropTypes } from 'react'
 
-import {CheckIcon, BlankIcon} from '../../icons'
-import {styles} from './styles'
+import { CheckIcon, BlankIcon } from '../../icons'
+import { styles } from './styles'
 
 class ComboBoxOption extends Component {
-  render () {
-    const {text, selected, focused, onClick} = this.props
+  render() {
+    const { text, selected, focused, onClick } = this.props
     return (
       <div
         {...Object.assign(
@@ -17,8 +17,7 @@ class ComboBoxOption extends Component {
       >
         {selected
           ? <CheckIcon xsmall style={styles.option.checkIcon} />
-          : <BlankIcon xsmall />
-        }
+          : <BlankIcon xsmall />}
         <span {...styles.option.text}>{text}</span>
       </div>
     )
