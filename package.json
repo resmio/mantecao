@@ -10,6 +10,7 @@
     "build:babel": "NODE_ENV=release babel ./src --out-dir ./dist --ignore stories.js,spec.js,tape.js",
     "build:icon-index": "babel-node ./scripts/icon-index-generator.js",
     "clean:build": "rimraf dist",
+    "precommit": "yarn run prettier && yarn run lint",
     "lint": "eslint ./src",
     "start" :"yarn run storybook:dev",
     "storybook:dev": "start-storybook -p 9001 -c .storybook",
@@ -60,14 +61,13 @@
     "eslint-plugin-jsx-a11y": "^5.0.3",
     "eslint-plugin-react": "^7.1.0",
     "flow-bin": "^0.48.0",
-<<<<<<< HEAD
     "jest": "^20.0.4",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-test-renderer": "^15.6.1",
-=======
+    "husky": "^0.13.4",
+    "lint-staged": "^4.0.0",
     "prettier": "^1.4.4",
->>>>>>> Add some prettier test rules
     "recursive-readdir-sync": "^1.0.6",
     "rimraf": "^2.6.1",
     "semantic-release": "^6.3.6"
