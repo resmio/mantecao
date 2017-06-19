@@ -7,7 +7,7 @@
     "commit": "git cz",
     "prebuild": "yarn run clean:build",
     "build": "yarn run build:icon-index && yarn run build:babel",
-    "build:babel": "NODE_ENV=release babel ./src --out-dir ./dist --ignore stories.js --ignore spec.js",
+    "build:babel": "NODE_ENV=release babel ./src --out-dir ./dist --ignore stories.js,spec.js,tape.js",
     "build:icon-index": "babel-node ./scripts/icon-index-generator.js",
     "clean:build": "rimraf dist",
     "lint": "eslint ./src",
@@ -61,6 +61,7 @@
     "jest": "^20.0.4",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
+    "react-test-renderer": "^15.6.1",
     "recursive-readdir-sync": "^1.0.6",
     "rimraf": "^2.6.1",
     "semantic-release": "^6.3.6"
