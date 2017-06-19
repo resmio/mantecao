@@ -8,5 +8,5 @@ storiesOf('Badge', module)
     <Badge>Hello 💩</Badge>
   ))
   .add('with styles as props', () => (
-    <Badge style={{color: 'lime', backgroundColor: 'pink'}}>stylish</Badge>
+    <Badge style={{color: 'lime', backgroundColor: 'pink'}}>Stylish 💩</Badge>
   ));
