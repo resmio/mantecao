@@ -11,11 +11,11 @@
     "build:icon-index": "babel-node ./scripts/icon-index-generator.js",
     "clean:build": "rimraf dist",
     "lint": "eslint ./src",
-    "test": "npm help",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "start" :"yarn run storybook:dev",
     "storybook:dev": "start-storybook -p 9001 -c .storybook",
-    "storybook:build": "rimraf docs && build-storybook -c .storybook -o docs"
+    "storybook:build": "rimraf docs && build-storybook -c .storybook -o docs",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -60,6 +60,7 @@
     "eslint-plugin-jsx-a11y": "^5.0.3",
     "eslint-plugin-react": "^7.1.0",
     "flow-bin": "^0.48.0",
+    "jest": "^20.0.4",
     "recursive-readdir-sync": "^1.0.6",
     "rimraf": "^2.6.1",
     "semantic-release": "^6.3.6"
@@ -81,8 +82,5 @@
     "commitizen": {
       "path": "node_modules/cz-conventional-changelog"
     }
-  },
-  "release": {
-    "verifyConditions": "condition-circle"
   }
 }
