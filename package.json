@@ -11,6 +11,7 @@
     "build:icon-index": "babel-node ./scripts/icon-index-generator.js",
     "clean:build": "rimraf dist",
     "precommit": "yarn run prettier && yarn run lint",
+    "prepush": "yarn test",
     "lint": "eslint ./src",
     "start" :"yarn run storybook:dev",
     "storybook:dev": "start-storybook -p 9001 -c .storybook",
