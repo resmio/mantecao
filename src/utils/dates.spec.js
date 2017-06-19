@@ -1,5 +1,3 @@
-// Uncomment file once mantecao runs jest tests
-/*
 import {
   isValidDate,
   getPastYears,
@@ -105,4 +103,3 @@ describe('isValidDate', () => {
     expect(actual).toEqual(expected)
   })
 })
-*/
