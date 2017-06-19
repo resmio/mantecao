@@ -11,7 +11,7 @@ const defaultStyle = {
 /**
  * A button with a border - color and bgColor set with props
  */
-const BorderButton = (props) => {
+const BorderButton = props => {
   const color = props.color || defaultStyle.color
   const bgColor = props.bgColor || defaultStyle.bgColor
   return (
@@ -25,7 +25,7 @@ const BorderButton = (props) => {
       hoverTextColor={bgColor}
       onClick={props.onClick}
     >
-      { props.children }
+      {props.children}
     </Button>
   )
 }

@@ -12,13 +12,13 @@ const defaultBgColor = colors.white
 /**
  * Body section of a dialog
  */
-const DialogBody = (props) => {
+const DialogBody = props => {
   let addedStyle = { textAlign: props.right ? 'right' : 'left' }
   const style = Object.assign({}, defaultStyle, addedStyle, props.style)
   return (
     <div style={{ backgroundColor: props.bgColor || defaultBgColor }}>
-      <div style={ style }>
-        { props.children }
+      <div style={style}>
+        {props.children}
       </div>
     </div>
   )

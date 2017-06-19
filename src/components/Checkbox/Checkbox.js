@@ -1,7 +1,7 @@
-import React, {PropTypes, Component} from 'react'
+import React, { PropTypes, Component } from 'react'
 
-import {colors, iconSizes} from '../../variables'
-import {CheckIcon} from '../../icons'
+import { colors, iconSizes } from '../../variables'
+import { CheckIcon } from '../../icons'
 
 const defaultContainerStyle = {
   display: 'flex'
@@ -43,7 +43,7 @@ const disabledStyle = {
  * with label, description and hint
  */
 class Checkbox extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.state = {}
     // we need a state for this because it can be controlled or non-controlled
@@ -56,44 +56,61 @@ class Checkbox extends Component {
       this.state.checked = false
     }
   }
-  componentWillReceiveProps (nextProps) {
+  componentWillReceiveProps(nextProps) {
     if (nextProps.checked !== undefined) {
-      this.setState({checked: nextProps.checked})
+      this.setState({ checked: nextProps.checked })
     }
   }
-  render () {
-    const {error, warning, labelStyle, disabled, label, description, hint, style} = this.props
+  render() {
+    const {
+      error,
+      warning,
+      labelStyle,
+      disabled,
+      label,
+      description,
+      hint,
+      style
+    } = this.props
 
     let computerContainerStyle = Object.assign({}, defaultContainerStyle, style)
-    let textColorStyle = Object.assign({},
-      warning ? {color: colors.goldenTainoi} : {},
-      error ? {color: colors.amaranth} : {}
+    let textColorStyle = Object.assign(
+      {},
+      warning ? { color: colors.goldenTainoi } : {},
+      error ? { color: colors.amaranth } : {}
     )
     let computedLabelStyle = Object.assign({}, defaultLabelStyle, labelStyle)
     let computedHintStyle = Object.assign({}, textColorStyle)
-    let computedCheckboxStyle = Object.assign({},
+    let computedCheckboxStyle = Object.assign(
+      {},
       defaultCheckboxStyle,
       this.state.checked ? checkedStyle : {},
       disabled ? disabledStyle : {},
-      this.state.checked && disabled ? {backgroundColor: colors.silver} : {}
+      this.state.checked && disabled ? { backgroundColor: colors.silver } : {}
     )
 
     return (
       <div style={computerContainerStyle}>
-        <div style={{flex: '0 1 auto', marginRight: '0.7rem'}}>
+        <div style={{ flex: '0 1 auto', marginRight: '0.7rem' }}>
           <label
             onClick={this._toggleCheckbox}
             htmlFor={this.refs.checkboxInput}
             style={computedCheckboxStyle}
           >
             {this.state.checked === true
-              ? <CheckIcon style={{strokeWidth: '3.5px', width: '1.4rem', height: '1.4rem', verticalAlign: 'none'}} />
-              : null
-            }
+              ? <CheckIcon
+                  style={{
+                    strokeWidth: '3.5px',
+                    width: '1.4rem',
+                    height: '1.4rem',
+                    verticalAlign: 'none'
+                  }}
+                />
+              : null}
             <input
-              ref='checkboxInput'
-              style={{visibility: 'hidden', position: 'absolute', left: 0}}
-              type='checkbox'
+              ref="checkboxInput"
+              style={{ visibility: 'hidden', position: 'absolute', left: 0 }}
+              type="checkbox"
               disabled={disabled}
               checked={this.state.checked}
               onChange={this._onChange}
@@ -106,29 +123,22 @@ class Checkbox extends Component {
             : null
           }
           {description
-            ? <div style={{marginBottom: '0.5rem'}}>{description}</div>
-            : null
-          }
-          {hint
-            ? <div style={computedHintStyle}>{hint}</div>
-            : null
-          }
+            ? <div style={{ marginBottom: '0.5rem' }}>{description}</div>
+            : null}
+          {hint ? <div style={computedHintStyle}>{hint}</div> : null}
         </div>
       </div>
     )
   }
-  _toggleCheckbox = (e) => {
+  _toggleCheckbox = e => {
     e.preventDefault()
     if (!this.props.disabled) {
-      this.setState(
-        {checked: !this.state.checked},
-        () => {
-          this.props.onChange(this.state.checked)
-        }
-      )
+      this.setState({ checked: !this.state.checked }, () => {
+        this.props.onChange(this.state.checked)
+      })
     }
   }
-  _onChange = (e) => {
+  _onChange = e => {
     // with a controlled input, react requires an onchange handler - do nothing
   }
 }

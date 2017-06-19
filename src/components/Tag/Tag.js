@@ -1,9 +1,9 @@
-import React, {Component, PropTypes} from 'react'
-import {merge} from 'glamor'
+import React, { Component, PropTypes } from 'react'
+import { merge } from 'glamor'
 
-import {CloseIcon} from '../../icons'
+import { CloseIcon } from '../../icons'
 
-import {styles} from './styles'
+import { styles } from './styles'
 
 const AdjustedCloseIcon = (
   <CloseIcon
@@ -21,24 +21,25 @@ class Tag extends Component {
     hovered: false
   }
 
-  render () {
-    const {name, onClickAction} = this.props
+  render() {
+    const { name, onClickAction } = this.props
 
     return (
       <div {...merge(styles.tag, this.state.hovered && styles.hover)}>
         <span {...styles.text}>{name}</span>
         {onClickAction &&
-          (
-            <span
-              {...styles.close}
-              onClick={() => onClickAction(name)}
-              onMouseEnter={() => { this.setState({hovered: true}) }}
-              onMouseLeave={() => { this.setState({hovered: false}) }}
-            >
-               {AdjustedCloseIcon}
-            </span>
-          )
-        }
+          <span
+            {...styles.close}
+            onClick={() => onClickAction(name)}
+            onMouseEnter={() => {
+              this.setState({ hovered: true })
+            }}
+            onMouseLeave={() => {
+              this.setState({ hovered: false })
+            }}
+          >
+            {AdjustedCloseIcon}
+          </span>}
       </div>
     )
   }

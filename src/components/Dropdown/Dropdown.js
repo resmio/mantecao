@@ -1,6 +1,6 @@
-import React, {Component, PropTypes} from 'react'
+import React, { Component, PropTypes } from 'react'
 import EventListener from 'react-event-listener'
-import {colors} from '../../variables'
+import { colors } from '../../variables'
 
 const defaultContainerStyle = {
   position: 'relative',
@@ -16,9 +16,9 @@ const defaultChildrenStyle = {
   minWidth: '100%',
   zIndex: 1000
 }
-const centerChildren = {left: '50%', transform: 'translate(-50%, 0)'}
-const leftChildren = {left: 0}
-const rightChildren = {right: 0}
+const centerChildren = { left: '50%', transform: 'translate(-50%, 0)' }
+const leftChildren = { left: 0 }
+const rightChildren = { right: 0 }
 
 const defaultTriggerStyle = {
   width: '100%'
@@ -61,42 +61,44 @@ class Dropdown extends Component {
   render () {
     const {children, triggerNode, disabled, left, right, center, arrow, lockWidth, fullWidth, borderColor, backgroundColor, closeOnClick} = this.props
     const {isOpen, openDropdown} = this._getControls()
-
-    const computedContainerStyle = Object.assign({},
+    const computedContainerStyle = Object.assign(
+      {},
       defaultContainerStyle,
-      fullWidth ? {width: '100%'} : {}
+      fullWidth ? { width: '100%' } : {}
     )
 
-    const computedTriggerStyle = Object.assign({},
-      defaultTriggerStyle,
-      {cursor: disabled ? 'not-allowed' : 'pointer'}
-    )
+    const computedTriggerStyle = Object.assign({}, defaultTriggerStyle, {
+      cursor: disabled ? 'not-allowed' : 'pointer'
+    })
 
-    const computedChildrenStyle = Object.assign({},
+    const computedChildrenStyle = Object.assign(
+      {},
       defaultChildrenStyle,
-      borderColor ? {borderColor} : {},
-      backgroundColor ? {backgroundColor} : {},
-      arrow ? {marginTop: '5px'} : {},
+      borderColor ? { borderColor } : {},
+      backgroundColor ? { backgroundColor } : {},
+      arrow ? { marginTop: '5px' } : {},
       left ? leftChildren : {},
       right ? rightChildren : {},
       center ? centerChildren : {},
-      lockWidth ? {maxWidth: '100%'} : {}
+      lockWidth ? { maxWidth: '100%' } : {}
     )
 
-    const computedBackgroundArrow = Object.assign({},
+    const computedBackgroundArrow = Object.assign(
+      {},
       defaultBackgroundArrow,
-      backgroundColor ? {borderBottomColor: backgroundColor} : {},
+      backgroundColor ? { borderBottomColor: backgroundColor } : {}
     )
 
-    const computedBorderArrow = Object.assign({},
+    const computedBorderArrow = Object.assign(
+      {},
       defaultBorderArrow,
-      borderColor ? {borderBottomColor: borderColor} : {},
+      borderColor ? { borderBottomColor: borderColor } : {}
     )
 
     const ArrowThing = (
       <div>
-        <div style={computedBorderArrow}></div>
-        <div style={computedBackgroundArrow}></div>
+        <div style={computedBorderArrow} />
+        <div style={computedBackgroundArrow} />
       </div>
     )
     return (
@@ -113,10 +115,7 @@ class Dropdown extends Component {
           {triggerNode}
         </div>
         {arrow && isOpen ? ArrowThing : null}
-        {isOpen
-          ? <div style={computedChildrenStyle}>{children}</div>
-          : null
-        }
+        {isOpen ? <div style={computedChildrenStyle}>{children}</div> : null}
       </div>
     )
   }
@@ -138,13 +137,19 @@ class Dropdown extends Component {
     }
   }
   _getControls = () => {
-    const {openDropdown, closeDropdown, isOpen} = this[this._hasExternalControls() ? 'props' : 'state']
-    return {openDropdown, isOpen, closeDropdown}
+    const { openDropdown, closeDropdown, isOpen } = this[
+      this._hasExternalControls() ? 'props' : 'state'
+    ]
+    return { openDropdown, isOpen, closeDropdown }
   }
   _hasExternalControls = () => {
     // only if we have full controll from outside can use use props
-    const {openDropdown, closeDropdown, isOpen} = this.props
-    return (openDropdown !== undefined && closeDropdown !== undefined && isOpen !== undefined)
+    const { openDropdown, closeDropdown, isOpen } = this.props
+    return (
+      openDropdown !== undefined &&
+      closeDropdown !== undefined &&
+      isOpen !== undefined
+    )
   }
 }
 

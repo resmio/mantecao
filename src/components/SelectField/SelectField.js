@@ -1,5 +1,5 @@
-import React, {PropTypes} from 'react'
-import {colors} from '../../variables'
+import React, { PropTypes } from 'react'
+import { colors } from '../../variables'
 
 const defaultStyle = {
   backgroundColor: colors.white,
@@ -23,28 +23,36 @@ const disabledStyle = {
 /**
  * Can be given options to list in the select dropdown (assigned as optionValues)
  */
-const SelectField = (props) => {
-  let {optionValues, options} = props
-  if (!optionValues) { optionValues = options }
+const SelectField = props => {
+  let { optionValues, options } = props
+  if (!optionValues) {
+    optionValues = options
+  }
 
-  let borderColorStyle = Object.assign({},
-    props.warning ? {borderColor: colors.goldenTainoi} : {},
-    props.error ? {borderColor: colors.amaranth} : {}
+  let borderColorStyle = Object.assign(
+    {},
+    props.warning ? { borderColor: colors.goldenTainoi } : {},
+    props.error ? { borderColor: colors.amaranth } : {}
   )
-  let textColorStyle = Object.assign({},
-    props.disabled ? {color: colors.dustyGray} : {},
-    props.warning ? {color: colors.goldenTainoi} : {},
-    props.error ? {color: colors.amaranth} : {}
+  let textColorStyle = Object.assign(
+    {},
+    props.disabled ? { color: colors.dustyGray } : {},
+    props.warning ? { color: colors.goldenTainoi } : {},
+    props.error ? { color: colors.amaranth } : {}
   )
 
-  let computedInputStyle = Object.assign({},
+  let computedInputStyle = Object.assign(
+    {},
     defaultStyle,
     borderColorStyle,
     props.disabled ? disabledStyle : {}
   )
   let computedLabelStyle = Object.assign({}, defaultLabelStyle, textColorStyle)
-  let computedContainerStyle = Object.assign({marginBottom: '1rem'}, props.style)
-  let computedHintStyle = Object.assign({marginTop: '0.5rem'}, textColorStyle)
+  let computedContainerStyle = Object.assign(
+    { marginBottom: '1rem' },
+    props.style
+  )
+  let computedHintStyle = Object.assign({ marginTop: '0.5rem' }, textColorStyle)
 
   return (
     <div style={computedContainerStyle}>
@@ -61,10 +69,7 @@ const SelectField = (props) => {
       >
         {props.options.map((option, index) => {
           return (
-            <option
-              key={index}
-              value={optionValues[index]}
-            >
+            <option key={index} value={optionValues[index]}>
               {options[index]}
             </option>
           )
@@ -87,7 +92,11 @@ SelectField.propTypes = {
   optionValues: PropTypes.array,
   options: PropTypes.array.isRequired,
   required: PropTypes.bool,
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.bool]),
+  value: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+    PropTypes.bool
+  ]),
   warning: PropTypes.bool
 }
 

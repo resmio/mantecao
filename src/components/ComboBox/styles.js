@@ -1,5 +1,5 @@
-import {css} from 'glamor'
-import {colors} from '@resmio/rollico/dist/'
+import { css } from 'glamor'
+import { colors } from '@resmio/rollico/dist/'
 
 export const styles = {
   option: {
@@ -13,7 +13,8 @@ export const styles = {
         backgroundColor: colors.alto
       }
     }),
-    checkIcon: { // <-- inline styles, not glamor
+    checkIcon: {
+      // <-- inline styles, not glamor
       strokeWidth: '3px',
       color: colors.pacificBlue
     },

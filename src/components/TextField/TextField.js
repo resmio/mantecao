@@ -1,8 +1,8 @@
 // we should remove the 'type' prop here and make specific fields for other types (like number)
 // this component should only be type='text'
 
-import React, {PropTypes} from 'react'
-import {colors, iconSizes} from '../../variables'
+import React, { PropTypes } from 'react'
+import { colors, iconSizes } from '../../variables'
 
 const defaultContainerStyle = {
   marginBottom: '1rem'
@@ -39,21 +39,25 @@ const defaultIconStyle = {
   position: 'absolute'
 }
 
-const TextField = (props) => {
-  let borderColorStyle = Object.assign({},
-    props.warning ? {borderColor: colors.goldenTainoi} : {},
-    props.error ? {borderColor: colors.amaranth} : {}
+const TextField = props => {
+  let borderColorStyle = Object.assign(
+    {},
+    props.warning ? { borderColor: colors.goldenTainoi } : {},
+    props.error ? { borderColor: colors.amaranth } : {}
   )
-  let textColorStyle = Object.assign({},
-    props.warning ? {color: colors.goldenTainoi} : {},
-    props.error ? {color: colors.amaranth} : {}
+  let textColorStyle = Object.assign(
+    {},
+    props.warning ? { color: colors.goldenTainoi } : {},
+    props.error ? { color: colors.amaranth } : {}
   )
 
-  let computedContainerStyle = Object.assign({},
+  let computedContainerStyle = Object.assign(
+    {},
     defaultContainerStyle,
     props.style
   )
-  let computedInputStyle = Object.assign({},
+  let computedInputStyle = Object.assign(
+    {},
     defaultInputStyle,
     borderColorStyle,
     props.icon ? iconInputStyle : {},
@@ -114,15 +118,7 @@ const TextField = (props) => {
     </div>
   )
 }
-const {
-  bool,
-  func,
-  node,
-  number,
-  string,
-  object,
-  oneOfType
-} = PropTypes
+const { bool, func, node, number, string, object, oneOfType } = PropTypes
 
 TextField.propTypes = {
   className: string,

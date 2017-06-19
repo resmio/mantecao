@@ -25,18 +25,18 @@ const defaultCloseStyle = {
 /**
  * Header section of a dialog
  */
-const DialogHeader = (props) => {
+const DialogHeader = props => {
   let close = (
-    <div style={ defaultCloseStyle }>
-      <UnstyledButton onClick={ props.close }><CloseIcon /></UnstyledButton>
+    <div style={defaultCloseStyle}>
+      <UnstyledButton onClick={props.close}><CloseIcon /></UnstyledButton>
     </div>
   )
   return (
-    <div style={ defaultWrapperStyle }>
-      <div style={ defaultContainerStyle }>
-        { props.children }
+    <div style={defaultWrapperStyle}>
+      <div style={defaultContainerStyle}>
+        {props.children}
       </div>
-      { props.close ? close : null }
+      {props.close ? close : null}
     </div>
   )
 }
