@@ -12,6 +12,7 @@ export const colors = { // http://veli.ee/colorpedia/
   oxfordBlue: '#333B4F',
   ebonyClay: '#293140',
   midnightExpress: '#1E2532',
+  charlotte: '#B9F2FA',
   // greens
   java: '#22CCAA',
   mountainMeadow: '#21B498',
@@ -56,8 +57,16 @@ export const iconSizes = {
 export const theme = (function() {
   const borderColor = colors.alto
   const borderRadius = '4px'
+  const formBoxShadow = `inset 0 1px 3px ${colors.gallery}`
+
   return {
+    actionColor: {
+      light: colors.pacificBlue,
+      medium: colors.blueBayoux,
+      dark: colors.fiord
+    },
     buttonPadding: '0.6em 2.4em',
+    fontColor: colors.emperor,
     fontFamily: '"Open Sans", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif',
     fontSize: '1rem',
     backgroundColor: colors.white,
@@ -65,6 +74,8 @@ export const theme = (function() {
     borderColor,
     borderRadius,
     baseSpace: '0.625em',
+    formBoxShadow,
+    formBoxShadowFocus: `${formBoxShadow}, 0 0 5px ${colors.charlotte}`,
     transitionDuration: '150ms',
     transitionTiming: 'ease'
   }
