@@ -1,12 +1,57 @@
 import React from 'react'
 import styled, { injectGlobal } from 'styled-components'
+<<<<<<< HEAD
 import { shade, darken, tint, normalize } from 'polished'
+=======
+import { shade, tint, normalize } from 'polished'
+>>>>>>> Add basic styles for input element
 import { theme } from '../../variables'
 
 injectGlobal`${normalize('excludeOpinionated')}`
 
 const StyledInput = styled.input`
+<<<<<<< HEAD
   ${props => computeStyles(props.type)}
+=======
+  appearance: none;
+  border-width: 1px;
+  border-color: ${theme.borderColor};
+  border-radius: ${theme.borderRadius};
+  border-style: solid;
+  box-shadow: none;
+  box-sizing: border-box;
+  display: block;
+  font-family: ${theme.fontFamily};
+  font-size: ${theme.fontSize};
+  margin-bottom: ${theme.baseSpace};
+  padding-bottom: ${theme.baseSpace};
+  padding-left: ${theme.baseSpace};
+  padding-top: ${theme.baseSpace};
+  padding-right: ${theme.baseSpace};
+
+  &:hover {
+    border-color: ${shade(0.2, theme.borderColor)};
+  }
+
+  &:focus {
+    border-color: ${theme.actionColor.light};
+    box-shadow: ${theme.formBoxShadowFocus};
+    outline: none;
+  }
+
+  &:disabled {
+    background-color: ${shade(0.2, theme.backgroundColor)};
+    cursor: not-allowed;
+
+    &:hover {
+      border: ${theme.border};
+    }
+  }
+
+  &::placeholder {
+    color: ${tint(0.4, theme.fontColor)};
+  }
+>>>>>>> Add basic styles for input element
 `
 
 const computeStyles = type => {

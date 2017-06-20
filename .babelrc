@@ -5,6 +5,7 @@
     "flow"
   ],
   "plugins": [
+    "polished",
     "transform-export-extensions",
     "transform-class-properties"
   ]
