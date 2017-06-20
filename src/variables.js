@@ -1,5 +1,10 @@
-export const colors = {
-  // http://veli.ee/colorpedia/
+// Putting this here cause don't know where else to put it
+// Rule of thumb for defining sizes:
+// - Font-sizes in rems
+// - Borders in pixels
+// - Everything else in ems
+
+export const colors = { // http://veli.ee/colorpedia/
   // blues
   pacificBlue: '#00A7C4',
   deepCerulean: '#018EA6',
@@ -47,3 +52,20 @@ export const iconSizes = {
   medium: '2.75rem', // default
   large: '3.5rem'
 }
+
+export const theme = (function() {
+  const borderColor = colors.alto
+  const borderRadius = '4px'
+  return {
+    buttonPadding: '0.6em 2.4em',
+    fontFamily: '"Open Sans", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif',
+    fontSize: '1rem',
+    backgroundColor: colors.white,
+    border: `1px solid ${borderColor}`,
+    borderColor,
+    borderRadius,
+    baseSpace: '0.625em',
+    transitionDuration: '150ms',
+    transitionTiming: 'ease'
+  }
+})()
