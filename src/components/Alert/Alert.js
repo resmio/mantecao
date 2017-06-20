@@ -1,15 +1,9 @@
-import React, { Component, PropTypes } from 'react'
+import React, {Component, PropTypes} from 'react'
 import ReactDOM from 'react-dom'
 
-import {
-  SuccessIcon,
-  ErrorIcon,
-  WarningIcon,
-  InfoIcon,
-  CloseIcon
-} from '../../icons'
+import {SuccessIcon, ErrorIcon, WarningIcon, InfoIcon, CloseIcon} from '../../icons'
 
-import { colors } from '../../variables'
+import {colors} from '../../variables'
 
 const defaultAlertStyle = {
   boxShadow: '0px 0px 20px ' + colors.alto,
@@ -41,37 +35,39 @@ const defaultFooterStyle = {
   overflow: 'hidden'
 }
 const defaultAlertColors = {
-  alert: colors.goldenTainoi,
-  error: colors.amaranth,
-  info: colors.pacificBlue,
-  success: colors.java
+  'alert': colors.goldenTainoi,
+  'error': colors.amaranth,
+  'info': colors.pacificBlue,
+  'success': colors.java
 }
 const defaultAlertIcons = {
-  alert: <WarningIcon width="100%" height="100%" />,
-  error: <ErrorIcon width="100%" height="100%" />,
-  info: <InfoIcon width="100%" height="100%" />,
-  success: <SuccessIcon width="100%" height="100%" />
+  'alert': <WarningIcon width="100%" height="100%" />,
+  'error': <ErrorIcon width="100%" height="100%" />,
+  'info': <InfoIcon width="100%" height="100%" />,
+  'success': <SuccessIcon width="100%" height="100%" />
 }
 
 /**
  * (types: alert, error, info, success) with a large icon display, heading, message and body
  */
 class Alert extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
-    this.headerStyle = Object.assign({}, defaultHeaderStyle, {
-      backgroundColor: defaultAlertColors[props.type]
-    })
-    this.headingStyle = Object.assign({}, defaultHeadingStyle, {
-      color: defaultAlertColors[props.type]
-    })
+    this.headerStyle = Object.assign({},
+      defaultHeaderStyle,
+      { backgroundColor: defaultAlertColors[props.type] }
+    )
+    this.headingStyle = Object.assign({},
+      defaultHeadingStyle,
+      { color: defaultAlertColors[props.type] }
+    )
     this.alertIcon = defaultAlertIcons[props.type]
   }
-  render() {
+  render () {
     const closeIcon = (
       <div
         onClick={this.props.onRemove}
-        style={{ float: 'right', padding: '0.5rem' }}
+        style={{float: 'right', padding: '0.5rem'}}
       >
         <CloseIcon />
       </div>
@@ -81,13 +77,11 @@ class Alert extends Component {
       <div style={defaultAlertStyle}>
         <div style={this.headerStyle}>
           {this.props.onClose ? closeIcon : null}
-          <div
-            style={{ width: '15rem', margin: '0 auto', paddingTop: '2.5rem' }}
-          >
+          <div style={{width: '15rem', margin: '0 auto', paddingTop: '2.5rem'}}>
             {this.alertIcon}
           </div>
         </div>
-        <div style={{ padding: '2rem' }}>
+        <div style={{padding: '2rem'}}>
           <p style={this.headingStyle}>{this.props.heading}</p>
           <p style={defaultMessageStyle}>{this.props.message}</p>
           <div style={defaultFooterStyle}>{this.props.children}</div>
