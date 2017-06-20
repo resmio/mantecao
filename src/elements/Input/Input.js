@@ -11,6 +11,7 @@ injectGlobal`${normalize('excludeOpinionated')}`
 
 const StyledInput = styled.input`
 <<<<<<< HEAD
+<<<<<<< HEAD
   ${props => computeStyles(props.type)}
 =======
   appearance: none;
@@ -32,27 +33,71 @@ const StyledInput = styled.input`
   &:hover {
     border-color: ${shade(0.2, theme.borderColor)};
   }
+=======
+  ${props => computeStyles(props.type)}
+`
+>>>>>>> Make the Input work for different types
 
-  &:focus {
-    border-color: ${theme.actionColor.light};
-    box-shadow: ${theme.formBoxShadowFocus};
-    outline: none;
+const computeStyles = type => {
+  switch(type) {
+    case 'checkbox':
+      return `
+        display: inline;
+        margin-right: ${theme.smallSpace};
+      `
+    case 'file':
+      return `
+        margin-bottom: ${theme.baseSpace};
+        width: '100%';
+      `
+    default:
+      return `
+        appearance: none;
+        border-width: 1px;
+        border-color: ${theme.borderColor};
+        border-radius: ${theme.borderRadius};
+        border-style: solid;
+        box-shadow: none;
+        box-sizing: border-box;
+        color: ${theme.fontColor};
+        font-family: ${theme.fontFamily};
+        font-size: ${theme.fontSize};
+        margin-bottom: ${theme.baseSpace};
+        padding-bottom: ${theme.baseSpace};
+        padding-left: ${theme.baseSpace};
+        padding-top: ${theme.baseSpace};
+        padding-right: ${theme.baseSpace};
+
+        &:hover {
+          border-color: ${shade(0.2, theme.borderColor)};
+        }
+
+        &:focus {
+          border-color: ${theme.actionColor.light};
+          box-shadow: ${theme.formBoxShadowFocus};
+          outline: none;
+        }
+
+        &:disabled {
+          background-color: ${shade(0.2, theme.backgroundColor)};
+          cursor: not-allowed;
+
+          &:hover {
+            border: ${theme.border};
+          }
+        }
+
+        &::placeholder {
+          color: ${tint(0.4, theme.fontColor)};
+        }
+        `
   }
-
-  &:disabled {
-    background-color: ${shade(0.2, theme.backgroundColor)};
-    cursor: not-allowed;
-
-    &:hover {
-      border: ${theme.border};
-    }
-  }
-
-  &::placeholder {
-    color: ${tint(0.4, theme.fontColor)};
-  }
+<<<<<<< HEAD
 >>>>>>> Add basic styles for input element
 `
+=======
+}
+>>>>>>> Make the Input work for different types
 
 const computeStyles = type => {
   switch(type) {
