@@ -1,6 +1,5 @@
 import React from 'react'
-
-import { Icon } from '../components/Icon'
+import Icon from '../components/Icon'
 
 const SuccessIcon = props =>
   <Icon {...props}>
