@@ -101,6 +101,7 @@ class Dropdown extends Component {
     )
     return (
       <div
+        ref='container'
         onClick={this._onContainerClick}
         style={computedContainerStyle}
       >
@@ -120,14 +121,15 @@ class Dropdown extends Component {
     )
   }
   _onWindowClick = (e) => {
+    const {closeOnClick, disabled} = this.props
     const {closeDropdown} = this._getControls()
-    closeDropdown()
+    if (!this.refs.container.contains(e.target)) {
+      closeDropdown()
+    }
   }
   _onContainerClick = (e) => {
     const {closeOnClick, disabled} = this.props
     const {isOpen, openDropdown, closeDropdown} = this._getControls()
-    // we need to stop this event from propagating
-    e.stopPropagation()
     // then explicitly call an action based on state/prop conditions
     if (isOpen && (closeOnClick || disabled)) {
       closeDropdown()

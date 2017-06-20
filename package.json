@@ -1,6 +1,6 @@
 {
   "name": "@resmio/mantecao",
-  "version": "1.0.4",
+  "version": "1.0.5-beta.1",
   "description": "A react UI library for resmio",
   "main": "dist/index.js",
   "scripts": {
@@ -9,6 +9,7 @@
     "lint:fix": "eslint . --ext .js --ext .jsx --fix || true",
     "postpublish": "npm run styleguide-build",
     "prepublish": "npm run build",
+    "prepare": "npm run build",
     "start": "yarn run styleguide-server",
     "styleguide-build": "NODE_ENV=production styleguidist build",
     "styleguide-server": "styleguidist server",
