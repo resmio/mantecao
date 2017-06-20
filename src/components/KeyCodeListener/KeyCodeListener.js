@@ -1,37 +1,51 @@
-import React, {PropTypes, Component} from 'react'
+import React, { PropTypes, Component } from 'react'
 import EventListener from 'react-event-listener'
 
 class KeyCodeListener extends Component {
-  render () {
+  render() {
     return (
       <div>
         <EventListener target={window} onKeyDown={this._onKeyDown} />
       </div>
     )
   }
-  _onKeyDown = (e) => {
+  _onKeyDown = e => {
     switch (e.keyCode) {
       case 9: // TAB
-        if (this.props.onTab) { this.props.onTab() }
+        if (this.props.onTab) {
+          this.props.onTab()
+        }
         break
       case 13: // ENTER
         e.preventDefault() // prevent default behavior
-        if (this.props.onEnter) { this.props.onEnter() }
+        if (this.props.onEnter) {
+          this.props.onEnter()
+        }
         break
       case 27: // ESCAPE
-        if (this.props.onEsc) { this.props.onEsc() }
+        if (this.props.onEsc) {
+          this.props.onEsc()
+        }
         break
       case 37: // LEFT
-        if (this.props.onLeft) { this.props.onLeft() }
+        if (this.props.onLeft) {
+          this.props.onLeft()
+        }
         break
       case 38: // UP
-        if (this.props.onUp) { this.props.onUp() }
+        if (this.props.onUp) {
+          this.props.onUp()
+        }
         break
       case 39: // RIGHT
-        if (this.props.onRight) { this.props.onRight() }
+        if (this.props.onRight) {
+          this.props.onRight()
+        }
         break
       case 40: // DOWN
-        if (this.props.onDown) { this.props.onDown() }
+        if (this.props.onDown) {
+          this.props.onDown()
+        }
         break
     }
   }

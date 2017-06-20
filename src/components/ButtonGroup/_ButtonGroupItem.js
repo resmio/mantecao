@@ -1,7 +1,7 @@
-import React, {PropTypes, Component} from 'react'
-import {Button} from '../Button'
+import React, { PropTypes, Component } from 'react'
+import { Button } from '../Button'
 
-import {colors} from '../../variables'
+import { colors } from '../../variables'
 
 const itemStyle = {
   display: 'inline-block',
@@ -31,9 +31,18 @@ const unselectedItemStyle = {
 }
 
 class ButtonGroupItem extends Component {
-  render () {
-    const {text, value, onSelect, first, last, selected, disabled} = this.props
-    const baseStyle = Object.assign({},
+  render() {
+    const {
+      text,
+      value,
+      onSelect,
+      first,
+      last,
+      selected,
+      disabled
+    } = this.props
+    const baseStyle = Object.assign(
+      {},
       itemStyle,
       first ? firstItemStyle : middleItemStyle,
       last ? lastItemStyle : {},
@@ -51,7 +60,7 @@ class ButtonGroupItem extends Component {
   }
 }
 
-const {bool, func, number, string, oneOfType} = PropTypes
+const { bool, func, number, string, oneOfType } = PropTypes
 ButtonGroupItem.propTypes = {
   disabled: bool,
   first: bool,

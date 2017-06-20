@@ -31,7 +31,7 @@ const large = {
 /**
  * Renders SVGs and applies some transforms (mirrorX/Y) - Small and large
  */
-const Icon = (props) => {
+const Icon = props => {
   let componentStyle = Object.assign({}, defaultStyle)
   // assign new values from any styles passed as props
   Object.assign(componentStyle, props.style)
@@ -46,10 +46,10 @@ const Icon = (props) => {
 
   // handle explicit width/height
   if (props.width) {
-    Object.assign(componentStyle, {width: props.width})
+    Object.assign(componentStyle, { width: props.width })
   }
   if (props.height) {
-    Object.assign(componentStyle, {height: props.height})
+    Object.assign(componentStyle, { height: props.height })
   }
 
   // handle mirroring (done at path group level)
@@ -62,13 +62,15 @@ const Icon = (props) => {
 
   // handle rotation (done at svg level)
   if (props.rotate) {
-    Object.assign(componentStyle, {transform: 'rotate(' + props.rotate + 'deg)'})
+    Object.assign(componentStyle, {
+      transform: 'rotate(' + props.rotate + 'deg)'
+    })
   }
 
   return (
-    <svg viewBox='0 0 32 32' style={ componentStyle } className={props.className}>
-      <g transform={ transform || props.transform }>
-        { props.children }
+    <svg viewBox="0 0 32 32" style={componentStyle} className={props.className}>
+      <g transform={transform || props.transform}>
+        {props.children}
       </g>
     </svg>
   )

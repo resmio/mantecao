@@ -10,12 +10,16 @@
     "build:babel": "NODE_ENV=release babel ./src --out-dir ./dist --ignore stories.js,spec.js,tape.js",
     "build:icon-index": "babel-node ./scripts/icon-index-generator.js",
     "clean:build": "rimraf dist",
+    "precommit": "yarn run prettier && yarn run lint",
+    "prepush": "yarn test",
     "lint": "eslint ./src",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "start" :"yarn run storybook:dev",
     "storybook:dev": "start-storybook -p 9001 -c .storybook",
     "storybook:build": "rimraf docs && build-storybook -c .storybook -o docs",
-    "test": "jest"
+    "test": "jest",
+    "prettier": "prettier --single-quote --no-semi \"src/**/*.js\" --write",
+    "prettier:test": "prettier --single-quote --no-semi \"src/**/*.js\"",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
     "type": "git",
@@ -62,6 +66,9 @@
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-test-renderer": "^15.6.1",
+    "husky": "^0.13.4",
+    "lint-staged": "^4.0.0",
+    "prettier": "^1.4.4",
     "recursive-readdir-sync": "^1.0.6",
     "rimraf": "^2.6.1",
     "semantic-release": "^6.3.6"

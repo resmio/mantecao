@@ -1,6 +1,6 @@
-import React, {Component, PropTypes} from 'react'
+import React, { Component, PropTypes } from 'react'
 import EventListener from 'react-event-listener'
-import {colors} from '../../variables'
+import { colors } from '../../variables'
 
 const defaultContainerStyle = {
   position: 'relative',
@@ -16,9 +16,9 @@ const defaultChildrenStyle = {
   minWidth: '100%',
   zIndex: 1000
 }
-const centerChildren = {left: '50%', transform: 'translate(-50%, 0)'}
-const leftChildren = {left: 0}
-const rightChildren = {right: 0}
+const centerChildren = { left: '50%', transform: 'translate(-50%, 0)' }
+const leftChildren = { left: 0 }
+const rightChildren = { right: 0 }
 
 const defaultTriggerStyle = {
   width: '100%'
@@ -55,53 +55,68 @@ const defaultBackgroundArrow = {
 class Dropdown extends Component {
   state = {
     mouseIsOver: false,
-    onMouseLeave: () => this.setState({mouseIsOver: false}),
-    onMouseEnter: () => this.setState({mouseIsOver: true}),
+    onMouseLeave: () => this.setState({ mouseIsOver: false }),
+    onMouseEnter: () => this.setState({ mouseIsOver: true }),
     isOpen: false,
     stillPropagating: false,
-    openDropdown: () => this.setState({isOpen: true, stillPropagating: true}),
-    closeDropdown: () => this.setState({isOpen: false})
+    openDropdown: () => this.setState({ isOpen: true, stillPropagating: true }),
+    closeDropdown: () => this.setState({ isOpen: false })
   }
-  render () {
-    const {children, triggerNode, disabled, left, right, center, arrow, lockWidth, fullWidth, borderColor, backgroundColor} = this.props
-    const {onMouseLeave, onMouseEnter, mouseIsOver} = this.state
-    const {isOpen, openDropdown} = this._getControls()
+  render() {
+    const {
+      children,
+      triggerNode,
+      disabled,
+      left,
+      right,
+      center,
+      arrow,
+      lockWidth,
+      fullWidth,
+      borderColor,
+      backgroundColor
+    } = this.props
+    const { onMouseLeave, onMouseEnter, mouseIsOver } = this.state
+    const { isOpen, openDropdown } = this._getControls()
 
-    const computedContainerStyle = Object.assign({},
+    const computedContainerStyle = Object.assign(
+      {},
       defaultContainerStyle,
-      fullWidth ? {width: '100%'} : {}
+      fullWidth ? { width: '100%' } : {}
     )
 
-    const computedTriggerStyle = Object.assign({},
-      defaultTriggerStyle,
-      {cursor: disabled ? 'not-allowed' : 'pointer'}
-    )
+    const computedTriggerStyle = Object.assign({}, defaultTriggerStyle, {
+      cursor: disabled ? 'not-allowed' : 'pointer'
+    })
 
-    const computedChildrenStyle = Object.assign({},
+    const computedChildrenStyle = Object.assign(
+      {},
       defaultChildrenStyle,
-      borderColor ? {borderColor} : {},
-      backgroundColor ? {backgroundColor} : {},
-      arrow ? {marginTop: '5px'} : {},
+      borderColor ? { borderColor } : {},
+      backgroundColor ? { backgroundColor } : {},
+      arrow ? { marginTop: '5px' } : {},
       left ? leftChildren : {},
       right ? rightChildren : {},
       center ? centerChildren : {},
-      lockWidth ? {maxWidth: '100%'} : {}
+      lockWidth ? { maxWidth: '100%' } : {}
     )
 
-    const computedBackgroundArrow = Object.assign({},
+    const computedBackgroundArrow = Object.assign(
+      {},
       defaultBackgroundArrow,
-      backgroundColor ? {borderBottomColor: backgroundColor} : {},
+      backgroundColor ? { borderBottomColor: backgroundColor } : {}
     )
 
-    const computedBorderArrow = Object.assign({},
+    const computedBorderArrow = Object.assign(
+      {},
       defaultBorderArrow,
-      borderColor ? {borderBottomColor: borderColor} : {},
+      borderColor ? { borderBottomColor: borderColor } : {}
     )
 
     const ArrowThing = (
       <div>
-        <div style={computedBorderArrow}></div>
-        <div style={computedBackgroundArrow}></div>
+        <div style={computedBorderArrow} />
+        <div style={computedBackgroundArrow} />
       </div>
     )
 
@@ -115,37 +130,39 @@ class Dropdown extends Component {
       >
         {isOpen
           ? <EventListener target={window} onClick={this._onWindowClick} />
-          : null
-        }
+          : null}
         <div onClick={computedToggleFunc} style={computedTriggerStyle}>
           {triggerNode}
         </div>
         {arrow && isOpen ? ArrowThing : null}
-        {isOpen
-          ? <div style={computedChildrenStyle}>{children}</div>
-          : null
-        }
+        {isOpen ? <div style={computedChildrenStyle}>{children}</div> : null}
       </div>
     )
   }
   _onWindowClick = () => {
-    const {closeOnClick} = this.props
-    const {mouseIsOver, stillPropagating} = this.state
-    const {isOpen, closeDropdown} = this._getControls()
+    const { closeOnClick } = this.props
+    const { mouseIsOver, stillPropagating } = this.state
+    const { isOpen, closeDropdown } = this._getControls()
     if (closeOnClick && stillPropagating) {
-      this.setState({stillPropagating: false}) // <-- bug fix for the synthetic event propagation... wow
+      this.setState({ stillPropagating: false }) // <-- bug fix for the synthetic event propagation... wow
     } else if (!mouseIsOver || closeOnClick) {
       closeDropdown()
     }
   }
   _getControls = () => {
-    const {openDropdown, closeDropdown, isOpen} = this[this._hasExternalControls() ? 'props' : 'state']
-    return {openDropdown, isOpen, closeDropdown}
+    const { openDropdown, closeDropdown, isOpen } = this[
+      this._hasExternalControls() ? 'props' : 'state'
+    ]
+    return { openDropdown, isOpen, closeDropdown }
   }
   _hasExternalControls = () => {
     // only if we have full controll from outside can use use props
-    const {openDropdown, closeDropdown, isOpen} = this.props
-    return (openDropdown !== undefined && closeDropdown !== undefined && isOpen !== undefined)
+    const { openDropdown, closeDropdown, isOpen } = this.props
+    return (
+      openDropdown !== undefined &&
+      closeDropdown !== undefined &&
+      isOpen !== undefined
+    )
   }
 }
 

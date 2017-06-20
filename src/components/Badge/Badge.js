@@ -1,5 +1,5 @@
-import React, {PropTypes} from 'react'
-import {colors} from '../../variables'
+import React, { PropTypes } from 'react'
+import { colors } from '../../variables'
 
 const defaultBadgeStyle = {
   display: 'inline-block',
@@ -18,7 +18,7 @@ const defaultBadgeStyle = {
 /**
  * small badge - we can update this later
  */
-const Badge = (props) => {
+const Badge = props => {
   const computedBadgeStyle = Object.assign({}, defaultBadgeStyle, props.style)
   return (
     <span style={computedBadgeStyle}>

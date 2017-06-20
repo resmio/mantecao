@@ -1,8 +1,8 @@
-import React, {Component, PropTypes} from 'react'
+import React, { Component, PropTypes } from 'react'
 
-import {ErrorIcon, WarningIcon, InfoIcon, SuccessIcon} from '../../icons'
+import { ErrorIcon, WarningIcon, InfoIcon, SuccessIcon } from '../../icons'
 
-import {colors} from '../../variables'
+import { colors } from '../../variables'
 
 const defaultAlertStyle = {
   width: '100%',
@@ -20,16 +20,16 @@ const defaultIconStyle = {
   padding: '0.5rem'
 }
 const defaultAlertColors = {
-  'alert': colors.goldenTainoi,
-  'error': colors.amaranth,
-  'info': colors.pacificBlue,
-  'success': colors.java
+  alert: colors.goldenTainoi,
+  error: colors.amaranth,
+  info: colors.pacificBlue,
+  success: colors.java
 }
 const defaultAlertIcons = {
-  'alert': <WarningIcon />,
-  'error': <ErrorIcon />,
-  'info': <InfoIcon />,
-  'success': <SuccessIcon />
+  alert: <WarningIcon />,
+  error: <ErrorIcon />,
+  info: <InfoIcon />,
+  success: <SuccessIcon />
 }
 const defaultChildrenStyle = {
   padding: '0.5rem 1rem',
@@ -41,19 +41,17 @@ const defaultChildrenStyle = {
  * (types: alert, error, info) with a small icon display and message body
  */
 class InlineAlert extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
-    this.alertStyle = Object.assign({},
-      defaultAlertStyle,
-      { borderColor: defaultAlertColors[props.type] }
-    )
-    this.iconStyle = Object.assign({},
-      defaultIconStyle,
-      { backgroundColor: defaultAlertColors[props.type] }
-    )
+    this.alertStyle = Object.assign({}, defaultAlertStyle, {
+      borderColor: defaultAlertColors[props.type]
+    })
+    this.iconStyle = Object.assign({}, defaultIconStyle, {
+      backgroundColor: defaultAlertColors[props.type]
+    })
     this.alertIcon = defaultAlertIcons[props.type]
   }
-  render () {
+  render() {
     return (
       <div style={this.alertStyle}>
         <span style={this.iconStyle}>
