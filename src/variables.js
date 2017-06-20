@@ -74,6 +74,7 @@ export const theme = (function() {
     borderColor,
     borderRadius,
     baseSpace: '0.625em',
+    smallSpace: '0.312em',
     formBoxShadow,
     formBoxShadowFocus: `${formBoxShadow}, 0 0 5px ${colors.charlotte}`,
     transitionDuration: '150ms',
