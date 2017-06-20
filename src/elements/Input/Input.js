@@ -1,10 +1,14 @@
 import React from 'react'
 import styled, { injectGlobal } from 'styled-components'
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { shade, darken, tint, normalize } from 'polished'
 =======
 import { shade, tint, normalize } from 'polished'
 >>>>>>> Add basic styles for input element
+=======
+import { shade, darken, tint, normalize } from 'polished'
+>>>>>>> Add stories to the Input element
 import { theme } from '../../variables'
 
 injectGlobal`${normalize('excludeOpinionated')}`
@@ -41,6 +45,7 @@ const StyledInput = styled.input`
 const computeStyles = type => {
   switch(type) {
     case 'checkbox':
+    case 'radio':
       return `
         display: inline;
         margin-right: ${theme.smallSpace};
@@ -79,7 +84,7 @@ const computeStyles = type => {
         }
 
         &:disabled {
-          background-color: ${shade(0.2, theme.backgroundColor)};
+          background-color: ${darken(0.1, theme.backgroundColor)};
           cursor: not-allowed;
 
           &:hover {
