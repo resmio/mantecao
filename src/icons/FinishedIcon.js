@@ -1,6 +1,5 @@
 import React from 'react'
-
-import { Icon } from '../components/Icon'
+import Icon from '../components/Icon'
 
 const FinishedIcon = props =>
   <Icon {...props}>
