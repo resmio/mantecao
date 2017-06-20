@@ -1,11 +1,14 @@
+/*
+  Sigue por aqui
+  https://github.com/rollup/rollup-plugin-babel/issues/120
+*/
 {
   "presets": [
-    "es2015",
+    "es2015", { "modules": false },
     "react",
     "flow"
   ],
   "plugins": [
-    "transform-export-extensions",
-    "transform-class-properties"
+    "external-helpers"
   ]
 }
