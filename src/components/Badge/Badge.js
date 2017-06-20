@@ -18,10 +18,10 @@ const StyledSpan = styled.span`
 /**
  * small badge - we can update this later
  */
-const Badge = (props) => {
+const Badge = ({style, children}) => {
   return (
-    <StyledSpan style={props.style}>
-      {props.children}
+    <StyledSpan style={style}>
+      {children}
     </StyledSpan>
   )
 }
