@@ -6,6 +6,15 @@ import Input from './Input'
 storiesOf('Input', module)
   .add('default', () => (
     <Input placeholder='email@email.com'/>
+<<<<<<< HEAD
+=======
+  ))
+  .add('disabled', () => (
+    <Input disabled/>
+  ))
+  .add('with extra styling', () => (
+    <Input style={{backgroundColor:'fuchsia'}}/>
+>>>>>>> Add stories to the Input element
   ))
 <<<<<<< HEAD
   .add('disabled', () => (
@@ -30,4 +39,10 @@ storiesOf('Input', module)
     <Input type='file'/>
 =======
 >>>>>>> Make the Input work for different types
+  ))
+  .add('type="radio"', () => (
+    <Input type='radio'/>
+  ))
+  .add('type="file"', () => (
+    <Input type='file'/>
   ))
