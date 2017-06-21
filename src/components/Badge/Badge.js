@@ -1,6 +1,6 @@
-import React, {PropTypes} from 'react'
+import React, { PropTypes } from 'react'
 import styled from 'styled-components'
-import {colors} from '../../variables'
+import { colors } from '../../variables'
 const StyledSpan = styled.span`
   display: inline-block;
   min-width: 10px;
@@ -18,7 +18,7 @@ const StyledSpan = styled.span`
 /**
  * small badge - we can update this later
  */
-const Badge = ({style, children}) => {
+const Badge = ({ style, children }) => {
   return (
     <StyledSpan style={style}>
       {children}

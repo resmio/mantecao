@@ -7,25 +7,23 @@ const DATE = '1984-03-19'
 
 describe('Date Selector', () => {
   it('renders with no date when no date is passed as a prop', () => {
-    const tree = renderer.create(
-      <DateSelector onChange={ON_CHANGE} />
-    ).toJSON()
+    const tree = renderer.create(<DateSelector onChange={ON_CHANGE} />).toJSON()
 
     expect(tree).toMatchSnapshot()
   })
 
   it('renders a date if you pass it as a prop', () => {
-    const tree = renderer.create(
-      <DateSelector date={DATE} onChange={ON_CHANGE} />
-    ).toJSON()
+    const tree = renderer
+      .create(<DateSelector date={DATE} onChange={ON_CHANGE} />)
+      .toJSON()
 
     expect(tree).toMatchSnapshot()
   })
 
   it('renders month before day if specified as a prop', () => {
-    const tree = renderer.create(
-      <DateSelector date={DATE} onChange={ON_CHANGE} monthBeforeDay />
-    ).toJSON()
+    const tree = renderer
+      .create(<DateSelector date={DATE} onChange={ON_CHANGE} monthBeforeDay />)
+      .toJSON()
 
     expect(tree).toMatchSnapshot()
   })

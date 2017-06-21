@@ -10,7 +10,7 @@ const StyledInput = styled.input`
 `
 
 const computeStyles = type => {
-  switch(type) {
+  switch (type) {
     case 'checkbox':
     case 'radio':
       return `
@@ -66,10 +66,8 @@ const computeStyles = type => {
   }
 }
 
-const Input = (props) => {
-  return (
-    <StyledInput {...props}/>
-  )
+const Input = props => {
+  return <StyledInput {...props} />
 }
 
 export default Input

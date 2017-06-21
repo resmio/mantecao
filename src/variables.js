@@ -4,7 +4,8 @@
 // - Borders in pixels
 // - Everything else in ems
 
-export const colors = { // http://veli.ee/colorpedia/
+export const colors = {
+  // http://veli.ee/colorpedia/
   // blues
   pacificBlue: '#00A7C4',
   deepCerulean: '#018EA6',
@@ -67,7 +68,8 @@ export const theme = (function() {
     },
     buttonPadding: '0.6em 2.4em',
     fontColor: colors.emperor,
-    fontFamily: '"Open Sans", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif',
+    fontFamily:
+      '"Open Sans", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif',
     fontSize: '1rem',
     backgroundColor: colors.white,
     border: `1px solid ${borderColor}`,

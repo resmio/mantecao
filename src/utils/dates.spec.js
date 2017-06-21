@@ -10,8 +10,18 @@ import {
 describe('MONTH_NAMES', () => {
   it('Ouputs an array with the month names in english', () => {
     const expected = [
-      'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August',
-      'September', 'October', 'November', 'December'
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July',
+      'August',
+      'September',
+      'October',
+      'November',
+      'December'
     ]
     expect(MONTH_NAMES).toEqual(expected)
   })
@@ -69,35 +79,35 @@ describe('getYearFromDate', () => {
 
 describe('isValidDate', () => {
   it('returns false for 31 November 2012', () => {
-    const actual = isValidDate({day: 31, month: 11, year: 2012})
+    const actual = isValidDate({ day: 31, month: 11, year: 2012 })
     const expected = false
 
     expect(actual).toEqual(expected)
   })
 
   it('returns false for 32 December 1999', () => {
-    const actual = isValidDate({day: 32, month: 12, year: 1999})
+    const actual = isValidDate({ day: 32, month: 12, year: 1999 })
     const expected = false
 
     expect(actual).toEqual(expected)
   })
 
   it('returns false for 29 February 2017', () => {
-    const actual = isValidDate({day: 29, month: 2, year: 2017})
+    const actual = isValidDate({ day: 29, month: 2, year: 2017 })
     const expected = false
 
     expect(actual).toEqual(expected)
   })
 
   it('returns true for 29 February 2016 (leap year)', () => {
-    const actual = isValidDate({day: 29, month: 2, year: 2016})
+    const actual = isValidDate({ day: 29, month: 2, year: 2016 })
     const expected = true
 
     expect(actual).toEqual(expected)
   })
 
   it('returns true for 27 April 1937', () => {
-    const actual = isValidDate({day: 27, month: 4, year: 1937})
+    const actual = isValidDate({ day: 27, month: 4, year: 1937 })
     const expected = true
 
     expect(actual).toEqual(expected)
