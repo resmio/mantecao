@@ -6,13 +6,14 @@ import uglify from 'rollup-plugin-uglify';
 
 var env = process.env.NODE_ENV
 var config = {
-  entry: 'src',
-  format: 'iife',
+  entry: 'src/index.js',
+  format: 'umd',
   moduleName: 'Mantecao',
   external: [
     'react',
     'react-dom',
-    'react-event-listener'
+    'react-event-listener',
+    '@resmio/rollico/dist'
   ],
   globals: {
     'react': 'React',
@@ -39,14 +40,7 @@ if (env === 'production') {
         pure_getters: true,
         unsafe: true,
         unsafe_comps: true,
-        warnings: false,
-        screw_ie8: false
-      },
-      mangle: {
-        screw_ie8: false
-      },
-      output: {
-        screw_ie8: false
+        warnings: false
       }
     })
   )

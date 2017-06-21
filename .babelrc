@@ -8,11 +8,17 @@
     "react",
     "flow"
   ],
+  "ignore":[
+    "**/*.stories.js",
+    "**/*.spec.js",
+    "**/*.tape.js"
+  ],
   "env": {
     "commonjs": {
       "presets": ["es2015", "react", "flow"],
       "plugins": [
-        "transform-class-properties"
+        "transform-class-properties",
+        "transform-export-extensions"
       ]
     },
     "es": {

@@ -2,7 +2,6 @@ import React, { Component, PropTypes as t } from 'react'
 import styles from './DateSelector.styles'
 import Select from './Select'
 import { TrashIcon } from '../../icons'
-// import '@resmio/rollico'
 
 import {
   isValidDate,

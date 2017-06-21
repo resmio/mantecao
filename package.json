@@ -6,14 +6,14 @@
   "module": "es/index.js",
   "scripts": {
     "commit": "git cz",
-    "prebuild": "yarn run clean:build",
+    "prebuild": "yarn run clean:builds",
     "build:commonjs": "cross-env BABEL_ENV=commonjs babel src --out-dir lib",
     "build:es": "cross-env BABEL_ENV=es babel src --out-dir es",
-    "build:umd": "cross-env BABEL_ENV=es NODE_ENV=development rollup -c -i src/index.js -o dist/mantecao.js",
+    "build:umd": "cross-env BABEL_ENV=rollup NODE_ENV=development rollup -c -o dist/mantecao.js",
     "build": "yarn run build:icon-index && yarn run build:babel",
     "build:babel": "NODE_ENV=release babel ./src --out-dir ./dist --ignore stories.js,spec.js,tape.js",
     "build:icon-index": "babel-node ./scripts/icon-index-generator.js",
-    "clean:build": "rimraf dist",
+    "clean:builds": "rimraf dist es lib",
     "precommit": "yarn run prettier && yarn run lint",
     "prepush": "yarn test",
     "lint": "eslint ./src",
@@ -47,16 +47,12 @@
     "verifyConditions": "condition-circle"
   },
   "peerDependencies": {
-    "react-event-listener": "0.x",
     "@resmio/rollico": "^3.0.0",
     "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "react-dom": "^15.6.1",
+    "react-event-listener": "0.x"
   },
   "devDependencies": {
-    "babel-preset-es2015": "^6.24.1",
-    "commitizen": "^2.9.6",
-    "cz-conventional-changelog": "^2.0.0",
-    "glamor": "^2.20.25",
     "@storybook/react": "^3.1.3",
     "babel-cli": "^6.24.1",
     "babel-core": "^6.25.0",
@@ -65,9 +61,12 @@
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-export-extensions": "^6.22.0",
     "babel-preset-env": "^1.5.2",
+    "babel-preset-es2015": "^6.24.1",
     "babel-preset-flow": "^6.23.0",
     "babel-preset-react": "^6.24.1",
+    "commitizen": "^2.9.6",
     "cross-env": "^5.0.1",
+    "cz-conventional-changelog": "^2.0.0",
     "eslint": "^4.0.0",
     "eslint-config-react-app": "^1.0.4",
     "eslint-plugin-flowtype": "^2.34.0",
@@ -75,6 +74,7 @@
     "eslint-plugin-jsx-a11y": "^5.0.3",
     "eslint-plugin-react": "^7.1.0",
     "flow-bin": "^0.48.0",
+    "glamor": "^2.20.25",
     "husky": "^0.13.4",
     "jest": "^20.0.4",
     "lint-staged": "^4.0.0",
@@ -86,6 +86,7 @@
     "rimraf": "^2.6.1",
     "rollup": "^0.43.0",
     "rollup-plugin-babel": "^2.7.1",
+    "rollup-plugin-commonjs": "^8.0.2",
     "rollup-plugin-node-resolve": "^3.0.0",
     "rollup-plugin-replace": "^1.1.1",
     "rollup-plugin-uglify": "^2.0.1",
@@ -94,9 +95,7 @@
   "directories": {
     "doc": "docs"
   },
-  "dependencies": {
-
-  },
+  "dependencies": {},
   "config": {
     "commitizen": {
       "path": "node_modules/cz-conventional-changelog"

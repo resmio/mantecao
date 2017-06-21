@@ -1,5 +1,5 @@
 import { css } from 'glamor'
-import { colors } from '@resmio/rollico/dist/'
+import { colors } from '../../variables'
 
 export const styles = {
   tag: css({
