@@ -1,3 +1,9 @@
+// Putting this here cause don't know where else to put it
+// Rule of thumb for defining sizes:
+// - Font-sizes in rems
+// - Borders in pixels
+// - Everything else in ems
+
 export const colors = {
   // http://veli.ee/colorpedia/
   // blues
@@ -7,6 +13,7 @@ export const colors = {
   oxfordBlue: '#333B4F',
   ebonyClay: '#293140',
   midnightExpress: '#1E2532',
+  charlotte: '#B9F2FA',
   // greens
   java: '#22CCAA',
   mountainMeadow: '#21B498',
@@ -47,3 +54,32 @@ export const iconSizes = {
   medium: '2.75rem', // default
   large: '3.5rem'
 }
+
+export const theme = (function() {
+  const borderColor = colors.alto
+  const borderRadius = '4px'
+  const formBoxShadow = `inset 0 1px 3px ${colors.gallery}`
+
+  return {
+    actionColor: {
+      light: colors.pacificBlue,
+      medium: colors.blueBayoux,
+      dark: colors.fiord
+    },
+    buttonPadding: '0.6em 2.4em',
+    fontColor: colors.emperor,
+    fontFamily:
+      '"Open Sans", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif',
+    fontSize: '1rem',
+    backgroundColor: colors.white,
+    border: `1px solid ${borderColor}`,
+    borderColor,
+    borderRadius,
+    baseSpace: '0.625em',
+    smallSpace: '0.312em',
+    formBoxShadow,
+    formBoxShadowFocus: `${formBoxShadow}, 0 0 5px ${colors.charlotte}`,
+    transitionDuration: '150ms',
+    transitionTiming: 'ease'
+  }
+})()

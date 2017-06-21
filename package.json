@@ -13,7 +13,8 @@
     "precommit": "yarn run prettier && yarn run lint",
     "prepush": "yarn test",
     "lint": "eslint ./src",
-    "start" :"yarn run storybook:dev",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "start": "yarn run storybook:dev",
     "storybook:dev": "start-storybook -p 9001 -c .storybook",
     "storybook:build": "rimraf docs && build-storybook -c .storybook -o docs",
     "test": "jest",
@@ -50,6 +51,7 @@
     "babel-cli": "^6.24.1",
     "babel-core": "^6.25.0",
     "babel-eslint": "^7.2.3",
+    "babel-plugin-polished": "^1.1.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-export-extensions": "^6.22.0",
     "babel-preset-env": "^1.5.2",
@@ -71,7 +73,8 @@
     "prettier": "^1.4.4",
     "recursive-readdir-sync": "^1.0.6",
     "rimraf": "^2.6.1",
-    "semantic-release": "^6.3.6"
+    "semantic-release": "^6.3.6",
+    "styled-components": "^2.1.0"
   },
   "directories": {
     "doc": "docs"
