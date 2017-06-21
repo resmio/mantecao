@@ -8,15 +8,23 @@
     "react",
     "flow"
   ],
-  "plugins": [
-    "external-helpers",
-    "transform-export-extensions",
-    "transform-class-properties"
-  ],
   "env": {
     "commonjs": {
       "presets": ["es2015", "react", "flow"],
       "plugins": [
+        "transform-class-properties"
+      ]
+    },
+    "es": {
+      "plugins": [
+        "transform-export-extensions",
+        "transform-class-properties"
+      ]
+    },
+    "rollup": {
+      "plugins": [
+        "external-helpers",
+        "transform-export-extensions",
         "transform-class-properties"
       ]
     }

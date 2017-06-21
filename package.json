@@ -2,7 +2,8 @@
   "name": "@resmio/mantecao",
   "version": "0.0.0-semantically-released",
   "description": "A react UI library for resmio",
-  "main": "dist/index.js",
+  "main": "./lib/index.js",
+  "module": "es/index.js",
   "scripts": {
     "commit": "git cz",
     "prebuild": "yarn run clean:build",
