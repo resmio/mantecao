@@ -6,8 +6,19 @@ import uglify from 'rollup-plugin-uglify';
 
 var env = process.env.NODE_ENV
 var config = {
-  format: 'umd',
+  entry: 'src',
+  format: 'iife',
   moduleName: 'Mantecao',
+  external: [
+    'react',
+    'react-dom',
+    'react-event-listener'
+  ],
+  globals: {
+    'react': 'React',
+    'react-dom': 'ReactDOM',
+    'react-event-listener': 'EventListener'
+  },
   plugins: [
     nodeResolve({
       jsnext: true
@@ -42,4 +53,3 @@ if (env === 'production') {
 }
 
 export default config
-8

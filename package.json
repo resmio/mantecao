@@ -6,6 +6,8 @@
   "scripts": {
     "commit": "git cz",
     "prebuild": "yarn run clean:build",
+    "build:commonjs": "cross-env BABEL_ENV=commonjs babel src --out-dir lib",
+    "build:es": "cross-env BABEL_ENV=es babel src --out-dir es",
     "build:umd": "cross-env BABEL_ENV=es NODE_ENV=development rollup -c -i src/index.js -o dist/mantecao.js",
     "build": "yarn run build:icon-index && yarn run build:babel",
     "build:babel": "NODE_ENV=release babel ./src --out-dir ./dist --ignore stories.js,spec.js,tape.js",
