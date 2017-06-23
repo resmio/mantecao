@@ -6,9 +6,9 @@
   "scripts": {
     "commit": "git cz",
     "prebuild": "yarn run clean:build",
-    "build": "yarn run build:icon-index && yarn run build:babel",
+    "build": "yarn run build:icon-index && yarn run build:babel && yarn run build:webpack",
     "build:babel": "NODE_ENV=production BABEL_ENV=production babel ./src --out-dir ./dist",
-    "build:webpack": "NODE_ENV=production webpack",
+    "build:webpack": "NODE_ENV=production BABEL_ENV=production webpack",
     "build:icon-index": "babel-node ./scripts/icon-index-generator.js",
     "clean:build": "rimraf dist",
     "precommit": "yarn run prettier && yarn run lint",
