@@ -81,6 +81,8 @@
     "rimraf": "^2.6.1",
     "semantic-release": "^6.3.6",
     "styled-components": "^2.1.0",
+    "uglify-js": "^3.0.19",
+    "uglifyjs-webpack-plugin": "^0.4.6",
     "webpack": "^3.0.0"
   },
   "directories": {

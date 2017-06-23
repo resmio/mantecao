@@ -1,35 +1,31 @@
-var path = require('path')
-var webpack = require('webpack')
+const path = require('path');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 
 module.exports = {
-  entry: {
-	   'main':'./src/index.js'
-  },
+  entry: './src/index.js',
   output: {
-    path: __dirname + '/dist/',
-	  filename: 'mantecao.js'
+    filename: 'mantecao.js',
+    path: path.resolve(__dirname, 'dist'),
+    library: 'mantecao',
+    libraryTarget: 'var'
   },
-  module: {
-    loaders: [
+  externals: [
+    '@resmio/rollico',
+    'react',
+    'react-dom',
+    'react-event-listener',
+    'glamor',
+    'styled-components'
+  ],
+   module: {
+    rules: [
       {
-        test: /.jsx?$/,
-        loader: 'babel-loader',
-        exclude: /node_modules/,
-        query: {
-          presets: ['react']
-        }
-      }],
-      plugins: [
-	       new webpack.optimize.OccurrenceOrderPlugin(),
-	       new webpack.DefinePlugin({
-	          'process.env': {
-		            'NODE_ENV': JSON.stringify('production')
-	          }
-	       }),
-	       new webpack.optimize.UglifyJsPlugin({
-	          compressor: {
-		            warnings: false
-	          }
-	       })
+        test: /\.js$/,
+        use: 'babel-loader'
+      }
     ]
+  },
+  plugins: [
+    new UglifyJSPlugin()
+  ]
 }

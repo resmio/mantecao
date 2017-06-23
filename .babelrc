@@ -1,6 +1,6 @@
 {
   "presets": [
-    "es2015",
+    ["es2015", {"modules": false}],
     "react",
     "flow"
   ],
@@ -13,13 +13,5 @@
     "polished",
     "transform-export-extensions",
     "transform-class-properties"
-  ],
-  "env": {
-    "production": {
-      "presets": [["babili", {
-        "evaluate": false,
-        "mangle": false
-      }]]
-    }
-  }
+  ]
 }
