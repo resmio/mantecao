@@ -1,20 +1,42 @@
 {
-  "presets": [
-    "es2015",
-    "stage-1",
-    "react",
-    "flow"
-  ],
-  "plugins": [
-    "polished",
-    "transform-export-extensions",
-    "transform-class-properties"
-  ],
   "env": {
+    "development": {
+      "presets": [
+        "es2015",
+        "stage-1",
+        "react",
+        "flow"
+      ],
+      "plugins": [
+        ["transform-replace-object-assign", "simple-assign"],
+        "transform-dev-warning",
+        "polished"
+      ]
+    },
     "release": {
+      "presets": [
+        "es2015",
+        "stage-1",
+        "react",
+        "flow"
+      ],
       "plugins": [
         "transform-runtime",
-        ["transform-react-remove-prop-types", {"mode": "wrap"}]
+        ["transform-react-remove-prop-types", {"mode": "wrap"}],
+        "polished"
+      ]
+    },
+    "es": {
+      "presets": [
+        ["es2015", {"modules": false}],
+        "stage-1",
+        "react",
+        "flow"
+      ],
+      "plugins": [
+        ["transform-replace-object-assign", "simple-assign"],
+        "transform-dev-warning",
+        "polished"
       ]
     }
   }
