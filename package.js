@@ -1,13 +1,20 @@
+// A commented version of package.json
+// Since they don't allow comments there
+
 {
-  "name": "@resmio/mantecao",
-  "version": "0.0.0-semantically-released",
-  "description": "A react UI library for resmio",
+  // We change the version through semantic-release so we
+  // don't need to update this manually
+  "version":	"0.0.0-semantically-released",
+  // Npm will point to this file when the library is installed
   "main": "dist/index.js",
   "scripts": {
+    // alias for comming through commitzen, that way
+    // we don't need to add commitzen globally
     "commit": "git cz",
+    // runs automatically before 'build' task
     "prebuild": "yarn run clean:build",
     "build": "yarn run build:icon-index && yarn run build:babel",
-    "build:babel": "NODE_ENV=release babel ./src --out-dir ./build --ignore stories.js,spec.js,tape.js",
+    "build:babel": "NODE_ENV=release babel ./src --out-dir ./dist --ignore stories.js,spec.js,tape.js",
     "build:icon-index": "babel-node ./scripts/icon-index-generator.js",
     "clean:build": "rimraf dist",
     "precommit": "yarn run prettier && yarn run lint",
@@ -21,32 +28,6 @@
     "prettier": "prettier --single-quote --no-semi \"src/**/*.js\" --write",
     "prettier:test": "prettier --single-quote --no-semi \"src/**/*.js\""
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/resmio/mantecao.git"
-  },
-  "keywords": [
-    "react",
-    "ui",
-    "library",
-    "components",
-    "dialog",
-    "resmio"
-  ],
-  "author": "resmio <developers@resmio.com> (https://resmio.com)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/resmio/mantecao/issues"
-  },
-  "homepage": "https://resmio.github.io/mantecao",
-  "release": {
-    "verifyConditions": "condition-circle"
-  },
-  "peerDependencies": {
-    "react": "15.x",
-    "react-dom": "15.x",
-    "react-event-listener": "0.x"
-  },
   "devDependencies": {
     "@storybook/react": "^3.1.3",
     "babel-cli": "^6.24.1",
@@ -54,18 +35,10 @@
     "babel-eslint": "^7.2.3",
     "babel-plugin-polished": "^1.1.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-plugin-transform-dev-warning": "^0.1.0",
     "babel-plugin-transform-export-extensions": "^6.22.0",
-    "babel-plugin-transform-react-constant-elements": "^6.23.0",
-    "babel-plugin-transform-react-remove-prop-types": "^0.4.6",
-    "babel-plugin-transform-replace-object-assign": "^0.2.1",
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-env": "^1.5.2",
     "babel-preset-flow": "^6.23.0",
     "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-1": "^6.24.1",
-    "commitizen": "^2.9.6",
-    "cz-conventional-changelog": "^2.0.0",
     "eslint": "^4.0.0",
     "eslint-config-react-app": "^1.0.4",
     "eslint-plugin-flowtype": "^2.34.0",
@@ -85,18 +58,10 @@
     "semantic-release": "^6.3.6",
     "styled-components": "^2.1.0"
   },
-  "directories": {
-    "doc": "docs"
-  },
-  "dependencies": {
-    "@resmio/rollico": "^3.0.0",
-    "babel-runtime": "^6.23.0",
-    "glamor": "^2.20.25",
-    "react-event-listener": "^0.4.5"
-  },
-  "config": {
-    "commitizen": {
-      "path": "node_modules/cz-conventional-changelog"
-    }
-  }
 }
+
+// This plugin removes development warning from production code.
+"babel-plugin-transform-dev-warning"
+
+// Skipped
+babel-plugin-transform-react-inline-elements // requires babel-polyfill
