@@ -1,5 +1,5 @@
 import React from 'react'
-import Icon from '../components/Icon'
+import Icon from '../Icon'
 
 const InfoIcon = props =>
   <Icon {...props}>

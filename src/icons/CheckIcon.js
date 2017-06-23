@@ -1,5 +1,5 @@
 import React from 'react'
-import Icon from '../components/Icon'
+import Icon from '../Icon'
 
 const CheckIcon = props =>
   <Icon {...props} transform="translate(0, -2)">
