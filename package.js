@@ -13,8 +13,9 @@
     "commit": "git cz",
     // runs automatically before 'build' task
     "prebuild": "yarn run clean:build",
-    "build": "yarn run build:icon-index && yarn run build:babel",
+    "build": "yarn run build:icon-index && yarn run build:babel && yarn run build:copy-files",
     "build:babel": "NODE_ENV=release babel ./src --out-dir ./dist --ignore stories.js,spec.js,tape.js",
+    "build:copy-files": "babel-node ./scripts/copy-files.js",
     "build:icon-index": "babel-node ./scripts/icon-index-generator.js",
     "clean:build": "rimraf dist",
     "precommit": "yarn run prettier && yarn run lint",
