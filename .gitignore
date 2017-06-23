@@ -6,6 +6,7 @@ webpack-stats.json
 
 # Build folder
 dist/
+build/
 
 # Code coverage
 coverage/
