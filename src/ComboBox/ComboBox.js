@@ -1,9 +1,9 @@
 import React, { Component, PropTypes } from 'react'
 import ReactDOM from 'react-dom'
 
-import { TextField } from '../TextField'
-import { Dropdown } from '../Dropdown'
-import { KeyCodeListener } from '../KeyCodeListener'
+import TextField from '../TextField'
+import Dropdown from '../Dropdown'
+import KeyCodeListener from '../KeyCodeListener'
 
 import ComboBoxOptions from './_options'
 import ComboBoxEmpty from './_empty'

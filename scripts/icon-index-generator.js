@@ -2,7 +2,7 @@ import fs from 'fs';
 import rrs from 'recursive-readdir-sync';
 
 const outArray = [];
-const svgIconPath = 'src/svg-icons/';
+const svgIconPath = 'src/icons/';
 
 rrs(svgIconPath).forEach((file) => {
   if (file !== 'index-generator.js' && file !== 'index.js') {

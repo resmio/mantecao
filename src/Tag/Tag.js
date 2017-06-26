@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { merge } from 'glamor'
 
-import { CloseIcon } from '../svg-icons'
+import CloseIcon from '../icons/CloseIcon'
 
 import { styles } from './styles'
 
