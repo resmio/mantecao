@@ -1,7 +1,7 @@
 import React, { Component, PropTypes as t } from 'react'
 import styles from './DateSelector.styles'
 import Select from './Select'
-import { TrashIcon } from '../icons'
+import { TrashIcon } from '../svg-icons'
 // import '@resmio/rollico'
 
 import {

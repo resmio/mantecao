@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 
-import { ErrorIcon, WarningIcon, InfoIcon, SuccessIcon } from '../icons'
+import { ErrorIcon, WarningIcon, InfoIcon, SuccessIcon } from '../svg-icons'
 
 import { colors } from '../variables'
 

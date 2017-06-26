@@ -7,7 +7,7 @@ import {
   WarningIcon,
   InfoIcon,
   CloseIcon
-} from '../icons'
+} from '../svg-icons'
 
 import { colors } from '../variables'
 
