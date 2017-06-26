@@ -1,5 +1,4 @@
 Example:
-
     <SelectField
       className='testClass'
       hint='this is a hint'
