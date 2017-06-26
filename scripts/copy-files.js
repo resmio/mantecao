@@ -58,7 +58,7 @@ function createPackageFile() {
     } = packageData;
 
     const minimalPackage = {
-      name: 'mantecao',
+      name: '@resmio/mantecao',
       author,
       version,
       description,
