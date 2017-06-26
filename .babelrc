@@ -26,6 +26,19 @@
         "polished"
       ]
     },
+    "test": {
+      "presets": [
+        "es2015",
+        "stage-1",
+        "react",
+        "flow"
+      ],
+      "plugins": [
+        ["transform-replace-object-assign", "simple-assign"],
+        "transform-dev-warning",
+        "polished"
+      ]
+    },
     "es": {
       "presets": [
         ["es2015", {"modules": false}],
