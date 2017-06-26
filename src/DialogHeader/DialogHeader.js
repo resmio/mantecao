@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 
-import { CloseIcon } from '../icons'
+import { CloseIcon } from '../svg-icons'
 import { UnstyledButton } from '../UnstyledButton'
 
 import { colors } from '../variables'
