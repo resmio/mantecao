@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react'
-import { Tag } from '../Tag'
+import Tag from '../Tag'
 
 import { styles } from './styles'
 
