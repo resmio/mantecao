@@ -1,6 +1,8 @@
 import React, { Component, PropTypes } from 'react'
 
-import { CheckIcon, BlankIcon } from '../svg-icons'
+import CheckIcon from '../icons/CheckIcon'
+import BlankIcon from '../icons/BlankIcon'
+
 import { styles } from './styles'
 
 class ComboBoxOption extends Component {

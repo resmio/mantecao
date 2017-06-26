@@ -1,11 +1,11 @@
 import React, { Component, PropTypes } from 'react'
 import ReactDOM from 'react-dom'
 
-import SuccessIcon from '../svg-icons/SuccessIcon'
-import ErrorIcon from '../svg-icons/ErrorIcon'
-import WarningIcon from '../svg-icons/WarningIcon'
-import InfoIcon from '../svg-icons/InfoIcon'
-import CloseIcon from '../svg-icons/CloseIcon'
+import SuccessIcon from '../icons/SuccessIcon'
+import ErrorIcon from '../icons/ErrorIcon'
+import WarningIcon from '../icons/WarningIcon'
+import InfoIcon from '../icons/InfoIcon'
+import CloseIcon from '../icons/CloseIcon'
 
 import { colors } from '../variables'
 

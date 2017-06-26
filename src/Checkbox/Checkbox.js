@@ -1,7 +1,7 @@
 import React, { PropTypes, Component } from 'react'
 
 import { colors, iconSizes } from '../variables'
-import { CheckIcon } from '../svg-icons'
+import CheckIcon from '../icons/CheckIcon'
 
 const defaultContainerStyle = {
   display: 'flex'
