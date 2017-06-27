@@ -23,7 +23,8 @@
     "start": "yarn run storybook:dev",
     "storybook:dev": "start-storybook -p 9001 -c .storybook",
     "storybook:build": "rimraf docs && build-storybook -c .storybook -o docs",
-    "test": "jest",
+    "test": "jest --config .jestconfig.json",
+    "test:ci": "jest --config .jestconfig.json --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "prettier": "prettier --single-quote --no-semi \"src/**/*.js\" --write",
     "prettier:test": "prettier --single-quote --no-semi \"src/**/*.js\""
   },
@@ -71,6 +72,7 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-1": "^6.24.1",
     "commitizen": "^2.9.6",
+    "coveralls": "^2.13.1",
     "cross-env": "^5.0.1",
     "cz-conventional-changelog": "^2.0.0",
     "eslint": "^4.0.0",
