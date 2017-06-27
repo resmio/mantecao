@@ -7,7 +7,7 @@ import { colors } from '../variables'
 
 // TODO: get the padding spaces from the theme
 const StyledWrapper = styled.div`
-  background-color: ${props => props.focused ? colors.alto : 'inherit'}
+  background-color: ${props => (props.focused ? colors.alto : 'inherit')}
   padding-bottom: 0.5rem;
   padding-left: 1rem;
   padding-top: 0.5rem;
