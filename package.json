@@ -16,7 +16,9 @@
     "clean:build": "rimraf build",
     "precommit": "yarn run prettier && yarn run lint",
     "prepush": "yarn test",
-    "lint": "eslint ./src",
+    "lint": "yarn run lint:css && yarn run lint:css",
+    "lint:css": "stylelint './src/**/*.js'",
+    "lint:es": "eslint ./src",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "start": "yarn run storybook:dev",
     "storybook:dev": "start-storybook -p 9001 -c .storybook",
@@ -88,7 +90,10 @@
     "recursive-readdir-sync": "^1.0.6",
     "rimraf": "^2.6.1",
     "semantic-release": "^6.3.6",
-    "simple-assign": "^0.1.0"
+    "simple-assign": "^0.1.0",
+    "stylelint": "^7.12.0",
+    "stylelint-config-standard": "^16.0.0",
+    "stylelint-processor-styled-components": "^0.1.2"
   },
   "directories": {
     "doc": "docs"

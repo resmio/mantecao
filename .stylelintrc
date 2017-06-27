@@ -1,0 +1,8 @@
+{
+  "processors": ["stylelint-processor-styled-components"],
+  "extends": "stylelint-config-standard",
+  "syntax": "scss",
+  "rules": {
+    "declaration-block-no-redundant-longhand-properties": null
+  }
+}
