@@ -1,13 +1,20 @@
 import React, { Component, PropTypes } from 'react'
 
 import Option from './_option'
-import { styles } from './styles'
+import styled from 'styled-components'
+import { colors } from '../variables'
+
+const StyledWrapper = styled.div`
+  max-height: 16rem;
+  overflow-x: hidden;
+  overflow-y: scroll;
+`
 
 class ComboBoxOptions extends Component {
   render() {
     const { options, selectedOptions, focusedIndex, onSelect } = this.props
     return (
-      <div {...styles.options.wrapper}>
+      <StyledWrapper>
         {options.map((option, i) => {
           return (
             <Option
@@ -20,7 +27,7 @@ class ComboBoxOptions extends Component {
             />
           )
         })}
-      </div>
+      </StyledWrapper>
     )
   }
 }
