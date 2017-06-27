@@ -88,8 +88,7 @@
     "recursive-readdir-sync": "^1.0.6",
     "rimraf": "^2.6.1",
     "semantic-release": "^6.3.6",
-    "simple-assign": "^0.1.0",
-    "styled-components": "^2.1.0"
+    "simple-assign": "^0.1.0"
   },
   "directories": {
     "doc": "docs"
@@ -98,7 +97,8 @@
     "@resmio/rollico": "^3.0.0",
     "babel-runtime": "^6.23.0",
     "glamor": "^2.20.25",
-    "react-event-listener": "^0.4.5"
+    "react-event-listener": "^0.4.5",
+    "styled-components": "^2.1.0"
   },
   "config": {
     "commitizen": {
