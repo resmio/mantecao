@@ -18,9 +18,9 @@ const StyledWrapper = styled.div`
   display: flex;
   justify-content: space-between;
 
-  & select:first-of-type + select  {
-    margin-right: .3em;
-    margin-left: .3em;
+  & select:first-of-type + select {
+    margin-right: 0.3em;
+    margin-left: 0.3em;
   }
 `
 
@@ -32,10 +32,10 @@ const StyledError = styled.div`
 const StyledTrash = styled.span`
   cursor: pointer;
   color: ${colors.dustyGray};
-  padding-top: .2em;
+  padding-top: 0.2em;
 
   &:hover {
-    color: ${colors.emperor}
+    color: ${colors.emperor};
   }
 `
 
