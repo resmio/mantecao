@@ -1,27 +1,47 @@
 import React, { Component, PropTypes } from 'react'
+import styled from 'styled-components'
 
 import CheckIcon from '../icons/CheckIcon'
 import BlankIcon from '../icons/BlankIcon'
+import { colors } from '../variables'
 
-import { styles } from './styles'
+// TODO: get the padding spaces from the theme
+const StyledWrapper = styled.div`
+  background-color: ${props => (props.focused ? colors.alto : 'inherit')}
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-top: 0.5rem;
+  padding-right: 1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  &:hover {
+    cursor: pointer;
+    background-color: ${colors.alto}
+  }
+`
+
+const PaddedText = styled.span`
+  padding-left: 0.75rem;
+`
+
+const checkIconStyles = {
+  // <-- inline styles, not styled-components
+  strokeWidth: '3px',
+  color: colors.pacificBlue
+}
 
 class ComboBoxOption extends Component {
   render() {
     const { text, selected, focused, onClick } = this.props
     return (
-      <div
-        {...Object.assign(
-          {},
-          styles.option.wrapper,
-          focused ? styles.option.focused : {}
-        )}
-        onClick={onClick}
-      >
+      <StyledWrapper onClick={onClick} focused={focused}>
         {selected
-          ? <CheckIcon xsmall style={styles.option.checkIcon} />
+          ? <CheckIcon xsmall style={checkIconStyles} />
           : <BlankIcon xsmall />}
-        <span {...styles.option.text}>{text}</span>
-      </div>
+        <PaddedText>{text}</PaddedText>
+      </StyledWrapper>
     )
   }
 }

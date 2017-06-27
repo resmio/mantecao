@@ -2,7 +2,7 @@
 
 exports[`Select renders correctly 1`] = `
 <select
-  data-css-jwxvo5=""
+  className="sc-bdVaJa estItw"
   id="testId"
   name="testName"
   onChange={[Function]}
@@ -38,7 +38,7 @@ exports[`Select renders correctly 1`] = `
 
 exports[`Select renders differently if it has an error 1`] = `
 <select
-  data-css-1indj9q=""
+  className="sc-bdVaJa chtzXX"
   id={undefined}
   name={undefined}
   onChange={[Function]}
@@ -72,7 +72,7 @@ exports[`Select renders differently if it has an error 1`] = `
 
 exports[`Select renders values if those are passed as props 1`] = `
 <select
-  data-css-jwxvo5=""
+  className="sc-bdVaJa estItw"
   id={undefined}
   name={undefined}
   onChange={[Function]}
@@ -106,7 +106,7 @@ exports[`Select renders values if those are passed as props 1`] = `
 
 exports[`Select should fire the onOptionChange prop passing the value selected 1`] = `
 <select
-  data-css-jwxvo5=""
+  className="sc-bdVaJa estItw"
   id={undefined}
   name={undefined}
   onChange={[Function]}
