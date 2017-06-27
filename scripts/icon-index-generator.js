@@ -15,7 +15,7 @@ rrs(svgIconPath).forEach((file) => {
         const moduleName = fileLines[index].split(' ')[2].replace(';', '').trim();
         const modulePath = file.substring(0, file.length - 3).replace(/\\/g, '/').replace(svgIconPath, '');
 
-        outArray.push(`export ${moduleName} from './${modulePath}';\n`);
+        outArray.push(`export ${moduleName} from './${modulePath}'\n`);
 
         found = true;
       } else {
