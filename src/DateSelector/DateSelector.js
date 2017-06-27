@@ -1,8 +1,6 @@
 import React, { Component, PropTypes as t } from 'react'
-import styles from './DateSelector.styles'
-import Select from './Select'
-import TrashIcon from '../icons/TrashIcon'
-// import '@resmio/rollico'
+import styled from 'styled-components'
+import { colors } from '../variables'
 
 import {
   isValidDate,
@@ -12,6 +10,34 @@ import {
   getYearFromDate,
   MONTH_NAMES
 } from '../utils/dates'
+
+import Select from './Select'
+import TrashIcon from '../icons/TrashIcon'
+
+const StyledWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+
+  & select:first-of-type + select  {
+    margin-right: .3em;
+    margin-left: .3em;
+  }
+`
+
+const StyledError = styled.div`
+  font-size: 0.9em;
+  color: ${colors.amaranth};
+`
+
+const StyledTrash = styled.span`
+  cursor: pointer;
+  color: ${colors.dustyGray};
+  padding-top: .2em;
+
+  &:hover {
+    color: ${colors.emperor}
+  }
+`
 
 // Date Generation
 const days = [...Array(31 + 1).keys()].slice(1)
@@ -120,7 +146,7 @@ class DateSelector extends Component {
 
     return (
       <div>
-        <div {...styles.container}>
+        <StyledWrapper>
           {this.props.monthBeforeDay ? month : day}
           {this.props.monthBeforeDay ? day : month}
           <Select
@@ -133,14 +159,14 @@ class DateSelector extends Component {
             optionsAsValues
           />
           {this.props.allowReset &&
-            <span {...styles.trash} onClick={this.resetDate}>
-              <TrashIcon />
-            </span>}
-        </div>
+            <StyledTrash onClick={this.resetDate}>
+              <TrashIcon style={{ width: '2em', height: '2em' }} />
+            </StyledTrash>}
+        </StyledWrapper>
         {this.state.errors.invalid &&
-          <div {...styles.error}>
+          <StyledError>
             {this.props.errorString || 'Please provide a valid date'}
-          </div>}
+          </StyledError>}
       </div>
     )
   }

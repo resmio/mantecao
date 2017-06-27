@@ -1,6 +1,20 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styles from './Select.styles'
+import styled from 'styled-components'
+import { colors } from '../variables'
+
+const StyledSelect = styled.select`
+  background-color: ${colors.white};
+  flex: 1 1 30%;
+  font-size: 1em;
+  height: 2.4em;
+  color: ${colors.dustyGray};
+  border-color: ${props => (props.hasError ? colors.amaranth : colors.silver)};
+
+  &:focus {
+    outline-color: ${props => props.hasError && colors.amaranth};
+  }
+`
 
 const Select = ({
   id,
@@ -11,8 +25,8 @@ const Select = ({
   values,
   hasError
 }) =>
-  <select
-    {...styles.field(hasError)}
+  <StyledSelect
+    hasError={hasError}
     name={name}
     value={selected}
     onChange={onOptionChange}
@@ -22,7 +36,7 @@ const Select = ({
     {options.map((option, i) =>
       <option key={i} value={values ? values[i] : option}>{option}</option>
     )}
-  </select>
+  </StyledSelect>
 
 const { arrayOf, bool, func, number, oneOfType, string } = PropTypes
 
