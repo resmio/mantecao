@@ -1,5 +1,5 @@
 [![CircleCI](https://circleci.com/gh/resmio/mantecao.svg?style=svg)](https://circleci.com/gh/resmio/mantecao)
-[![Coverage Status](https://coveralls.io/repos/github/resmio/mantecao/badge.svg?branch=master)](https://coveralls.io/github/resmio/mantecao?branch=master)
+[![codecov](https://codecov.io/gh/resmio/mantecao/branch/master/graph/badge.svg)](https://codecov.io/gh/resmio/mantecao)
 
 #mantecao
 resmio UI Library powered by react components :muscle:
