@@ -3,10 +3,10 @@
 exports[`Date Selector renders a date if you pass it as a prop 1`] = `
 <div>
   <div
-    data-css-15rl7l3=""
+    className="sc-bwzfXH hNCqcJ"
   >
     <select
-      data-css-jwxvo5=""
+      className="sc-bdVaJa estItw"
       id="day"
       name="Day"
       onChange={[Function]}
@@ -174,7 +174,7 @@ exports[`Date Selector renders a date if you pass it as a prop 1`] = `
       </option>
     </select>
     <select
-      data-css-jwxvo5=""
+      className="sc-bdVaJa estItw"
       id="month"
       name="Month"
       onChange={[Function]}
@@ -247,7 +247,7 @@ exports[`Date Selector renders a date if you pass it as a prop 1`] = `
       </option>
     </select>
     <select
-      data-css-jwxvo5=""
+      className="sc-bdVaJa estItw"
       id="year"
       name="Year"
       onChange={[Function]}
@@ -871,10 +871,10 @@ exports[`Date Selector renders a date if you pass it as a prop 1`] = `
 exports[`Date Selector renders month before day if specified as a prop 1`] = `
 <div>
   <div
-    data-css-15rl7l3=""
+    className="sc-bwzfXH hNCqcJ"
   >
     <select
-      data-css-jwxvo5=""
+      className="sc-bdVaJa estItw"
       id="month"
       name="Month"
       onChange={[Function]}
@@ -947,7 +947,7 @@ exports[`Date Selector renders month before day if specified as a prop 1`] = `
       </option>
     </select>
     <select
-      data-css-jwxvo5=""
+      className="sc-bdVaJa estItw"
       id="day"
       name="Day"
       onChange={[Function]}
@@ -1115,7 +1115,7 @@ exports[`Date Selector renders month before day if specified as a prop 1`] = `
       </option>
     </select>
     <select
-      data-css-jwxvo5=""
+      className="sc-bdVaJa estItw"
       id="year"
       name="Year"
       onChange={[Function]}
@@ -1739,10 +1739,10 @@ exports[`Date Selector renders month before day if specified as a prop 1`] = `
 exports[`Date Selector renders with no date when no date is passed as a prop 1`] = `
 <div>
   <div
-    data-css-15rl7l3=""
+    className="sc-bwzfXH hNCqcJ"
   >
     <select
-      data-css-jwxvo5=""
+      className="sc-bdVaJa estItw"
       id="day"
       name="Day"
       onChange={[Function]}
@@ -1910,7 +1910,7 @@ exports[`Date Selector renders with no date when no date is passed as a prop 1`]
       </option>
     </select>
     <select
-      data-css-jwxvo5=""
+      className="sc-bdVaJa estItw"
       id="month"
       name="Month"
       onChange={[Function]}
@@ -1983,7 +1983,7 @@ exports[`Date Selector renders with no date when no date is passed as a prop 1`]
       </option>
     </select>
     <select
-      data-css-jwxvo5=""
+      className="sc-bdVaJa estItw"
       id="year"
       name="Year"
       onChange={[Function]}
