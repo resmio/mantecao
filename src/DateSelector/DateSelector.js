@@ -1,4 +1,5 @@
-import React, { Component, PropTypes as t } from 'react'
+import React, { Component } from 'react'
+import * as t from 'prop-types'
 import styled from 'styled-components'
 import { colors } from '../variables'
 

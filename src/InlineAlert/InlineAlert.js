@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 import SuccessIcon from '../icons/SuccessIcon'
 import ErrorIcon from '../icons/ErrorIcon'
