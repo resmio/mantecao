@@ -1,17 +1,49 @@
-import React, { Component, PropTypes } from 'react'
-import { merge } from 'glamor'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import styled from 'styled-components'
+import { colors } from '../variables'
 
 import CloseIcon from '../icons/CloseIcon'
 
-import { styles } from './styles'
+const CloseSpan = styled.span`
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 0.35em;
+
+  &:hover {
+    color: rgba(188, 33, 63, 1);
+  }
+`
+
+const TagDiv = styled.div`
+  background-color: ${props =>
+    props.hovered ? 'rgba(188, 33, 63, 0.2)' : 'rgba(248,193,80, 0.2)'};
+  border: ${props =>
+    props.hovered
+      ? '1px solid rgba(248,193,80, 0.2)'
+      : '1px solid rgba(188, 33, 63, 0.3)'};
+  border-left: 4px solid;
+  border-left-color: ${props =>
+    props.hovered ? 'rgba(188, 33, 63, 1)' : colors.goldenTainoi};
+  border-radius: 2px;
+  color: ${props => (props.hovered ? colors.emperor : colors.dustyGray)};
+  display: inline-block;
+  font-size: 0.8rem;
+  padding-right: 0.7em;
+`
+
+const TagSpan = styled.span`
+  display: inline-block;
+  padding: 0.5em 0.1em 0.5em 0.8em;
+`
 
 const AdjustedCloseIcon = (
   <CloseIcon
     style={{
-      height: '1.3rem',
-      width: '1.3rem',
+      height: '1.2em',
+      width: '1.2em',
       strokeWidth: '2.5px',
-      marginBottom: '0.2rem'
+      marginBottom: '0.2em'
     }}
   />
 )
@@ -25,11 +57,10 @@ class Tag extends Component {
     const { name, onClickAction } = this.props
 
     return (
-      <div {...merge(styles.tag, this.state.hovered && styles.hover)}>
-        <span {...styles.text}>{name}</span>
+      <TagDiv hovered={this.state.hovered}>
+        <TagSpan>{name}</TagSpan>
         {onClickAction &&
-          <span
-            {...styles.close}
+          <CloseSpan
             onClick={() => onClickAction(name)}
             onMouseEnter={() => {
               this.setState({ hovered: true })
@@ -39,8 +70,8 @@ class Tag extends Component {
             }}
           >
             {AdjustedCloseIcon}
-          </span>}
-      </div>
+          </CloseSpan>}
+      </TagDiv>
     )
   }
 }

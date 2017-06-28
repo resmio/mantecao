@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 
 import CloseIcon from '../icons/CloseIcon'
 import UnstyledButton from '../UnstyledButton'
