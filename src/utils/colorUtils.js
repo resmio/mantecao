@@ -1,5 +1,5 @@
 // @flow
-export const colorLuminance = (hex: string, lum?: number): string => {
+export const colorLuminance = (hex: number, lum?: number): string => {
   // validate hex string or default to white
   hex = String(hex).replace(/[^0-9a-f]/gi, '') || 'FFFFFF'
   if (hex.length < 6) {
