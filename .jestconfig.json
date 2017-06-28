@@ -1,0 +1,10 @@
+{
+  "collectCoverageFrom": [
+    "src/**/*.js",
+    "!src/index.js",
+    "!src/variables.js",
+    "!src/icons/**/*.js"
+  ],
+  "coverageDirectory": "./coverage/",
+  "collectCoverage": true
+}

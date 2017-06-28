@@ -23,7 +23,8 @@
     "start": "yarn run storybook:dev",
     "storybook:dev": "start-storybook -p 9001 -c .storybook",
     "storybook:build": "rimraf docs && build-storybook -c .storybook -o docs",
-    "test": "jest",
+    "test": "jest --config .jestconfig.json",
+    "test:ci": "jest --config .jestconfig.json && codecov",
     "prettier": "prettier --single-quote --no-semi \"src/**/*.js\" --write",
     "prettier:test": "prettier --single-quote --no-semi \"src/**/*.js\""
   },
@@ -70,6 +71,7 @@
     "babel-preset-flow": "^6.23.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-1": "^6.24.1",
+    "codecov": "^2.2.0",
     "commitizen": "^2.9.6",
     "cross-env": "^5.0.1",
     "cz-conventional-changelog": "^2.0.0",
