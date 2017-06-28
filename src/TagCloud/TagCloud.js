@@ -1,18 +1,22 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import styled from 'styled-components'
 
 import Tag from '../Tag'
 
-import { styles } from './styles'
+const ItemStyled = styled.div`
+  display: inline-block;
+  margin: 0.4em 0.4em 0.4em 0;
+`
 
 const TagCloud = ({ names, onClickAction }) =>
   <div>
     {names.map((name, i) =>
-      <div {...styles.item} key={i}>
+      <ItemStyled key={i}>
         {onClickAction
           ? <Tag name={name} onClickAction={name => onClickAction(name)} />
           : <Tag name={name} />}
-      </div>
+      </ItemStyled>
     )}
   </div>
 
