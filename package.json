@@ -4,7 +4,7 @@
   "description": "A react UI library for resmio",
   "main": "./src/index.js",
   "scripts": {
-    "commit": "git cz",
+    "cz": "git cz",
     "prebuild": "yarn run clean:build",
     "build": "yarn run build:icon-index && yarn run build:babel && yarn run build:copy-files && yarn run build:es",
     "build:babel": "NODE_ENV=release babel ./src --out-dir ./build --ignore stories.js,spec.js,tape.js",
@@ -14,7 +14,7 @@
     "build:es-icon-index": "cross-env BABEL_ENV=es babel ./src/icons/index.js --out-file ./build/icons/index.es.js",
     "build:icon-index": "babel-node ./scripts/icon-index-generator.js",
     "clean:build": "rimraf build",
-    "precommit": "yarn run prettier && yarn run lint",
+    "precommit": "lint-staged",
     "prepush": "yarn test",
     "lint": "yarn run lint:css && yarn run lint:css",
     "lint:css": "stylelint './src/**/*.js'",
@@ -27,6 +27,9 @@
     "test:ci": "jest --config .jestconfig.json && codecov",
     "prettier": "prettier --single-quote --no-semi \"src/**/*.js\" --write",
     "prettier:test": "prettier --single-quote --no-semi \"src/**/*.js\""
+  },
+  "lint-staged": {
+    "*.js": ["yarn run flow && yarn run prettier && yarn run lint", "git add"]
   },
   "repository": {
     "type": "git",
