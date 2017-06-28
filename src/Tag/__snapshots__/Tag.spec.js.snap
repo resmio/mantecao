@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tag Component renders with a close button if an onCLickAction prop is passed 1`] = `
+<div
+  className="sc-bwzfXH bbolKG"
+>
+  <span
+    className="sc-htpNat jbZKpL"
+  >
+    tag 1
+  </span>
+  <span
+    className="sc-bdVaJa cJwrfy"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+  >
+    <svg
+      className={undefined}
+      style={
+        Object {
+          "display": "inline-block",
+          "fill": "none",
+          "height": "1.2em",
+          "marginBottom": "0.2em",
+          "pointerEvents": "none",
+          "stroke": "currentColor",
+          "strokeWidth": "2.5px",
+          "verticalAlign": "middle",
+          "width": "1.2em",
+        }
+      }
+      viewBox="0 0 32 32"
+    >
+      <g
+        transform={undefined}
+      >
+        <g
+          strokeLinecap="square"
+        >
+          <path
+            d="M5.5 6.5L25.5 26.5M25 7L5 27"
+          />
+        </g>
+      </g>
+    </svg>
+  </span>
+</div>
+`;
+
+exports[`Tag Component renders with no close button if not onCLickAction prop is passed 1`] = `
+<div
+  className="sc-bwzfXH bbolKG"
+>
+  <span
+    className="sc-htpNat jbZKpL"
+  >
+    tag 1
+  </span>
+</div>
+`;
