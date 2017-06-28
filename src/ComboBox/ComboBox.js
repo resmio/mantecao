@@ -1,5 +1,5 @@
-import React, { Component, PropTypes } from 'react'
-import ReactDOM from 'react-dom'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 import TextField from '../TextField'
 import Dropdown from '../Dropdown'
