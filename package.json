@@ -29,7 +29,7 @@
     "prettier:test": "prettier --single-quote --no-semi \"src/**/*.js\""
   },
   "lint-staged": {
-    "*.js": ["yarn run flow && yarn run prettier && yarn run lint", "git add"]
+    "*.js": ["yarn run prettier && yarn run lint", "git add"]
   },
   "repository": {
     "type": "git",
