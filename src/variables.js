@@ -72,7 +72,7 @@ export const theme = (function() {
       '"Open Sans", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif',
     fontSize: '16px',
     lineHeight: '1.2',
-    backgroundColor: colors.white,
+    backgroundColor: 'lime',
     border: `1px solid ${borderColor}`,
     borderColor,
     borderRadius,

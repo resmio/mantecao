@@ -8,9 +8,12 @@ import InfoIcon from '../icons/InfoIcon'
 import CloseIcon from '../icons/CloseIcon'
 
 import { colors } from '../variables'
-import globalStyles from '../styles.global'
 
-globalStyles()
+// We need this on every component to normalize the styles and apply our minimal
+// base, they won't be included in the bundle
+import normalize from '../styles.normalize'
+
+normalize()
 
 const defaultAlertStyle = {
   boxShadow: '0px 0px 20px ' + colors.alto,
