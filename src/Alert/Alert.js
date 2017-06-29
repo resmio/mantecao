@@ -8,6 +8,9 @@ import InfoIcon from '../icons/InfoIcon'
 import CloseIcon from '../icons/CloseIcon'
 
 import { colors } from '../variables'
+import globalStyles from '../styles.global'
+
+globalStyles()
 
 const defaultAlertStyle = {
   boxShadow: '0px 0px 20px ' + colors.alto,

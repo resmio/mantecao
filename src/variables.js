@@ -70,7 +70,8 @@ export const theme = (function() {
     fontColor: colors.emperor,
     fontFamily:
       '"Open Sans", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif',
-    fontSize: '1rem',
+    fontSize: '16px',
+    lineHeight: '1.2',
     backgroundColor: colors.white,
     border: `1px solid ${borderColor}`,
     borderColor,
