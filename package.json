@@ -21,7 +21,7 @@
     "lint:es": "eslint ./src",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "start": "yarn run storybook:dev",
-    "storybook:dev": "start-storybook -p 9001 -c .storybook",
+    "storybook:dev": "start-storybook -s node_modules/@resmio/rollico/dist/ -p 9001 -c .storybook",
     "storybook:build": "rimraf docs && build-storybook -c .storybook -o docs",
     "test": "yarn run flow && jest --config .jestconfig.json",
     "test:ci": "jest --config .jestconfig.json && codecov",
