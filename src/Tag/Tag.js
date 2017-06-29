@@ -5,6 +5,13 @@ import { colors } from '../variables'
 
 import CloseIcon from '../icons/CloseIcon'
 
+// We need this on every component to apply our minimal base
+// This runs on top of normalize.css which is included here in the storybook
+// template, we don't want to call it from here since we don't want it included
+// on every component
+import globalStyles from '../styles.global'
+globalStyles()
+
 const CloseSpan = styled.span`
   cursor: pointer;
   display: inline-block;
