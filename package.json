@@ -108,7 +108,6 @@
     "doc": "docs"
   },
   "dependencies": {
-    "@resmio/rollico": "^3.0.0",
     "babel-runtime": "^6.23.0",
     "react-event-listener": "^0.4.5",
     "styled-components": "^2.1.0"

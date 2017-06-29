@@ -4,6 +4,11 @@
 #mantecao
 resmio UI Library powered by react components :muscle:
 
+## Normalizer  
+We include [normalize](https://github.com/necolas/normalize.css) as a dependency in our styleguide to avoid differences 
+between browsers, we recommend you to do do in your app if you want to keep things
+consistent.
+
 ##Cool, how does it work?
 Do you really care? This is what you need to know
 

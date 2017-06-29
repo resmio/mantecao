@@ -2,10 +2,6 @@
 # yarn lockfile v1
 
 
-"@resmio/rollico@^3.0.0":
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@resmio/rollico/-/rollico-3.0.0.tgz#7f4ffcf3d565c7806b0a42922f4164491211e9de"
-
 "@semantic-release/commit-analyzer@^2.0.0":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@semantic-release/commit-analyzer/-/commit-analyzer-2.0.0.tgz#924d1e2c30167c6a472bed9f66ee8f8e077489b2"
