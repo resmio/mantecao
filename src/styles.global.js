@@ -1,27 +1,9 @@
 import { injectGlobal } from 'styled-components'
-import { normalize } from 'polished'
-
 import { theme } from './variables'
 
+// Those are base styles that we want to include on every component
 const globalStyles = () => {
   injectGlobal`
-    ${normalize({ excludeOpinionated: true })};
-
-    html {
-      box-sizing: border-box;
-    }
-
-    *,
-    *::before,
-    *::after {
-      box-sizing: inherit;
-    }
-
-    html,
-    body {
-      height: 100%;
-    }
-
     body {
       background-color: ${theme.backgroundColor};
       color: ${theme.fontColor};
@@ -33,6 +15,3 @@ const globalStyles = () => {
 }
 
 export default globalStyles
-
-// Run normalizr from storybook preview head
-// In the app, run it from the section base, that way we don't include the normalizr on every component

@@ -9,11 +9,12 @@ import CloseIcon from '../icons/CloseIcon'
 
 import { colors } from '../variables'
 
-// We need this on every component to normalize the styles and apply our minimal
-// base, they won't be included in the bundle
-import normalize from '../styles.normalize'
-
-normalize()
+// We need this on every component to apply our minimal base
+// This runs on top of normalize.css which is included here in the storybook
+// template, we don't want to call it from here since we don't want it included
+// on every component
+import globalStyles from '../styles.global'
+globalStyles()
 
 const defaultAlertStyle = {
   boxShadow: '0px 0px 20px ' + colors.alto,
