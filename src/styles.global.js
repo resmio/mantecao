@@ -1,8 +1,12 @@
 import { injectGlobal } from 'styled-components'
+import { normalize } from 'polished'
+
 import { theme } from './variables'
 
 const globalStyles = () => {
   injectGlobal`
+    ${normalize({ excludeOpinionated: true })};
+
     html {
       box-sizing: border-box;
     }
@@ -29,3 +33,6 @@ const globalStyles = () => {
 }
 
 export default globalStyles
+
+// Run normalizr from storybook preview head
+// In the app, run it from the section base, that way we don't include the normalizr on every component
