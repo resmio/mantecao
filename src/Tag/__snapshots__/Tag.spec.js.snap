@@ -2,7 +2,7 @@
 
 exports[`Tag Component renders with a close button if an onCLickAction prop is passed 1`] = `
 <div
-  className="sc-bwzfXH bbolKG"
+  className="sc-bwzfXH jtzcYF"
 >
   <span
     className="sc-htpNat jbZKpL"
@@ -50,7 +50,7 @@ exports[`Tag Component renders with a close button if an onCLickAction prop is p
 
 exports[`Tag Component renders with no close button if not onCLickAction prop is passed 1`] = `
 <div
-  className="sc-bwzfXH bbolKG"
+  className="sc-bwzfXH jtzcYF"
 >
   <span
     className="sc-htpNat jbZKpL"

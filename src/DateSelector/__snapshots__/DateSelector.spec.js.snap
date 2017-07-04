@@ -3,7 +3,7 @@
 exports[`Date Selector renders a date if you pass it as a prop 1`] = `
 <div>
   <div
-    className="sc-bwzfXH iNUrdQ"
+    className="sc-bwzfXH ijcSyg"
   >
     <select
       className="sc-bdVaJa estItw"
@@ -871,7 +871,7 @@ exports[`Date Selector renders a date if you pass it as a prop 1`] = `
 exports[`Date Selector renders month before day if specified as a prop 1`] = `
 <div>
   <div
-    className="sc-bwzfXH iNUrdQ"
+    className="sc-bwzfXH ijcSyg"
   >
     <select
       className="sc-bdVaJa estItw"
@@ -1739,7 +1739,7 @@ exports[`Date Selector renders month before day if specified as a prop 1`] = `
 exports[`Date Selector renders with no date when no date is passed as a prop 1`] = `
 <div>
   <div
-    className="sc-bwzfXH iNUrdQ"
+    className="sc-bwzfXH ijcSyg"
   >
     <select
       className="sc-bdVaJa estItw"
