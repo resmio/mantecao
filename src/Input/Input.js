@@ -3,13 +3,6 @@ import styled from 'styled-components'
 import { shade, darken, tint, normalize } from 'polished'
 import { theme } from '../variables'
 
-// We need this on every component to apply our minimal base
-// This runs on top of normalize.css which is included here in the storybook
-// template, we don't want to call it from here since we don't want it included
-// on every component
-import globalStyles from '../styles.global'
-globalStyles()
-
 const StyledInput = styled.input`
   ${props => computeStyles(props.type)}
 `

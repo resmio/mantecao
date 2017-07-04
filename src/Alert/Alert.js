@@ -7,16 +7,14 @@ import WarningIcon from '../icons/WarningIcon'
 import InfoIcon from '../icons/InfoIcon'
 import CloseIcon from '../icons/CloseIcon'
 
-import { colors } from '../variables'
-
-// We need this on every component to apply our minimal base
-// This runs on top of normalize.css which is included here in the storybook
-// template, we don't want to call it from here since we don't want it included
-// on every component
-import globalStyles from '../styles.global'
-globalStyles()
+import { colors, theme } from '../variables'
 
 const defaultAlertStyle = {
+  backgroundColor: theme.backgroundColor,
+  color: theme.fontColor,
+  fontFamily: theme.fontFamily,
+  fontSize: theme.fontSize,
+  lineHeight: theme.lineHeight,
   boxShadow: '0px 0px 20px ' + colors.alto,
   width: '100%',
   maxWidth: '500px',

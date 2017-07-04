@@ -4,13 +4,16 @@ import PropTypes from 'prop-types'
 import CloseIcon from '../icons/CloseIcon'
 import UnstyledButton from '../UnstyledButton'
 
-import { colors } from '../variables'
+import { colors, theme } from '../variables'
 
 const defaultWrapperStyle = {
   position: 'relative',
   background: colors.pacificBlue,
-  color: colors.white
+  color: colors.white,
+  fontFamily: theme.fontFamily,
+  lineHeight: theme.lineHeight
 }
+
 const defaultContainerStyle = {
   padding: '2rem',
   textAlign: 'center',

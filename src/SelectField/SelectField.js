@@ -1,22 +1,20 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { colors } from '../variables'
-
-// We need this on every component to apply our minimal base
-// This runs on top of normalize.css which is included here in the storybook
-// template, we don't want to call it from here since we don't want it included
-// on every component
-import globalStyles from '../styles.global'
-globalStyles()
+import { colors, theme } from '../variables'
 
 const defaultStyle = {
-  backgroundColor: colors.white,
+  backgroundColor: theme.backgroundColor,
+  color: theme.fontColor,
+  fontFamily: theme.fontFamily,
+  fontSize: theme.fontSize,
+  lineHeight: theme.lineHeight,
   borderRadius: '0.4rem',
   border: '1px solid',
   borderColor: colors.silver,
   height: '3.3rem',
   width: '100%'
 }
+
 const defaultLabelStyle = {
   display: 'block',
   fontWeight: 600,

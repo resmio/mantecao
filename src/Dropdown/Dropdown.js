@@ -1,11 +1,16 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import EventListener from 'react-event-listener'
-import { colors } from '../variables'
+import { colors, theme } from '../variables'
 
 const defaultContainerStyle = {
   position: 'relative',
-  display: 'inline-block'
+  display: 'inline-block',
+  backgrounColor: theme.backgroundColor,
+  color: theme.fontColor,
+  fontFamily: theme.fontFamily,
+  fontSize: theme.fontSize,
+  lineHeight: theme.lineHeight
 }
 
 const defaultChildrenStyle = {

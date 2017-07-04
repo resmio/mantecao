@@ -1,9 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { colors } from '../variables'
+import { colors, theme } from '../variables'
 
 const defaultStyle = {
+  backgroundColor: theme.backgroundColor,
+  color: theme.fontColor,
+  fontFamily: theme.fontFamily,
+  fontSize: theme.fontSize,
+  lineHeight: theme.lineHeight,
   width: '80%',
   margin: '0rem auto',
   padding: '3rem 0rem'

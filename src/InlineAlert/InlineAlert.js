@@ -6,9 +6,12 @@ import ErrorIcon from '../icons/ErrorIcon'
 import WarningIcon from '../icons/WarningIcon'
 import InfoIcon from '../icons/InfoIcon'
 
-import { colors } from '../variables'
+import { colors, theme } from '../variables'
 
 const defaultAlertStyle = {
+  fontFamily: theme.fontFamily,
+  fontSize: theme.fontSize,
+  lineHeight: theme.lineHeight,
   width: '100%',
   backgroundColor: colors.white,
   textAlign: 'left',

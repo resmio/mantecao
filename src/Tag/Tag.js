@@ -1,16 +1,9 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import { colors } from '../variables'
+import { colors, theme } from '../variables'
 
 import CloseIcon from '../icons/CloseIcon'
-
-// We need this on every component to apply our minimal base
-// This runs on top of normalize.css which is included here in the storybook
-// template, we don't want to call it from here since we don't want it included
-// on every component
-import globalStyles from '../styles.global'
-globalStyles()
 
 const CloseSpan = styled.span`
   cursor: pointer;
@@ -37,6 +30,8 @@ const TagDiv = styled.div`
   display: inline-block;
   font-size: 0.8rem;
   padding-right: 0.7em;
+  font-family: ${theme.fontFamily};
+  line-height: ${theme.lineHeight};
 `
 
 const TagSpan = styled.span`

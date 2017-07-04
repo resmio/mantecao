@@ -3,11 +3,15 @@
 
 import React from 'react'
 import PropTypes from 'prop-types'
-import { colors, iconSizes } from '../variables'
+import { colors, iconSizes, theme } from '../variables'
 
 const defaultContainerStyle = {
-  marginBottom: '1rem'
+  marginBottom: '1rem',
+  fontFamily: theme.fontFamily,
+  fontSize: theme.fontSize,
+  lineHeight: theme.lineHeight
 }
+
 const defaultInputStyle = {
   width: '100%',
   borderRadius: '0.4rem',

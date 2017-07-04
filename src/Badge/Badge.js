@@ -2,15 +2,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import { colors } from '../variables'
-// We need this on every component to apply our minimal base
-// This runs on top of normalize.css which is included here in the storybook
-// template, we don't want to call it from here since we don't want it included
-// on every component
-import globalStyles from '../styles.global'
-globalStyles()
+import { colors, theme } from '../variables'
 
 const StyledSpan = styled.span`
+  font-family: ${theme.fontFamily};
+  line-height: ${theme.lineHeight};
   display: inline-block;
   min-width: 10px;
   padding: 1px 7px;

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import * as t from 'prop-types'
 import styled from 'styled-components'
-import { colors } from '../variables'
+import { colors, theme } from '../variables'
 
 import {
   isValidDate,
@@ -15,16 +15,14 @@ import {
 import Select from './Select'
 import TrashIcon from '../icons/TrashIcon'
 
-// We need this on every component to apply our minimal base
-// This runs on top of normalize.css which is included here in the storybook
-// template, we don't want to call it from here since we don't want it included
-// on every component
-import globalStyles from '../styles.global'
-globalStyles()
-
 const StyledWrapper = styled.div`
   display: flex;
   justify-content: space-between;
+  background-color: ${theme.backgroundColor};
+  color: ${theme.fontColor};
+  font-family: ${theme.fontFamily};
+  font-size: ${theme.fontSize};
+  line-height: ${theme.lineHeight};
 
   & select:first-of-type + select {
     margin-right: 0.3em;
