@@ -2,7 +2,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import ComboBox from './ComboBox'
 
-storiesOf('ComboBox', module).add('type error', () =>
+storiesOf('ComboBox', module).add('default', () =>
   <ComboBox
     placeHolder="example combobox"
     options={[
