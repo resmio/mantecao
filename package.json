@@ -21,7 +21,7 @@
     "lint:es": "eslint ./src",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "start": "yarn run storybook:dev",
-    "storybook:dev": "start-storybook -p 9001 -c .storybook",
+    "storybook:dev": "start-storybook -s node_modules/@resmio/rollico/dist -p 9001 -c .storybook",
     "storybook:build": "rimraf docs && build-storybook -c .storybook -o docs",
     "test": "yarn run flow && jest --config .jestconfig.json",
     "test:ci": "jest --config .jestconfig.json && codecov",
@@ -58,6 +58,7 @@
     "react-event-listener": "0.x"
   },
   "devDependencies": {
+    "@resmio/rollico": "^3.0.0",
     "@storybook/react": "^3.1.3",
     "babel-cli": "^6.24.1",
     "babel-core": "^6.25.0",
@@ -104,7 +105,6 @@
     "doc": "docs"
   },
   "dependencies": {
-    "@resmio/rollico": "^3.0.0",
     "babel-runtime": "^6.23.0",
     "react-event-listener": "^0.4.5",
     "styled-components": "^2.1.0"
