@@ -28,7 +28,7 @@ const TagDiv = styled.div`
   border-radius: 2px;
   color: ${props => (props.hovered ? colors.emperor : colors.dustyGray)};
   display: inline-block;
-  font-size: 0.8rem;
+  font-size: 12px;
   padding-right: 0.7em;
 `
 
