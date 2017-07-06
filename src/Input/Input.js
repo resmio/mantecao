@@ -1,11 +1,7 @@
 import React from 'react'
-import styled, { injectGlobal } from 'styled-components'
+import styled from 'styled-components'
 import { shade, darken, tint, normalize } from 'polished'
 import { theme } from '../variables'
-
-injectGlobal`
-  ${normalize('excludeOpinionated')}
-`
 
 const StyledInput = styled.input`
   ${props => computeStyles(props.type)}

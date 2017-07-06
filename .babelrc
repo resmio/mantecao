@@ -9,8 +9,7 @@
       ],
       "plugins": [
         ["transform-replace-object-assign", "simple-assign"],
-        "transform-dev-warning",
-        "polished"
+        "transform-dev-warning"
       ]
     },
     "release": {
@@ -22,8 +21,7 @@
       ],
       "plugins": [
         "transform-runtime",
-        ["transform-react-remove-prop-types", {"mode": "wrap"}],
-        "polished"
+        ["transform-react-remove-prop-types", {"mode": "wrap"}]
       ]
     },
     "test": {
@@ -35,8 +33,7 @@
       ],
       "plugins": [
         ["transform-replace-object-assign", "simple-assign"],
-        "transform-dev-warning",
-        "polished"
+        "transform-dev-warning"
       ]
     },
     "es": {
@@ -48,8 +45,7 @@
       ],
       "plugins": [
         ["transform-replace-object-assign", "simple-assign"],
-        "transform-dev-warning",
-        "polished"
+        "transform-dev-warning"
       ]
     }
   }
