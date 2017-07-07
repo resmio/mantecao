@@ -1,11 +1,14 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 import { shallow } from 'enzyme'
+
 import Stepper from './Stepper'
+import { EyeClosedIcon } from '../icons'
 
 const ON_CLICK = jest.fn()
 const INCREASE_ACTION = jest.fn()
 const DECREASE_ACTION = jest.fn()
+const CUSTOM_ICON = <EyeClosedIcon small />
 
 describe('Stepper', () => {
   let stepper
@@ -16,6 +19,7 @@ describe('Stepper', () => {
         onClickAction={ON_CLICK}
         onIncreaseClick={INCREASE_ACTION}
         onDecreaseClick={DECREASE_ACTION}
+        customIcon={CUSTOM_ICON}
       >
         Click
       </Stepper>
@@ -48,5 +52,15 @@ describe('Stepper', () => {
     ON_CLICK.mockClear()
     stepper.find('#mantecao-stepper-inc').simulate('click')
     expect(ON_CLICK).not.toBeCalled()
+  })
+
+  it('Should not run the onClickAction action when the dec button is clicked ', () => {
+    ON_CLICK.mockClear()
+    stepper.find('#mantecao-stepper-dec').simulate('click')
+    expect(ON_CLICK).not.toBeCalled()
+  })
+
+  it('Should render a custom icon if passed one as a prop', () => {
+    expect(stepper.contains(CUSTOM_ICON)).toBe(true)
   })
 })
