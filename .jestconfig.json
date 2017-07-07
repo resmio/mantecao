@@ -2,7 +2,7 @@
   "collectCoverageFrom": [
     "src/**/*.js",
     "!src/**/*.stories.js",
-    "!src/index.js",
+    "!src/**/index.js",
     "!src/variables.js",
     "!src/icons/**/*.js"
   ],
