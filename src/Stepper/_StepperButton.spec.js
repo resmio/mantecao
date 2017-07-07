@@ -23,15 +23,15 @@ describe('StepperButton', () => {
   })
 
   it('Should render the id passed as a prop', () => {
-    expect(stepperButton.contains(ID)).toBe(true)
+    expect(stepperButton.is(`#${ID}`)).toBe(true)
   })
 
-  xit('Should run the OnClickAction passed as a prop when clicked', () => {
+  it('Should run the OnClickAction passed as a prop when clicked', () => {
     stepperButton.simulate('click')
     expect(ON_CLICK).toHaveBeenCalled()
   })
 
-  xit('Should not fire the action if it is disabled', () => {
+  it('Should not fire the action if it is disabled', () => {
     ON_CLICK.mockClear()
 
     const disabledStepperButton = shallow(
