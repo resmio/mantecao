@@ -63,4 +63,29 @@ describe('Stepper', () => {
   it('Should render a custom icon if passed one as a prop', () => {
     expect(stepper.contains(CUSTOM_ICON)).toBe(true)
   })
+
+  xit('Should not fire the actions if it is disabled', () => {
+    ON_CLICK.mockClear()
+    INCREASE_ACTION.mockClear()
+    DECREASE_ACTION.mockClear()
+
+    const disabledStepper = shallow(
+      <Stepper
+        onClickAction={ON_CLICK}
+        onIncreaseClick={INCREASE_ACTION}
+        onDecreaseClick={DECREASE_ACTION}
+        disabled
+      >
+        Click
+      </Stepper>
+    )
+
+    stepper.simulate('click')
+    stepper.find('#mantecao-stepper-inc').simulate('click')
+    stepper.find('#mantecao-stepper-dec').simulate('click')
+
+    expect(ON_CLICK).not.toBeCalled()
+    expect(INCREASE_ACTION).not.toBeCalled()
+    expect(DECREASE_ACTION).not.toBeCalled()
+  })
 })
