@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Stepper Renders its children 1`] = `
+<div
+  onClick={undefined}
+>
+  👶👶🏻👶🏼👶🏽👶🏾👶🏿
+</div>
+`;
