@@ -1,14 +1,51 @@
 {
-  "presets": [
-    "es2015",
-    "stage-1",
-    "react"
-  ],
-  "plugins": ["transform-object-assign"],
   "env": {
     "development": {
       "presets": [
-        "react-hmre"
+        "es2015",
+        "stage-1",
+        "react",
+        "flow"
+      ],
+      "plugins": [
+        ["transform-replace-object-assign", "simple-assign"],
+        "transform-dev-warning"
+      ]
+    },
+    "release": {
+      "presets": [
+        "es2015",
+        "stage-1",
+        "react",
+        "flow"
+      ],
+      "plugins": [
+        "transform-runtime",
+        ["transform-react-remove-prop-types", {"mode": "wrap"}]
+      ]
+    },
+    "test": {
+      "presets": [
+        "es2015",
+        "stage-1",
+        "react",
+        "flow"
+      ],
+      "plugins": [
+        ["transform-replace-object-assign", "simple-assign"],
+        "transform-dev-warning"
+      ]
+    },
+    "es": {
+      "presets": [
+        ["es2015", {"modules": false}],
+        "stage-1",
+        "react",
+        "flow"
+      ],
+      "plugins": [
+        ["transform-replace-object-assign", "simple-assign"],
+        "transform-dev-warning"
       ]
     }
   }

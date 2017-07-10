@@ -1,2 +1,4 @@
 dist/**/*.js
 docs/build/**/*.js
+src/**/*.spec.js
+src/**/*.tape.js

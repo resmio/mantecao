@@ -1,12 +1,9 @@
-// allows us to grab a bunch at once (for convenience...) in other components
-// here -- something like:
-// import { SuccessIcon, WarningIcon, InfoIcon, ErrorIcon } from './icons'
 export AddIcon from './AddIcon'
-export ArrowIcon from './ArrowIcon'
 export ArrivedIcon from './ArrivedIcon'
+export ArrowIcon from './ArrowIcon'
+export BlankIcon from './BlankIcon'
 export BookIcon from './BookIcon'
 export BookingIcon from './BookingIcon'
-export BlankIcon from './BlankIcon'
 export CalendarIcon from './CalendarIcon'
 export CheckIcon from './CheckIcon'
 export CloseIcon from './CloseIcon'
