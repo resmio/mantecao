@@ -5,5 +5,99 @@ exports[`Stepper Renders its children 1`] = `
   onClick={undefined}
 >
   👶👶🏻👶🏼👶🏽👶🏾👶🏿
+  <svg
+    className={undefined}
+    style={
+      Object {
+        "display": "inline-block",
+        "fill": "none",
+        "height": "2.1rem",
+        "pointerEvents": "none",
+        "stroke": "currentColor",
+        "strokeWidth": 1.5,
+        "verticalAlign": "middle",
+        "width": "2.1rem",
+      }
+    }
+    viewBox="0 0 32 32"
+  >
+    <g
+      transform={undefined}
+    >
+      <g
+        transform="translate(0.75, -1)"
+      >
+        <path
+          d="M3 12.1L14.6 24.5C15 24.9 15.6 24.9 16 24.5L27.5 12"
+        />
+      </g>
+    </g>
+  </svg>
+  <span
+    id="mantecao-stepper-inc"
+    onClick={[Function]}
+  >
+    <svg
+      className={undefined}
+      style={
+        Object {
+          "display": "inline-block",
+          "fill": "none",
+          "height": "2.1rem",
+          "pointerEvents": "none",
+          "stroke": "currentColor",
+          "strokeWidth": 1.5,
+          "verticalAlign": "middle",
+          "width": "2.1rem",
+        }
+      }
+      viewBox="0 0 32 32"
+    >
+      <g
+        transform="translate(32) scale(-1, 1)"
+      >
+        <g
+          transform="translate(0.75, -1)"
+        >
+          <path
+            d="M3 12.1L14.6 24.5C15 24.9 15.6 24.9 16 24.5L27.5 12"
+          />
+        </g>
+      </g>
+    </svg>
+  </span>
+  <span
+    id="mantecao-stepper-dec"
+    onClick={[Function]}
+  >
+    <svg
+      className={undefined}
+      style={
+        Object {
+          "display": "inline-block",
+          "fill": "none",
+          "height": "2.1rem",
+          "pointerEvents": "none",
+          "stroke": "currentColor",
+          "strokeWidth": 1.5,
+          "verticalAlign": "middle",
+          "width": "2.1rem",
+        }
+      }
+      viewBox="0 0 32 32"
+    >
+      <g
+        transform={undefined}
+      >
+        <g
+          transform="translate(0.75, -1)"
+        >
+          <path
+            d="M3 12.1L14.6 24.5C15 24.9 15.6 24.9 16 24.5L27.5 12"
+          />
+        </g>
+      </g>
+    </svg>
+  </span>
 </div>
 `;
