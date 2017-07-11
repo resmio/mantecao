@@ -13,6 +13,11 @@ dependencies:
 test:
   override:
     - yarn run test:ci || true
-  post:
-    - cd build
-    - yarn run semantic-release
+
+deployment:
+  npm:
+    branch: master
+    commands:
+      - yarn build
+      - cd build
+      - yarn run semantic-release
