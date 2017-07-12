@@ -1,5 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import styled from 'styled-components'
+
+import { colors, theme } from '../variables'
 import { ArrowIcon } from '../icons'
 
 // TODO: move to utils
@@ -13,6 +16,42 @@ const stopPropagation = fn => e => {
 }
 
 const emptyFunctionWithNoPropagation = stopPropagation(_emptyFunction)
+
+// TODO: Move line-heigth to theme
+const StyledDiv = styled.div`
+  border: 1px solid ${colors.pacificBlue};
+  border-radius: ${theme.borderRadius};
+  display: flex;
+  max-width: 13em;
+  padding-left: ${theme.baseSpace};
+  color: ${theme.fontColor};
+  align-items: center;
+  line-height: 2.5;
+`
+
+const StyledChildren = styled.div`
+  flex: 1;
+`
+
+const StyledExpander = styled.div`
+  color: ${colors.alto};
+  max-width: 5em;
+  margin-left: auto;
+  margin-right: ${theme.smallSpace};
+`
+
+const StyledControls = styled.div`
+  color: ${colors.alto};
+  display: flex;
+  flex-direction: column;
+  flex-basis: 1.8em;
+`
+
+const StyledButton = styled.div`
+  border-left: 1px solid ${colors.pacificBlue};
+  line-height: 1.25;
+  align-self: center;
+`
 
 const Stepper = ({
   children,
@@ -37,16 +76,26 @@ const Stepper = ({
   }
 
   return (
-    <div onClick={clickAction}>
-      {children}
-      {customIcon ? customIcon : <ArrowIcon small />}
-      <span id="mantecao-stepper-inc" onClick={increaseAction}>
-        <ArrowIcon small mirrorY />
-      </span>
-      <span id="mantecao-stepper-dec" onClick={decreaseAction}>
-        <ArrowIcon small />
-      </span>
-    </div>
+    <StyledDiv onClick={clickAction}>
+
+      <StyledChildren>
+        {children}
+      </StyledChildren>
+
+      <StyledExpander>
+        {customIcon ? customIcon : <ArrowIcon width="1em" />}
+      </StyledExpander>
+
+      <StyledControls>
+        <StyledButton id="mantecao-stepper-inc" onClick={increaseAction}>
+          <ArrowIcon width="1em" mirrorX />
+        </StyledButton>
+        <StyledButton id="mantecao-stepper-dec" onClick={decreaseAction}>
+          <ArrowIcon width="1em" />
+        </StyledButton>
+      </StyledControls>
+
+    </StyledDiv>
   )
 }
 
