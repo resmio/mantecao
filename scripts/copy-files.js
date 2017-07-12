@@ -5,7 +5,8 @@ import fse from 'fs-extra';
 
 const files = [
   'README.md',
-  'LICENSE'
+  'LICENSE',
+  '.npmignore'
 ]
 
 Promise.all(
@@ -72,6 +73,9 @@ function createPackageFile() {
       homepage,
       peerDependencies,
       dependencies,
+      scripts: {
+        'semantic-release': 'npm install -D semantic-release && semantic-release pre && npm publish && semantic-release post'
+      }
     };
 
     return new Promise((resolve) => {

@@ -56,12 +56,25 @@ const defaultBackgroundArrow = {
 class Dropdown extends Component {
   state = {
     isOpen: false,
-    openDropdown: () => this.setState({isOpen: true}),
-    closeDropdown: () => this.setState({isOpen: false})
+    openDropdown: () => this.setState({ isOpen: true }),
+    closeDropdown: () => this.setState({ isOpen: false })
   }
-  render () {
-    const {children, triggerNode, disabled, left, right, center, arrow, lockWidth, fullWidth, borderColor, backgroundColor, closeOnClick} = this.props
-    const {isOpen, openDropdown} = this._getControls()
+  render() {
+    const {
+      children,
+      triggerNode,
+      disabled,
+      left,
+      right,
+      center,
+      arrow,
+      lockWidth,
+      fullWidth,
+      borderColor,
+      backgroundColor,
+      closeOnClick
+    } = this.props
+    const { isOpen, openDropdown } = this._getControls()
     const computedContainerStyle = Object.assign(
       {},
       defaultContainerStyle,
@@ -104,14 +117,13 @@ class Dropdown extends Component {
     )
     return (
       <div
-        ref='container'
+        ref="container"
         onClick={this._onContainerClick}
         style={computedContainerStyle}
       >
         {isOpen
           ? <EventListener target={window} onClick={this._onWindowClick} />
-          : null
-        }
+          : null}
         <div style={computedTriggerStyle}>
           {triggerNode}
         </div>
@@ -120,16 +132,16 @@ class Dropdown extends Component {
       </div>
     )
   }
-  _onWindowClick = (e) => {
-    const {closeOnClick, disabled} = this.props
-    const {closeDropdown} = this._getControls()
+  _onWindowClick = e => {
+    const { closeOnClick, disabled } = this.props
+    const { closeDropdown } = this._getControls()
     if (!this.refs.container.contains(e.target)) {
       closeDropdown()
     }
   }
-  _onContainerClick = (e) => {
-    const {closeOnClick, disabled} = this.props
-    const {isOpen, openDropdown, closeDropdown} = this._getControls()
+  _onContainerClick = e => {
+    const { closeOnClick, disabled } = this.props
+    const { isOpen, openDropdown, closeDropdown } = this._getControls()
     // then explicitly call an action based on state/prop conditions
     if (isOpen && (closeOnClick || disabled)) {
       closeDropdown()
