@@ -35,7 +35,7 @@ class ComboBox extends Component {
       <TextField
         style={{ margin: '0rem' }}
         placeHolder={placeHolder}
-        onChange={(e) => this.setState({filterText: e.target.value})}
+        onChange={e => this.setState({ filterText: e.target.value })}
         onFocus={openDropdown}
         value={this.state.filterText}
       />
