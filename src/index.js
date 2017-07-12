@@ -1,7 +1,6 @@
 // Components
 export Alert from './Alert'
 export Badge from './Badge'
-export BorderButton from './BorderButton'
 export Button from './Button'
 export ButtonGroup from './ButtonGroup'
 export Checkbox from './Checkbox'
