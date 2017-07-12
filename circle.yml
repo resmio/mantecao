@@ -20,4 +20,4 @@ deployment:
     commands:
       - yarn build
       - cd build
-      - yarn run semantic-release
+      - npm publish
