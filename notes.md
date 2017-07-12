@@ -12,5 +12,3 @@ But we don't want to bundle .css on every component, that would increase the siz
     - Margins, paddings, dimension will be in ems, this is relative to the font-size of the wrapper
     - This allows us to pass a size prop and set the font-size of the component to that and everything else
       will grow accordingly
-
-_deleteme
