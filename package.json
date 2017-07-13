@@ -23,7 +23,7 @@
     "start": "yarn run storybook:dev",
     "storybook:dev": "start-storybook -s node_modules/@resmio/rollico/dist -p 9001 -c .storybook",
     "storybook:build": "rimraf docs && build-storybook -c .storybook -o docs",
-    "storybook:publish": "gh-pages -d docs",
+    "storybook:publish": "yarn run storybook:build && gh-pages -d docs",
     "test": "yarn run flow && jest --config .jestconfig.json",
     "test:watch": "jest -o --watch",
     "test:ci": "jest --config .jestconfig.json && codecov",

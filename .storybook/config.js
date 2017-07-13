@@ -1,5 +1,7 @@
 import { configure } from '@storybook/react';
 
+import '@resmio/rollico/dist/rollico.css'
+
 const req = require.context('../src', true, /\.stories\.js$/)
 
 function loadStories() {
