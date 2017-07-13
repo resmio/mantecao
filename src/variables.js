@@ -43,6 +43,7 @@ export const colors = {
 }
 
 export const breakpoints = {
+  // we should name these better perhaps?
   medium: '480px',
   mediumHigh: '680px',
   mediumDesktop: '1100px'
