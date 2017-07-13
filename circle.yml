@@ -18,8 +18,9 @@ test:
 
 deployment:
   npm:
-    branch: master
+    branch: releases
     commands:
+      - yarn run storybook:publish
       - yarn build
       - cd build
       - npm publish
