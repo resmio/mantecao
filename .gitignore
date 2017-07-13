@@ -8,6 +8,9 @@ webpack-stats.json
 dist/
 build/
 
+# Docs
+docs/
+
 # Code coverage
 coverage/
 
