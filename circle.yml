@@ -16,10 +16,12 @@ test:
   override:
     - yarn run test:ci || true
 
+compile:
+  override:
+    - yarn build
+
 deployment:
   npm:
-    branch: master
+    branch: test-deploy
     commands:
-      - yarn build
-      - cd build
-      - npm publish
+      - cd build && npm publish
