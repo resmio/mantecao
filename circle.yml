@@ -24,4 +24,4 @@ deployment:
   npm:
     branch: test-deploy
     commands:
-      - cd build && npm publish
+      - pushd build && npm publish
