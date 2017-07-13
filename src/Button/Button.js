@@ -7,14 +7,14 @@ import { colors } from '../variables'
 import { media } from '../utils/style'
 
 const getHoverColor = props => {
-  return props.borderOnly ? props.color : darken(0.1, props.color)
+  return props.hollow ? props.color : darken(0.1, props.color)
 }
 
 const StyledButton = styled.button`
-  background-color: ${props => (props.borderOnly ? colors.white : props.color)};
+  background-color: ${props => (props.hollow ? colors.white : props.color)};
   border: 1px solid ${props => props.color};
   border-radius: 4px;
-  color: ${props => (props.borderOnly ? props.color : colors.white)};
+  color: ${props => (props.hollow ? props.color : colors.white)};
   cursor: pointer;
   font-size: 14px;
   padding: 11px 22px;
@@ -39,9 +39,9 @@ const StyledButton = styled.button`
 
     &:hover {
       background-color: ${props =>
-        props.borderOnly ? colors.white : darken(0.1, props.color)};
+        props.hollow ? colors.white : darken(0.1, props.color)};
       border-color: ${props => getHoverColor(props)};
-      color: ${props => (props.borderOnly ? props.color : props.white)};
+      color: ${props => (props.hollow ? props.color : props.white)};
     }
   }
 
@@ -55,12 +55,12 @@ const Button = props => <StyledButton {...props} />
 
 Button.defaultProps = {
   color: colors.blueBayoux,
-  borderOnly: false
+  hollow: false
 }
 
 Button.propTypes = {
   color: PropTypes.string,
-  borderOnly: PropTypes.bool
+  hollow: PropTypes.bool
 }
 
 export default Button

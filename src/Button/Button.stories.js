@@ -6,9 +6,7 @@ import Button from './Button'
 storiesOf('Button', module)
   .add('default', () => <Button>yo</Button>)
   .add('with color', () => <Button color="red">yo color</Button>)
-  .add('border only', () => <Button borderOnly>yo</Button>)
-  .add('border only with color', () =>
-    <Button borderOnly color="red">yo color</Button>
-  )
   .add('diabled', () => <Button disabled>yo</Button>)
-  .add('diabled border only', () => <Button borderOnly disabled>yo</Button>)
+  .add('hollow', () => <Button hollow>yo</Button>)
+  .add('hollow with color', () => <Button hollow color="red">yo color</Button>)
+  .add('hollow diabled', () => <Button hollow disabled>yo</Button>)

@@ -1,18 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Button Component renders properly with borderButton prop 1`] = `
+exports[`Button Component renders properly with color prop 1`] = `
 <button
-  className="sc-bdVaJa dasgOI"
-  color="#556285"
+  className="sc-bdVaJa iVPjYN"
+  color="lemonchiffon"
 >
   whatup
 </button>
 `;
 
-exports[`Button Component renders properly with color prop 1`] = `
+exports[`Button Component renders properly with hollow prop 1`] = `
 <button
-  className="sc-bdVaJa iVPjYN"
-  color="lemonchiffon"
+  className="sc-bdVaJa bbdLtm"
+  color="#556285"
 >
   whatup
 </button>

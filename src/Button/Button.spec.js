@@ -12,8 +12,8 @@ describe('Button Component', () => {
     expect(tree).toMatchSnapshot()
   })
 
-  it('renders properly with borderButton prop', () => {
-    const tree = renderer.create(<Button borderButton>whatup</Button>).toJSON()
+  it('renders properly with hollow prop', () => {
+    const tree = renderer.create(<Button hollow>whatup</Button>).toJSON()
     expect(tree).toMatchSnapshot()
   })
 })
