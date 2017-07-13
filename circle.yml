@@ -22,6 +22,6 @@ compile:
 
 deployment:
   npm:
-    branch: test-deploy
+    branch: master
     commands:
       - pushd build && npm publish
