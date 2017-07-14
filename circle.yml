@@ -22,6 +22,8 @@ compile:
 
 deployment:
   npm:
-    branch: master
+    branch: releases
     commands:
+      - yarn run storybook:publish
+      - yarn build
       - pushd build && npm publish
