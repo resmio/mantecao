@@ -1,16 +1,19 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import styled from 'styled-components'
 
 import ButtonGroupItem from './_ButtonGroupItem'
 
-/**
- * Button group out of the mantecao buttons
- */
+const StyledDiv = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`
+
 class ButtonGroup extends Component {
   render() {
     const { options, optionValues, disabled, selected } = this.props
     return (
-      <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+      <StyledDiv>
         {options.map((option, index) => {
           return (
             <ButtonGroupItem
@@ -21,11 +24,11 @@ class ButtonGroup extends Component {
               text={optionValues[index]}
               selected={selected.indexOf(option) > -1}
               onSelect={this._toggleOption}
-              disabled={disabled ? disabled.indexOf(option) > -1 : undefined}
+              disabled={disabled}
             />
           )
         })}
-      </div>
+      </StyledDiv>
     )
   }
   _toggleOption = option => {
@@ -42,7 +45,7 @@ class ButtonGroup extends Component {
 }
 
 ButtonGroup.propTypes = {
-  disabled: PropTypes.array,
+  disabled: PropTypes.bool,
   onChange: PropTypes.func,
   optionValues: PropTypes.array.isRequired,
   options: PropTypes.array.isRequired,

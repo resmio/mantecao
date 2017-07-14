@@ -1,76 +1,52 @@
-import React, { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
-
-import Button from '../Button'
+import { darken } from 'polished'
 
 import { colors } from '../variables'
+import Button from '../Button'
 
-const itemStyle = {
-  display: 'inline-block',
-  fontSize: '1.4rem',
-  padding: '0.3rem 2rem',
-  borderRadius: '0px',
-  border: '1px solid',
-  boxShadow: 'inset 0 1px rgba(0,0,0,.05)'
-}
-const firstItemStyle = {
-  borderTopLeftRadius: '4px',
-  borderBottomLeftRadius: '4px'
-}
-const middleItemStyle = {
-  borderLeft: 'none'
-}
-const lastItemStyle = {
-  borderTopRightRadius: '4px',
-  borderBottomRightRadius: '4px'
-}
-const selectedItemStyle = {
-  backgroundColor: colors.pacificBlue,
-  borderColor: colors.deepCerulean
-}
-const unselectedItemStyle = {
-  borderColor: colors.silver
-}
-
-class ButtonGroupItem extends Component {
-  render() {
-    const {
-      text,
-      value,
-      onSelect,
-      first,
-      last,
-      selected,
-      disabled
-    } = this.props
-    const baseStyle = Object.assign(
-      {},
-      itemStyle,
-      first ? firstItemStyle : middleItemStyle,
-      last ? lastItemStyle : {},
-      selected ? selectedItemStyle : unselectedItemStyle
-    )
-    return (
-      <Button
-        style={baseStyle}
-        onClick={() => onSelect(value)}
-        disabled={disabled}
-      >
-        {text}
-      </Button>
-    )
+const ButtonGroupItem = ({
+  text,
+  onSelect,
+  disabled,
+  first,
+  last,
+  selected,
+  value
+}) => {
+  const style = {
+    borderTopLeftRadius: first ? '4px' : '0px',
+    borderBottomLeftRadius: first ? '4px' : '0px',
+    borderTopRightRadius: last ? '4px' : '0px',
+    borderBottomRightRadius: last ? '4px' : '0px',
+    boxShadow: 'inset 0 1px rgba(0,0,0,.05)',
+    padding: '.5em 1.5em',
+    borderLeft: `1px solid ${selected
+      ? darken(0.1, colors.blueBayoux)
+      : darken(0.1, colors.silver)}`
   }
+
+  return (
+    <Button
+      onClick={() => onSelect(value)}
+      color={selected ? colors.blueBayoux : colors.silver}
+      disabled={disabled}
+      style={style}
+    >
+      {text}
+    </Button>
+  )
 }
 
 const { bool, func, number, string, oneOfType } = PropTypes
 ButtonGroupItem.propTypes = {
   disabled: bool,
-  first: bool,
-  last: bool,
-  onSelect: func,
-  selected: bool,
-  text: oneOfType([string, number]),
-  value: oneOfType([string, number, func])
+  first: bool.isRequired,
+  last: bool.isRequired,
+  onSelect: func.isRequired,
+  selected: bool.isRequired,
+  text: oneOfType([string, number]).isRequired,
+  value: oneOfType([string, number, func]).isRequired
 }
 
 export default ButtonGroupItem
