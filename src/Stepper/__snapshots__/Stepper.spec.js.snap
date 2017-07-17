@@ -1,0 +1,118 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Stepper Renders its children 1`] = `
+<div
+  className="sc-bdVaJa fYoHpT"
+  onClick={undefined}
+>
+  <div
+    className="sc-bwzfXH kMDzjb"
+  >
+    👶👶🏻👶🏼👶🏽👶🏾👶🏿
+  </div>
+  <div
+    className="sc-htpNat iYBxUa"
+  >
+    <svg
+      className={undefined}
+      style={
+        Object {
+          "display": "inline-block",
+          "fill": "none",
+          "height": "2.75rem",
+          "pointerEvents": "none",
+          "stroke": "currentColor",
+          "strokeWidth": 1.5,
+          "verticalAlign": "middle",
+          "width": "1em",
+        }
+      }
+      viewBox="0 0 32 32"
+    >
+      <g
+        transform={undefined}
+      >
+        <g
+          transform="translate(0.75, -1)"
+        >
+          <path
+            d="M3 12.1L14.6 24.5C15 24.9 15.6 24.9 16 24.5L27.5 12"
+          />
+        </g>
+      </g>
+    </svg>
+  </div>
+  <div
+    className="sc-bxivhb gpZVxY"
+  >
+    <div
+      className="sc-ifAKCX iahgXe"
+      id="mantecao-stepper-inc"
+      onClick={[Function]}
+    >
+      <svg
+        className={undefined}
+        style={
+          Object {
+            "display": "inline-block",
+            "fill": "none",
+            "height": "2.75rem",
+            "pointerEvents": "none",
+            "stroke": "currentColor",
+            "strokeWidth": 1.5,
+            "verticalAlign": "middle",
+            "width": "1em",
+          }
+        }
+        viewBox="0 0 32 32"
+      >
+        <g
+          transform="translate(0, 32) scale(1, -1)"
+        >
+          <g
+            transform="translate(0.75, -1)"
+          >
+            <path
+              d="M3 12.1L14.6 24.5C15 24.9 15.6 24.9 16 24.5L27.5 12"
+            />
+          </g>
+        </g>
+      </svg>
+    </div>
+    <div
+      className="sc-ifAKCX iahgXe"
+      id="mantecao-stepper-dec"
+      onClick={[Function]}
+    >
+      <svg
+        className={undefined}
+        style={
+          Object {
+            "display": "inline-block",
+            "fill": "none",
+            "height": "2.75rem",
+            "pointerEvents": "none",
+            "stroke": "currentColor",
+            "strokeWidth": 1.5,
+            "verticalAlign": "middle",
+            "width": "1em",
+          }
+        }
+        viewBox="0 0 32 32"
+      >
+        <g
+          transform={undefined}
+        >
+          <g
+            transform="translate(0.75, -1)"
+          >
+            <path
+              d="M3 12.1L14.6 24.5C15 24.9 15.6 24.9 16 24.5L27.5 12"
+            />
+          </g>
+        </g>
+      </svg>
+    </div>
+  </div>
+</div>
+`;
