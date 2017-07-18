@@ -1,7 +1,8 @@
 import fs from 'fs';
 import rrs from 'recursive-readdir-sync';
 
-const outArray = [];
+const iconImports = [];
+const iconList = [];
 const svgIconPath = 'src/icons/';
 
 rrs(svgIconPath).forEach((file) => {
@@ -15,7 +16,13 @@ rrs(svgIconPath).forEach((file) => {
         const moduleName = fileLines[index].split(' ')[2].replace(';', '').trim();
         const modulePath = file.substring(0, file.length - 3).replace(/\\/g, '/').replace(svgIconPath, '');
 
-        outArray.push(`export ${moduleName} from './${modulePath}'\n`);
+        iconImports.push(`import ${moduleName} from './${modulePath}'\n`);
+        iconList.push(`
+          <div style={{textAlign: 'center', flex: '1 1', padding: '10px'}}>
+            <p>${moduleName}</p>
+            <${moduleName} large />
+          </div>
+        `);
 
         found = true;
       } else {
@@ -25,4 +32,17 @@ rrs(svgIconPath).forEach((file) => {
   }
 });
 
-fs.writeFileSync(`./${svgIconPath}/index.js`, outArray.join(''));
+const storyDoc = `
+  import React from 'react'
+  import { storiesOf } from '@storybook/react'
+  ${iconImports.join('')}
+
+  storiesOf('${iconList.length} Icons', module)
+    .add('all icons', () =>
+      <div style={{display: 'flex', flexWrap: 'wrap'}}>
+        ${iconList.join('')}
+      </div>
+    )
+`
+
+fs.writeFileSync(`./${svgIconPath}/index.stories.js`, storyDoc);
