@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ButtonGroupItem Component renders a first button properly 1`] = `
+<button
+  className="sc-bdVaJa dNukzi"
+  color="#CCCCCC"
+  disabled={undefined}
+  onClick={[Function]}
+  style={
+    Object {
+      "borderBottomLeftRadius": "4px",
+      "borderBottomRightRadius": "0px",
+      "borderLeft": "1px solid #b3b3b3",
+      "borderTopLeftRadius": "4px",
+      "borderTopRightRadius": "0px",
+      "boxShadow": "inset 0 1px rgba(0,0,0,.05)",
+      "padding": ".5em 1.5em",
+    }
+  }
+>
+  whatup
+</button>
+`;
+
+exports[`ButtonGroupItem Component renders a last button properly 1`] = `
+<button
+  className="sc-bdVaJa dNukzi"
+  color="#CCCCCC"
+  disabled={undefined}
+  onClick={[Function]}
+  style={
+    Object {
+      "borderBottomLeftRadius": "0px",
+      "borderBottomRightRadius": "4px",
+      "borderLeft": "1px solid #b3b3b3",
+      "borderTopLeftRadius": "0px",
+      "borderTopRightRadius": "4px",
+      "boxShadow": "inset 0 1px rgba(0,0,0,.05)",
+      "padding": ".5em 1.5em",
+    }
+  }
+>
+  whatup
+</button>
+`;
+
+exports[`ButtonGroupItem Component renders a middle button properly 1`] = `
+<button
+  className="sc-bdVaJa dNukzi"
+  color="#CCCCCC"
+  disabled={undefined}
+  onClick={[Function]}
+  style={
+    Object {
+      "borderBottomLeftRadius": "0px",
+      "borderBottomRightRadius": "0px",
+      "borderLeft": "1px solid #b3b3b3",
+      "borderTopLeftRadius": "0px",
+      "borderTopRightRadius": "0px",
+      "boxShadow": "inset 0 1px rgba(0,0,0,.05)",
+      "padding": ".5em 1.5em",
+    }
+  }
+>
+  whatup
+</button>
+`;
+
+exports[`ButtonGroupItem Component renders properly disabled 1`] = `
+<button
+  className="sc-bdVaJa dNukzi"
+  color="#CCCCCC"
+  disabled={true}
+  onClick={[Function]}
+  style={
+    Object {
+      "borderBottomLeftRadius": "0px",
+      "borderBottomRightRadius": "4px",
+      "borderLeft": "1px solid #b3b3b3",
+      "borderTopLeftRadius": "0px",
+      "borderTopRightRadius": "4px",
+      "boxShadow": "inset 0 1px rgba(0,0,0,.05)",
+      "padding": ".5em 1.5em",
+    }
+  }
+>
+  whatup
+</button>
+`;
