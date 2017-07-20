@@ -22,8 +22,8 @@ compile:
 
 deployment:
   npm:
-    branch: releases
+    branch: master
     commands:
       - yarn run storybook:publish
       - yarn build
-      - pushd build && npm publish
+      - pushd build && yarn semantic-release
