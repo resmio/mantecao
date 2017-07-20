@@ -1,17 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Stepper Renders its children 1`] = `
+exports[`Stepper renders custom icons 1`] = `
 <div
-  className="sc-bdVaJa fYoHpT"
-  onClick={undefined}
+  className="sc-bwzfXH dqIYPn"
+  disabled={undefined}
 >
   <div
-    className="sc-bwzfXH kMDzjb"
-  >
-    👶👶🏻👶🏼👶🏽👶🏾👶🏿
-  </div>
+    className="sc-htpNat cCQUd"
+    onClick={undefined}
+  />
   <div
-    className="sc-htpNat iYBxUa"
+    className="sc-bxivhb hHsYUR"
+    disabled={undefined}
+    onClick={undefined}
   >
     <svg
       className={undefined}
@@ -19,10 +20,157 @@ exports[`Stepper Renders its children 1`] = `
         Object {
           "display": "inline-block",
           "fill": "none",
-          "height": "2.75rem",
+          "height": "2.1rem",
           "pointerEvents": "none",
           "stroke": "currentColor",
           "strokeWidth": 1.5,
+          "verticalAlign": "middle",
+          "width": "2.1rem",
+        }
+      }
+      viewBox="0 0 32 32"
+    >
+      <g
+        transform={undefined}
+      >
+        <g
+          transform="translate(1 8)"
+        >
+          <path
+            d="M14.806 16.59c8.686 0 14.133-6.603 14.133-6.603.37-.403.375-1.06-.014-1.467 0 0-5.434-6.54-14.12-6.54C6.12 1.98.674 8.532.674 8.532c-.372.4-.376 1.06 0 1.454 0 0 5.447 6.602 14.132 6.602zm.194-.026c4.01 0 7.258-3.272 7.258-7.308S19.008 1.95 15 1.95c-4.01 0-7.258 3.27-7.258 7.306s3.25 7.308 7.258 7.308zm-9.92 2.192L24.92.244"
+            stroke="currentColor"
+            strokeWidth="1.3"
+          />
+          <ellipse
+            cx="14.758"
+            cy="9.5"
+            fill="currentColor"
+            rx="3.629"
+            ry="3.654"
+          />
+        </g>
+      </g>
+    </svg>
+  </div>
+  <div
+    className="sc-ifAKCX bCKPal"
+  >
+    <button
+      className="sc-bdVaJa hZFViZ"
+      disabled={undefined}
+      onClick={undefined}
+    >
+      <svg
+        className={undefined}
+        style={
+          Object {
+            "display": "inline-block",
+            "fill": "none",
+            "height": "2.1rem",
+            "pointerEvents": "none",
+            "stroke": "currentColor",
+            "strokeWidth": 1.5,
+            "verticalAlign": "middle",
+            "width": "2.1rem",
+          }
+        }
+        viewBox="0 0 32 32"
+      >
+        <g
+          transform={undefined}
+        >
+          <g
+            transform="translate(1 8)"
+          >
+            <path
+              d="M14.806 16.59c8.686 0 14.133-6.603 14.133-6.603.37-.403.375-1.06-.014-1.467 0 0-5.434-6.54-14.12-6.54C6.12 1.98.674 8.532.674 8.532c-.372.4-.376 1.06 0 1.454 0 0 5.447 6.602 14.132 6.602zm.194-.026c4.01 0 7.258-3.272 7.258-7.308S19.008 1.95 15 1.95c-4.01 0-7.258 3.27-7.258 7.306s3.25 7.308 7.258 7.308zm-9.92 2.192L24.92.244"
+              stroke="currentColor"
+              strokeWidth="1.3"
+            />
+            <ellipse
+              cx="14.758"
+              cy="9.5"
+              fill="currentColor"
+              rx="3.629"
+              ry="3.654"
+            />
+          </g>
+        </g>
+      </svg>
+    </button>
+    <button
+      className="sc-bdVaJa hZFViZ"
+      disabled={undefined}
+      onClick={undefined}
+    >
+      <svg
+        className={undefined}
+        style={
+          Object {
+            "display": "inline-block",
+            "fill": "none",
+            "height": "2.1rem",
+            "pointerEvents": "none",
+            "stroke": "currentColor",
+            "strokeWidth": 1.5,
+            "verticalAlign": "middle",
+            "width": "2.1rem",
+          }
+        }
+        viewBox="0 0 32 32"
+      >
+        <g
+          transform={undefined}
+        >
+          <g
+            transform="translate(1 8)"
+          >
+            <path
+              d="M14.806 16.59c8.686 0 14.133-6.603 14.133-6.603.37-.403.375-1.06-.014-1.467 0 0-5.434-6.54-14.12-6.54C6.12 1.98.674 8.532.674 8.532c-.372.4-.376 1.06 0 1.454 0 0 5.447 6.602 14.132 6.602zm.194-.026c4.01 0 7.258-3.272 7.258-7.308S19.008 1.95 15 1.95c-4.01 0-7.258 3.27-7.258 7.306s3.25 7.308 7.258 7.308zm-9.92 2.192L24.92.244"
+              stroke="currentColor"
+              strokeWidth="1.3"
+            />
+            <ellipse
+              cx="14.758"
+              cy="9.5"
+              fill="currentColor"
+              rx="3.629"
+              ry="3.654"
+            />
+          </g>
+        </g>
+      </svg>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Stepper renders its children 1`] = `
+<div
+  className="sc-bwzfXH dqIYPn"
+  disabled={undefined}
+>
+  <div
+    className="sc-htpNat cCQUd"
+    onClick={undefined}
+  >
+    👶👶🏻👶🏼👶🏽👶🏾👶🏿
+  </div>
+  <div
+    className="sc-bxivhb hHsYUR"
+    disabled={undefined}
+    onClick={undefined}
+  >
+    <svg
+      className={undefined}
+      style={
+        Object {
+          "display": "inline-block",
+          "fill": "none",
+          "height": "1em",
+          "pointerEvents": "none",
+          "stroke": "currentColor",
+          "strokeWidth": "2.5px",
           "verticalAlign": "middle",
           "width": "1em",
         }
@@ -43,12 +191,12 @@ exports[`Stepper Renders its children 1`] = `
     </svg>
   </div>
   <div
-    className="sc-bxivhb gpZVxY"
+    className="sc-ifAKCX bCKPal"
   >
-    <div
-      className="sc-ifAKCX iahgXe"
-      id="mantecao-stepper-inc"
-      onClick={[Function]}
+    <button
+      className="sc-bdVaJa hZFViZ"
+      disabled={undefined}
+      onClick={undefined}
     >
       <svg
         className={undefined}
@@ -56,10 +204,10 @@ exports[`Stepper Renders its children 1`] = `
           Object {
             "display": "inline-block",
             "fill": "none",
-            "height": "2.75rem",
+            "height": "1em",
             "pointerEvents": "none",
             "stroke": "currentColor",
-            "strokeWidth": 1.5,
+            "strokeWidth": "2.5px",
             "verticalAlign": "middle",
             "width": "1em",
           }
@@ -78,11 +226,11 @@ exports[`Stepper Renders its children 1`] = `
           </g>
         </g>
       </svg>
-    </div>
-    <div
-      className="sc-ifAKCX iahgXe"
-      id="mantecao-stepper-dec"
-      onClick={[Function]}
+    </button>
+    <button
+      className="sc-bdVaJa hZFViZ"
+      disabled={undefined}
+      onClick={undefined}
     >
       <svg
         className={undefined}
@@ -90,10 +238,10 @@ exports[`Stepper Renders its children 1`] = `
           Object {
             "display": "inline-block",
             "fill": "none",
-            "height": "2.75rem",
+            "height": "1em",
             "pointerEvents": "none",
             "stroke": "currentColor",
-            "strokeWidth": 1.5,
+            "strokeWidth": "2.5px",
             "verticalAlign": "middle",
             "width": "1em",
           }
@@ -112,7 +260,125 @@ exports[`Stepper Renders its children 1`] = `
           </g>
         </g>
       </svg>
-    </div>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Stepper renders with click handlers 1`] = `
+<div
+  className="sc-bwzfXH dqIYPn"
+  disabled={undefined}
+>
+  <div
+    className="sc-htpNat cCQUd"
+    onClick={[Function]}
+  />
+  <div
+    className="sc-bxivhb hHsYUR"
+    disabled={undefined}
+    onClick={[Function]}
+  >
+    <svg
+      className={undefined}
+      style={
+        Object {
+          "display": "inline-block",
+          "fill": "none",
+          "height": "1em",
+          "pointerEvents": "none",
+          "stroke": "currentColor",
+          "strokeWidth": "2.5px",
+          "verticalAlign": "middle",
+          "width": "1em",
+        }
+      }
+      viewBox="0 0 32 32"
+    >
+      <g
+        transform={undefined}
+      >
+        <g
+          transform="translate(0.75, -1)"
+        >
+          <path
+            d="M3 12.1L14.6 24.5C15 24.9 15.6 24.9 16 24.5L27.5 12"
+          />
+        </g>
+      </g>
+    </svg>
+  </div>
+  <div
+    className="sc-ifAKCX bCKPal"
+  >
+    <button
+      className="sc-bdVaJa hZFViZ"
+      disabled={undefined}
+      onClick={[Function]}
+    >
+      <svg
+        className={undefined}
+        style={
+          Object {
+            "display": "inline-block",
+            "fill": "none",
+            "height": "1em",
+            "pointerEvents": "none",
+            "stroke": "currentColor",
+            "strokeWidth": "2.5px",
+            "verticalAlign": "middle",
+            "width": "1em",
+          }
+        }
+        viewBox="0 0 32 32"
+      >
+        <g
+          transform="translate(0, 32) scale(1, -1)"
+        >
+          <g
+            transform="translate(0.75, -1)"
+          >
+            <path
+              d="M3 12.1L14.6 24.5C15 24.9 15.6 24.9 16 24.5L27.5 12"
+            />
+          </g>
+        </g>
+      </svg>
+    </button>
+    <button
+      className="sc-bdVaJa hZFViZ"
+      disabled={undefined}
+      onClick={[Function]}
+    >
+      <svg
+        className={undefined}
+        style={
+          Object {
+            "display": "inline-block",
+            "fill": "none",
+            "height": "1em",
+            "pointerEvents": "none",
+            "stroke": "currentColor",
+            "strokeWidth": "2.5px",
+            "verticalAlign": "middle",
+            "width": "1em",
+          }
+        }
+        viewBox="0 0 32 32"
+      >
+        <g
+          transform={undefined}
+        >
+          <g
+            transform="translate(0.75, -1)"
+          >
+            <path
+              d="M3 12.1L14.6 24.5C15 24.9 15.6 24.9 16 24.5L27.5 12"
+            />
+          </g>
+        </g>
+      </svg>
+    </button>
   </div>
 </div>
 `;
