@@ -56,7 +56,7 @@ exports[`Stepper renders custom icons 1`] = `
     className="sc-ifAKCX bCKPal"
   >
     <button
-      className="sc-bdVaJa hZFViZ"
+      className="sc-bdVaJa fzYoTq"
       disabled={undefined}
       onClick={undefined}
     >
@@ -99,7 +99,7 @@ exports[`Stepper renders custom icons 1`] = `
       </svg>
     </button>
     <button
-      className="sc-bdVaJa hZFViZ"
+      className="sc-bdVaJa fzYoTq"
       disabled={undefined}
       onClick={undefined}
     >
@@ -194,7 +194,7 @@ exports[`Stepper renders its children 1`] = `
     className="sc-ifAKCX bCKPal"
   >
     <button
-      className="sc-bdVaJa hZFViZ"
+      className="sc-bdVaJa fzYoTq"
       disabled={undefined}
       onClick={undefined}
     >
@@ -228,7 +228,7 @@ exports[`Stepper renders its children 1`] = `
       </svg>
     </button>
     <button
-      className="sc-bdVaJa hZFViZ"
+      className="sc-bdVaJa fzYoTq"
       disabled={undefined}
       onClick={undefined}
     >
@@ -312,7 +312,7 @@ exports[`Stepper renders with click handlers 1`] = `
     className="sc-ifAKCX bCKPal"
   >
     <button
-      className="sc-bdVaJa hZFViZ"
+      className="sc-bdVaJa fzYoTq"
       disabled={undefined}
       onClick={[Function]}
     >
@@ -346,7 +346,7 @@ exports[`Stepper renders with click handlers 1`] = `
       </svg>
     </button>
     <button
-      className="sc-bdVaJa hZFViZ"
+      className="sc-bdVaJa fzYoTq"
       disabled={undefined}
       onClick={[Function]}
     >
