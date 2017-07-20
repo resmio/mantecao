@@ -14,7 +14,7 @@ dependencies:
 
 test:
   override:
-    - yarn run test:ci || true
+    - yarn run test:ci
 
 compile:
   override:
