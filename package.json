@@ -1,6 +1,6 @@
 {
   "name": "@resmio/mantecao",
-  "version": "2.0.4",
+  "version": "0.0.0-semantic",
   "description": "A react UI library for resmio",
   "main": "./src/index.js",
   "scripts": {
@@ -46,7 +46,7 @@
     "ui",
     "library",
     "components",
-    "dialog",
+    "icons",
     "resmio"
   ],
   "author": "resmio <developers@resmio.com> (https://resmio.com)",
