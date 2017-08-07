@@ -51,6 +51,7 @@ function createPackageFile() {
       description,
       keywords,
       repository,
+      release,
       license,
       bugs,
       homepage,
@@ -73,6 +74,7 @@ function createPackageFile() {
       homepage,
       peerDependencies,
       dependencies,
+      release,
       scripts: {
         'semantic-release': 'npm install -D semantic-release && semantic-release pre && npm publish && semantic-release post'
       }
