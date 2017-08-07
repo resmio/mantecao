@@ -10,13 +10,13 @@ export const getPastYears = (yearsBack, startYear) => {
 }
 
 // (String) : Number
-export const getDayFromDate = date => new Date(date).getDate()
+export const getDayFromDate = date => new Date(date).getUTCDate()
 
 // (String) : Number
-export const getMonthFromDate = date => new Date(date).getMonth()
+export const getMonthFromDate = date => new Date(date).getUTCMonth()
 
 // (String) : Number
-export const getYearFromDate = date => new Date(date).getFullYear()
+export const getYearFromDate = date => new Date(date).getUTCFullYear()
 
 // ({Number, Number, Number}) : Boolean
 export const isValidDate = date => {

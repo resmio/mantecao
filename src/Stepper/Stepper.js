@@ -68,6 +68,7 @@ const Stepper = ({
 Stepper.PropTypes = {
   children: PropTypes.node.isRequired,
   decreaseIcon: PropTypes.node,
+  disabled: PropTypes.bool,
   icon: PropTypes.node,
   increaseIcon: PropTypes.node,
   onClick: PropTypes.function,
