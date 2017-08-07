@@ -28,4 +28,4 @@ deployment:
     commands:
       - yarn run storybook:publish
       - yarn build
-      - pushd build && yarn semantic-release
+      - pushd build && yarn semantic-release githubToken=$GH_TOKEN
