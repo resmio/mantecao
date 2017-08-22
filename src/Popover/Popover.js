@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
+import KeyCodeListener from '../KeyCodeListener'
 import { colors } from '../variables'
 import Fullscreen from './_Fullscreen'
 import Anchored from './_Anchored'
@@ -25,8 +26,9 @@ class Popover extends Component {
         show={show}
         showBackdrop={showBackdrop}
         onClick={this._requestClose}>
+        {show && <KeyCodeListener onEsc={this._requestClose} />}
         {anchorEl
-          ? <Anchored {...this.props} />
+          ? <Anchored show={show} anchorEl={anchorEl}>{children}</Anchored>
           : <Fullscreen>{children}</Fullscreen>
         }
       </StyledContainer>

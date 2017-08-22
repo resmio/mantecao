@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { findDOMNode } from 'react-dom'
 import PropTypes from 'prop-types'
+import EventListener from 'react-event-listener'
 import styled from 'styled-components'
 
 const StyledAnchoredContent = styled.div`
@@ -12,9 +13,11 @@ class Anchored extends Component {
     this._setPosition()
   }
   render() {
-    const { children } = this.props
+    const { children, show } = this.props
     return (
       <div>
+        {show && <EventListener target='window' onResize={this._setPosition} />}
+        {show && <EventListener target='window' onScroll={this._setPosition} />}
         <StyledAnchoredContent ref='anchored'>
           {children}
         </StyledAnchoredContent>
@@ -46,9 +49,7 @@ class Anchored extends Component {
 
 Anchored.propTypes = {
   anchorEl: PropTypes.object,
-  show: PropTypes.bool.isRequired,
-  showBackdrop: PropTypes.bool.isRequired,
-  onClose: PropTypes.func.isRequired,
+  show: PropTypes.bool,
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.object])
 }
 
