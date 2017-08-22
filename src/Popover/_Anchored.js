@@ -5,7 +5,6 @@ import styled from 'styled-components'
 
 const StyledAnchoredContent = styled.div`
   position: fixed;
-  z-index: 101;
 `
 
 class Anchored extends Component {
@@ -23,7 +22,6 @@ class Anchored extends Component {
     )
   }
   _setPosition = () => {
-    console.log('fire')
     const { anchorEl } = this.props
     const { bottom, left, width, height } = this._getPosition()
     const el = findDOMNode(this.refs.anchored)
@@ -48,6 +46,9 @@ class Anchored extends Component {
 
 Anchored.propTypes = {
   anchorEl: PropTypes.object,
+  show: PropTypes.bool.isRequired,
+  showBackdrop: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.object])
 }
 

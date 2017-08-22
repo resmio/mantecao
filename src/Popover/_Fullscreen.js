@@ -8,6 +8,7 @@ const StyledFullscreen = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 1em;
 `
 
 const StyledContent = styled.div`
@@ -19,7 +20,7 @@ class Fullscreen extends Component {
   render() {
     const { children } = this.props
     return (
-      <StyledFullscreen  onClick={this._onFullscreenClick}>
+      <StyledFullscreen>
         <StyledContent onClick={this._onContentClick}>
           {children}
         </StyledContent>
@@ -29,17 +30,9 @@ class Fullscreen extends Component {
   _onContentClick = (e) => {
     e.stopPropagation()
   }
-  _onFullscreenClick = () => {
-    const { onClose } = this.props
-    onClose()
-  }
 }
 
 Fullscreen.propTypes = {
-  anchorEl: PropTypes.object,
-  show: PropTypes.bool.isRequired,
-  showBackdrop: PropTypes.bool.isRequired,
-  onClose: PropTypes.func.isRequired,
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.object])
 }
 

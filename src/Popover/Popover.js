@@ -14,19 +14,27 @@ const StyledContainer = styled.div`
   bottom: 0;
   left: 0;
   right: 0;
+  z-index: 101;
 `
 
 class Popover extends Component {
   render() {
-    const {anchorEl} = this.props
+    const {anchorEl, children, show, showBackdrop} = this.props
     return (
-      <StyledContainer {...this.props}>
+      <StyledContainer
+        show={show}
+        showBackdrop={showBackdrop}
+        onClick={this._requestClose}>
         {anchorEl
           ? <Anchored {...this.props} />
-          : <Fullscreen {...this.props} />
+          : <Fullscreen>{children}</Fullscreen>
         }
       </StyledContainer>
     )
+  }
+  _requestClose = () => {
+    const { onClose } = this.props
+    onClose()
   }
 }
 
