@@ -3,45 +3,43 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 const StyledFullscreen = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  height: 100%;
+  width: 100%;
   display: flex;
-  align-items: flex-start;
-  margin: 1em;
-  z-index: 101;
-  pointer-events: none;
-`
-
-const StyledCentered = styled.div`
-  margin: auto;
-  pointer-events: none;
-  overflow-y: auto;
-  max-height: 100%;
+  align-items: center;
+  justify-content: center;
 `
 
 const StyledContent = styled.div`
-  pointer-events: auto;
+  max-height: 100%;
+  overflow-y: auto;
 `
 
 class Fullscreen extends Component {
   render() {
     const { children } = this.props
     return (
-      <StyledFullscreen>
-        <StyledCentered>
-          <StyledContent>
-            {children}
-          </StyledContent>
-        </StyledCentered>
+      <StyledFullscreen  onClick={this._onFullscreenClick}>
+        <StyledContent onClick={this._onContentClick}>
+          {children}
+        </StyledContent>
       </StyledFullscreen>
     )
+  }
+  _onContentClick = (e) => {
+    e.stopPropagation()
+  }
+  _onFullscreenClick = () => {
+    const { onClose } = this.props
+    onClose()
   }
 }
 
 Fullscreen.propTypes = {
+  anchorEl: PropTypes.object,
+  show: PropTypes.bool.isRequired,
+  showBackdrop: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.object])
 }
 

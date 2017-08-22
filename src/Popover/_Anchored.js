@@ -13,20 +13,24 @@ class Anchored extends Component {
     this._setPosition()
   }
   render() {
+    const { children } = this.props
     return (
-      <StyledAnchoredContent ref="anchored">
-        {children}
-      </StyledAnchoredContent>
+      <div>
+        <StyledAnchoredContent ref='anchored'>
+          {children}
+        </StyledAnchoredContent>
+      </div>
     )
   }
   _setPosition = () => {
+    console.log('fire')
     const { anchorEl } = this.props
-    const { top, left, right, bottom } = this._getPosition()
+    const { bottom, left, width, height } = this._getPosition()
     const el = findDOMNode(this.refs.anchored)
-    el.styles.top = top
-    el.styles.botom = bottom
-    el.styles.left = left
-    el.styles.right = right
+    el.style.top = bottom + 'px'
+    el.style.left = left + 'px'
+    el.style.width = width + 'px'
+    el.style.height = height + 'px'
   }
   _getPosition = () => {
     const { anchorEl } = this.props
@@ -34,14 +38,16 @@ class Anchored extends Component {
     return {
       top: rect.top,
       left: rect.left,
+      right: rect.right,
       bottom: rect.bottom,
-      right: rect.right
+      width: anchorEl.clientWidth,
+      right: anchorEl.clientHeight
     }
   }
 }
 
 Anchored.propTypes = {
-  anchorEl: PropTypes.element,
+  anchorEl: PropTypes.object,
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.object])
 }
 
