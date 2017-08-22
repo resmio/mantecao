@@ -5,12 +5,19 @@ import Popover from './Popover'
 
 storiesOf('Popover', module).add('default', () =>
   <div>
-    <Popover
-      show
-      showBackdrop
-      onClose={action('onClose')}
-    >
-      <span>whatup</span>
+    <div style={{ padding: '100px 0' }}>some other stuff</div>
+    <div id="popover-anchor" style={{ width: '100px' }}>anchor</div>
+    <Popover show showBackdrop onClose={action('onClose')}>
+      <div style={{ background: '#FFF' }}>
+        whatup whatup whatup whatup whatup whatup whatup whatup whatup whatup
+        whatup whatup whatup whatup whatup whatup whatup whatup whatup whatup
+        whatup whatup whatup whatup whatup whatup whatup whatup whatup whatup
+        whatup whatup whatup whatup whatup whatup whatup whatup whatup whatup
+        whatup whatup whatup whatup whatup whatup whatup whatup whatup whatup
+        whatup whatup whatup whatup whatup whatup whatup whatup whatup whatup
+        whatup whatup whatup whatup whatup whatup whatup whatup whatup whatup
+        whatup
+      </div>
     </Popover>
   </div>
 )
