@@ -7,6 +7,8 @@ machine:
 dependencies:
   pre:
     - echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
+    - git config --global user.email $GH_EMAIL
+    - git config --global user.name $GH_NAME
   override:
     - yarn
   cache_directories:
@@ -14,7 +16,7 @@ dependencies:
 
 test:
   override:
-    - yarn run test:ci || true
+    - yarn run test:ci
 
 compile:
   override:
@@ -22,8 +24,8 @@ compile:
 
 deployment:
   npm:
-    branch: releases
+    branch: master
     commands:
       - yarn run storybook:publish
       - yarn build
-      - pushd build && npm publish
+      - pushd build && yarn semantic-release githubToken=$GH_TOKEN

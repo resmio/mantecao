@@ -1,0 +1,409 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ButtonGroup Component renders properly disabled 1`] = `
+<div
+  className="sc-bwzfXH icOaIC"
+>
+  <button
+    className="sc-bdVaJa dasgOI"
+    color="#556285"
+    disabled={true}
+    onClick={[Function]}
+    style={
+      Object {
+        "borderBottomLeftRadius": "4px",
+        "borderBottomRightRadius": "0px",
+        "borderLeft": "1px solid #414b66",
+        "borderTopLeftRadius": "4px",
+        "borderTopRightRadius": "0px",
+        "boxShadow": "inset 0 1px rgba(0,0,0,.05)",
+        "padding": ".5em 1.5em",
+      }
+    }
+  >
+    a
+  </button>
+  <button
+    className="sc-bdVaJa dNukzi"
+    color="#CCCCCC"
+    disabled={true}
+    onClick={[Function]}
+    style={
+      Object {
+        "borderBottomLeftRadius": "0px",
+        "borderBottomRightRadius": "0px",
+        "borderLeft": "1px solid #b3b3b3",
+        "borderTopLeftRadius": "0px",
+        "borderTopRightRadius": "0px",
+        "boxShadow": "inset 0 1px rgba(0,0,0,.05)",
+        "padding": ".5em 1.5em",
+      }
+    }
+  >
+    b
+  </button>
+  <button
+    className="sc-bdVaJa dNukzi"
+    color="#CCCCCC"
+    disabled={true}
+    onClick={[Function]}
+    style={
+      Object {
+        "borderBottomLeftRadius": "0px",
+        "borderBottomRightRadius": "0px",
+        "borderLeft": "1px solid #b3b3b3",
+        "borderTopLeftRadius": "0px",
+        "borderTopRightRadius": "0px",
+        "boxShadow": "inset 0 1px rgba(0,0,0,.05)",
+        "padding": ".5em 1.5em",
+      }
+    }
+  >
+    c
+  </button>
+  <button
+    className="sc-bdVaJa dasgOI"
+    color="#556285"
+    disabled={true}
+    onClick={[Function]}
+    style={
+      Object {
+        "borderBottomLeftRadius": "0px",
+        "borderBottomRightRadius": "0px",
+        "borderLeft": "1px solid #414b66",
+        "borderTopLeftRadius": "0px",
+        "borderTopRightRadius": "0px",
+        "boxShadow": "inset 0 1px rgba(0,0,0,.05)",
+        "padding": ".5em 1.5em",
+      }
+    }
+  >
+    d
+  </button>
+  <button
+    className="sc-bdVaJa dasgOI"
+    color="#556285"
+    disabled={true}
+    onClick={[Function]}
+    style={
+      Object {
+        "borderBottomLeftRadius": "0px",
+        "borderBottomRightRadius": "4px",
+        "borderLeft": "1px solid #414b66",
+        "borderTopLeftRadius": "0px",
+        "borderTopRightRadius": "4px",
+        "boxShadow": "inset 0 1px rgba(0,0,0,.05)",
+        "padding": ".5em 1.5em",
+      }
+    }
+  >
+    e
+  </button>
+</div>
+`;
+
+exports[`ButtonGroup Component renders properly with all selected 1`] = `
+<div
+  className="sc-bwzfXH icOaIC"
+>
+  <button
+    className="sc-bdVaJa dasgOI"
+    color="#556285"
+    disabled={undefined}
+    onClick={[Function]}
+    style={
+      Object {
+        "borderBottomLeftRadius": "4px",
+        "borderBottomRightRadius": "0px",
+        "borderLeft": "1px solid #414b66",
+        "borderTopLeftRadius": "4px",
+        "borderTopRightRadius": "0px",
+        "boxShadow": "inset 0 1px rgba(0,0,0,.05)",
+        "padding": ".5em 1.5em",
+      }
+    }
+  >
+    a
+  </button>
+  <button
+    className="sc-bdVaJa dasgOI"
+    color="#556285"
+    disabled={undefined}
+    onClick={[Function]}
+    style={
+      Object {
+        "borderBottomLeftRadius": "0px",
+        "borderBottomRightRadius": "0px",
+        "borderLeft": "1px solid #414b66",
+        "borderTopLeftRadius": "0px",
+        "borderTopRightRadius": "0px",
+        "boxShadow": "inset 0 1px rgba(0,0,0,.05)",
+        "padding": ".5em 1.5em",
+      }
+    }
+  >
+    b
+  </button>
+  <button
+    className="sc-bdVaJa dasgOI"
+    color="#556285"
+    disabled={undefined}
+    onClick={[Function]}
+    style={
+      Object {
+        "borderBottomLeftRadius": "0px",
+        "borderBottomRightRadius": "0px",
+        "borderLeft": "1px solid #414b66",
+        "borderTopLeftRadius": "0px",
+        "borderTopRightRadius": "0px",
+        "boxShadow": "inset 0 1px rgba(0,0,0,.05)",
+        "padding": ".5em 1.5em",
+      }
+    }
+  >
+    c
+  </button>
+  <button
+    className="sc-bdVaJa dasgOI"
+    color="#556285"
+    disabled={undefined}
+    onClick={[Function]}
+    style={
+      Object {
+        "borderBottomLeftRadius": "0px",
+        "borderBottomRightRadius": "0px",
+        "borderLeft": "1px solid #414b66",
+        "borderTopLeftRadius": "0px",
+        "borderTopRightRadius": "0px",
+        "boxShadow": "inset 0 1px rgba(0,0,0,.05)",
+        "padding": ".5em 1.5em",
+      }
+    }
+  >
+    d
+  </button>
+  <button
+    className="sc-bdVaJa dasgOI"
+    color="#556285"
+    disabled={undefined}
+    onClick={[Function]}
+    style={
+      Object {
+        "borderBottomLeftRadius": "0px",
+        "borderBottomRightRadius": "4px",
+        "borderLeft": "1px solid #414b66",
+        "borderTopLeftRadius": "0px",
+        "borderTopRightRadius": "4px",
+        "boxShadow": "inset 0 1px rgba(0,0,0,.05)",
+        "padding": ".5em 1.5em",
+      }
+    }
+  >
+    e
+  </button>
+</div>
+`;
+
+exports[`ButtonGroup Component renders properly with none selected 1`] = `
+<div
+  className="sc-bwzfXH icOaIC"
+>
+  <button
+    className="sc-bdVaJa dNukzi"
+    color="#CCCCCC"
+    disabled={undefined}
+    onClick={[Function]}
+    style={
+      Object {
+        "borderBottomLeftRadius": "4px",
+        "borderBottomRightRadius": "0px",
+        "borderLeft": "1px solid #b3b3b3",
+        "borderTopLeftRadius": "4px",
+        "borderTopRightRadius": "0px",
+        "boxShadow": "inset 0 1px rgba(0,0,0,.05)",
+        "padding": ".5em 1.5em",
+      }
+    }
+  >
+    a
+  </button>
+  <button
+    className="sc-bdVaJa dNukzi"
+    color="#CCCCCC"
+    disabled={undefined}
+    onClick={[Function]}
+    style={
+      Object {
+        "borderBottomLeftRadius": "0px",
+        "borderBottomRightRadius": "0px",
+        "borderLeft": "1px solid #b3b3b3",
+        "borderTopLeftRadius": "0px",
+        "borderTopRightRadius": "0px",
+        "boxShadow": "inset 0 1px rgba(0,0,0,.05)",
+        "padding": ".5em 1.5em",
+      }
+    }
+  >
+    b
+  </button>
+  <button
+    className="sc-bdVaJa dNukzi"
+    color="#CCCCCC"
+    disabled={undefined}
+    onClick={[Function]}
+    style={
+      Object {
+        "borderBottomLeftRadius": "0px",
+        "borderBottomRightRadius": "0px",
+        "borderLeft": "1px solid #b3b3b3",
+        "borderTopLeftRadius": "0px",
+        "borderTopRightRadius": "0px",
+        "boxShadow": "inset 0 1px rgba(0,0,0,.05)",
+        "padding": ".5em 1.5em",
+      }
+    }
+  >
+    c
+  </button>
+  <button
+    className="sc-bdVaJa dNukzi"
+    color="#CCCCCC"
+    disabled={undefined}
+    onClick={[Function]}
+    style={
+      Object {
+        "borderBottomLeftRadius": "0px",
+        "borderBottomRightRadius": "0px",
+        "borderLeft": "1px solid #b3b3b3",
+        "borderTopLeftRadius": "0px",
+        "borderTopRightRadius": "0px",
+        "boxShadow": "inset 0 1px rgba(0,0,0,.05)",
+        "padding": ".5em 1.5em",
+      }
+    }
+  >
+    d
+  </button>
+  <button
+    className="sc-bdVaJa dNukzi"
+    color="#CCCCCC"
+    disabled={undefined}
+    onClick={[Function]}
+    style={
+      Object {
+        "borderBottomLeftRadius": "0px",
+        "borderBottomRightRadius": "4px",
+        "borderLeft": "1px solid #b3b3b3",
+        "borderTopLeftRadius": "0px",
+        "borderTopRightRadius": "4px",
+        "boxShadow": "inset 0 1px rgba(0,0,0,.05)",
+        "padding": ".5em 1.5em",
+      }
+    }
+  >
+    e
+  </button>
+</div>
+`;
+
+exports[`ButtonGroup Component renders the correct selected and unselected things 1`] = `
+<div
+  className="sc-bwzfXH icOaIC"
+>
+  <button
+    className="sc-bdVaJa dasgOI"
+    color="#556285"
+    disabled={undefined}
+    onClick={[Function]}
+    style={
+      Object {
+        "borderBottomLeftRadius": "4px",
+        "borderBottomRightRadius": "0px",
+        "borderLeft": "1px solid #414b66",
+        "borderTopLeftRadius": "4px",
+        "borderTopRightRadius": "0px",
+        "boxShadow": "inset 0 1px rgba(0,0,0,.05)",
+        "padding": ".5em 1.5em",
+      }
+    }
+  >
+    a
+  </button>
+  <button
+    className="sc-bdVaJa dNukzi"
+    color="#CCCCCC"
+    disabled={undefined}
+    onClick={[Function]}
+    style={
+      Object {
+        "borderBottomLeftRadius": "0px",
+        "borderBottomRightRadius": "0px",
+        "borderLeft": "1px solid #b3b3b3",
+        "borderTopLeftRadius": "0px",
+        "borderTopRightRadius": "0px",
+        "boxShadow": "inset 0 1px rgba(0,0,0,.05)",
+        "padding": ".5em 1.5em",
+      }
+    }
+  >
+    b
+  </button>
+  <button
+    className="sc-bdVaJa dNukzi"
+    color="#CCCCCC"
+    disabled={undefined}
+    onClick={[Function]}
+    style={
+      Object {
+        "borderBottomLeftRadius": "0px",
+        "borderBottomRightRadius": "0px",
+        "borderLeft": "1px solid #b3b3b3",
+        "borderTopLeftRadius": "0px",
+        "borderTopRightRadius": "0px",
+        "boxShadow": "inset 0 1px rgba(0,0,0,.05)",
+        "padding": ".5em 1.5em",
+      }
+    }
+  >
+    c
+  </button>
+  <button
+    className="sc-bdVaJa dasgOI"
+    color="#556285"
+    disabled={undefined}
+    onClick={[Function]}
+    style={
+      Object {
+        "borderBottomLeftRadius": "0px",
+        "borderBottomRightRadius": "0px",
+        "borderLeft": "1px solid #414b66",
+        "borderTopLeftRadius": "0px",
+        "borderTopRightRadius": "0px",
+        "boxShadow": "inset 0 1px rgba(0,0,0,.05)",
+        "padding": ".5em 1.5em",
+      }
+    }
+  >
+    d
+  </button>
+  <button
+    className="sc-bdVaJa dasgOI"
+    color="#556285"
+    disabled={undefined}
+    onClick={[Function]}
+    style={
+      Object {
+        "borderBottomLeftRadius": "0px",
+        "borderBottomRightRadius": "4px",
+        "borderLeft": "1px solid #414b66",
+        "borderTopLeftRadius": "0px",
+        "borderTopRightRadius": "4px",
+        "boxShadow": "inset 0 1px rgba(0,0,0,.05)",
+        "padding": ".5em 1.5em",
+      }
+    }
+  >
+    e
+  </button>
+</div>
+`;
