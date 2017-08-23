@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Modal Component renders properly 1`] = `
+<div
+  className="sc-bxivhb tHErp"
+  onClick={[Function]}
+>
+  <div
+    className="sc-bdVaJa bKBZyW"
+  >
+    <div
+      className="sc-bwzfXH dJAmok"
+      onClick={[Function]}
+    >
+      <div>
+        child
+      </div>
+    </div>
+  </div>
+</div>
+`;

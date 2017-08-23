@@ -6,7 +6,7 @@ import Modal from './Modal'
 storiesOf('Modal', module).add('default', () =>
   <Modal show onClose={action('onClose')}>
     <div style={{ background: '#FFF', padding: '1em' }}>
-      dadaf
+      default modal
     </div>
   </Modal>
 )
