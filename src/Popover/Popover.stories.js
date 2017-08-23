@@ -1,5 +1,4 @@
 import React from 'react'
-import { findDOMNode } from 'react-dom'
 import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import Popover from './Popover'
