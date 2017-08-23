@@ -20,7 +20,11 @@ describe('Popover Component', () => {
 
   it('renders properly with showBackdrop prop', () => {
     const tree = renderer
-      .create(<Popover onClose={() => false} show showBackdrop><div>child</div></Popover>)
+      .create(
+        <Popover onClose={() => false} show showBackdrop>
+          <div>child</div>
+        </Popover>
+      )
       .toJSON()
     expect(tree).toMatchSnapshot()
   })

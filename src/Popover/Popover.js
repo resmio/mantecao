@@ -9,7 +9,8 @@ import Anchored from './_Anchored'
 
 const StyledContainer = styled.div`
   display: ${props => (props.show ? 'block' : 'none')};
-  background-color: ${props => props.showBackdrop ? 'rgba(0, 0, 0, 0.5)' : 'transparent'};
+  background-color: ${props =>
+    props.showBackdrop ? 'rgba(0, 0, 0, 0.5)' : 'transparent'};
   position: fixed;
   top: 0;
   bottom: 0;
@@ -20,17 +21,17 @@ const StyledContainer = styled.div`
 
 class Popover extends Component {
   render() {
-    const {anchorEl, children, show, showBackdrop} = this.props
+    const { anchorEl, children, show, showBackdrop } = this.props
     return (
       <StyledContainer
         show={show}
         showBackdrop={showBackdrop}
-        onClick={this._requestClose}>
+        onClick={this._requestClose}
+      >
         {show && <KeyCodeListener onEsc={this._requestClose} />}
         {anchorEl
           ? <Anchored show={show} anchorEl={anchorEl}>{children}</Anchored>
-          : <Fullscreen>{children}</Fullscreen>
-        }
+          : <Fullscreen>{children}</Fullscreen>}
       </StyledContainer>
     )
   }

@@ -19,9 +19,9 @@ class Anchored extends Component {
     const { children, show } = this.props
     return (
       <div>
-        {show && <EventListener target='window' onResize={this._setPosition} />}
-        {show && <EventListener target='window' onScroll={this._setPosition} />}
-        <StyledAnchoredContent ref='anchored'>
+        {show && <EventListener target="window" onResize={this._setPosition} />}
+        {show && <EventListener target="window" onScroll={this._setPosition} />}
+        <StyledAnchoredContent ref="anchored">
           {children}
         </StyledAnchoredContent>
       </div>

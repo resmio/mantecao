@@ -27,7 +27,7 @@ class Fullscreen extends Component {
       </StyledFullscreen>
     )
   }
-  _onContentClick = (e) => {
+  _onContentClick = e => {
     e.stopPropagation()
   }
 }
