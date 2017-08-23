@@ -12,6 +12,9 @@ class Anchored extends Component {
   componentDidMount() {
     this._setPosition()
   }
+  componentDidUpdate() {
+    this._setPosition()
+  }
   render() {
     const { children, show } = this.props
     return (

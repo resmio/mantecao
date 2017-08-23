@@ -15,7 +15,7 @@ const StyledContainer = styled.div`
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 101;
+  z-index: 1001;
 `
 
 class Popover extends Component {
@@ -42,8 +42,8 @@ class Popover extends Component {
 
 Popover.propTypes = {
   anchorEl: PropTypes.object,
-  show: PropTypes.bool.isRequired,
-  showBackdrop: PropTypes.bool.isRequired,
+  show: PropTypes.bool,
+  showBackdrop: PropTypes.bool,
   onClose: PropTypes.func.isRequired,
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.object])
 }
