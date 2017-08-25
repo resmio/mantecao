@@ -1,0 +1,202 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Checkbox renders checked 1`] = `
+<div
+  className="sc-bdVaJa gzoWJL"
+>
+  <div
+    className="sc-bwzfXH fThnKs"
+  >
+    <div
+      checked={true}
+      className="sc-EHOje fJaLOh"
+      color="#556285"
+      disabled={undefined}
+      onClick={[Function]}
+    >
+      <svg
+        className={undefined}
+        style={
+          Object {
+            "display": "inline-block",
+            "fill": "none",
+            "height": "1.2em",
+            "pointerEvents": "none",
+            "stroke": "currentColor",
+            "strokeWidth": "2.5px",
+            "verticalAlign": "middle",
+            "width": "1.2em",
+          }
+        }
+        viewBox="0 0 32 32"
+      >
+        <g
+          transform="translate(0, -2)"
+        >
+          <path
+            d="M3 18.2L11.4 26.7C11.8 27.1 12.4 27.1 12.8 26.7L30.1 9"
+          />
+        </g>
+      </svg>
+    </div>
+  </div>
+  <div
+    className="sc-htpNat kruefc"
+  >
+    <span
+      className="sc-ifAKCX gEjVhK"
+      onClick={[Function]}
+    >
+      hello checkbox
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Checkbox renders unchecked 1`] = `
+<div
+  className="sc-bdVaJa gzoWJL"
+>
+  <div
+    className="sc-bwzfXH fThnKs"
+  >
+    <div
+      checked={false}
+      className="sc-EHOje byiWrQ"
+      color="#556285"
+      disabled={undefined}
+      onClick={[Function]}
+    >
+      <svg
+        className={undefined}
+        style={
+          Object {
+            "display": "inline-block",
+            "fill": "none",
+            "height": "1.2em",
+            "pointerEvents": "none",
+            "stroke": "currentColor",
+            "strokeWidth": 1.5,
+            "verticalAlign": "middle",
+            "width": "1.2em",
+          }
+        }
+        viewBox="0 0 32 32"
+      >
+        <g
+          transform={undefined}
+        />
+      </svg>
+    </div>
+  </div>
+  <div
+    className="sc-htpNat kruefc"
+  >
+    <span
+      className="sc-ifAKCX gEjVhK"
+      onClick={[Function]}
+    >
+      hello checkbox
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Checkbox renders with a label 1`] = `
+<div
+  className="sc-bdVaJa gzoWJL"
+>
+  <div
+    className="sc-bwzfXH fThnKs"
+  >
+    <div
+      checked={true}
+      className="sc-EHOje fJaLOh"
+      color="#556285"
+      disabled={undefined}
+      onClick={[Function]}
+    >
+      <svg
+        className={undefined}
+        style={
+          Object {
+            "display": "inline-block",
+            "fill": "none",
+            "height": "1.2em",
+            "pointerEvents": "none",
+            "stroke": "currentColor",
+            "strokeWidth": "2.5px",
+            "verticalAlign": "middle",
+            "width": "1.2em",
+          }
+        }
+        viewBox="0 0 32 32"
+      >
+        <g
+          transform="translate(0, -2)"
+        >
+          <path
+            d="M3 18.2L11.4 26.7C11.8 27.1 12.4 27.1 12.8 26.7L30.1 9"
+          />
+        </g>
+      </svg>
+    </div>
+  </div>
+  <div
+    className="sc-htpNat kruefc"
+  >
+    <span
+      className="sc-ifAKCX gEjVhK"
+      onClick={[Function]}
+    >
+      hello checkbox
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Checkbox renders without a label 1`] = `
+<div
+  className="sc-bdVaJa gzoWJL"
+>
+  <div
+    className="sc-bwzfXH fThnKs"
+  >
+    <div
+      checked={true}
+      className="sc-EHOje fJaLOh"
+      color="#556285"
+      disabled={undefined}
+      onClick={[Function]}
+    >
+      <svg
+        className={undefined}
+        style={
+          Object {
+            "display": "inline-block",
+            "fill": "none",
+            "height": "1.2em",
+            "pointerEvents": "none",
+            "stroke": "currentColor",
+            "strokeWidth": "2.5px",
+            "verticalAlign": "middle",
+            "width": "1.2em",
+          }
+        }
+        viewBox="0 0 32 32"
+      >
+        <g
+          transform="translate(0, -2)"
+        >
+          <path
+            d="M3 18.2L11.4 26.7C11.8 27.1 12.4 27.1 12.8 26.7L30.1 9"
+          />
+        </g>
+      </svg>
+    </div>
+  </div>
+  <div
+    className="sc-htpNat kruefc"
+  />
+</div>
+`;
