@@ -1,60 +1,37 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import styled from 'styled-components'
 
-import { colors, iconSizes } from '../variables'
-import CheckIcon from '../icons/CheckIcon'
+import { colors } from '../variables'
+import { CheckIcon, BlankIcon } from '../icons'
 
-const defaultContainerStyle = {
-  display: 'flex'
-}
-const defaultLabelStyle = {
-  display: 'block',
-  fontWeight: 600,
-  marginBottom: '0.5rem',
-  maxWidth: '100%'
-}
-const defaultCheckboxStyle = {
-  display: 'block',
-  backgroundColor: colors.white,
-  border: '1px solid',
-  boxSizing: 'border-box',
-  padding: '0.1rem',
-  borderRadius: '2px',
-  cursor: 'pointer',
-  borderColor: 'currentColor',
-  position: 'relative',
-  height: '1.8rem',
-  width: '1.8rem',
-  margin: '0.2rem 0 0 0',
-  fontSize: '0px', // fixes weird white-space issues
-  userSelect: 'none' // fixes text select on multi-click
-}
-const checkedStyle = {
-  color: colors.white,
-  backgroundColor: colors.pacificBlue,
-  borderColor: colors.pacificBlue
-}
-const disabledStyle = {
-  color: colors.white,
-  cursor: 'not-allowed',
-  borderColor: colors.silver
-}
+const Container = styled.div`display: flex;`
+const CheckboxDiv = styled.div`
+  flex: 0 1 auto;
+  margin-right: 1em;
+`
+const LabelDiv = styled.div`flex: 1 1 auto;`
+const ChildrenDiv = styled.div`padding-top: 0.3em;`
+const LabelText = styled.span`
+  display: flex;
+  cursor: ${props => (props.clickable ? 'pointer' : 'inherit')};
+`
+const CheckboxButton = styled.div`
+  background: ${props => (props.checked ? props.color : colors.white)};
+  border: 1px solid ${props => (props.checked ? props.color : 'currentColor')};
+  border-radius: 2px;
+  color: ${props => (props.checked ? colors.white : 'currentColor')};
+  cursor: ${props => (props.disabled ? 'not-allowed' : 'pointer')};
+  display: flex;
+  opacity: ${props => (props.disabled ? '0.5' : '1')};
+  padding: 0.1em;
+`
 
-/**
- * with label, description and hint
- */
 class Checkbox extends Component {
   constructor(props) {
     super(props)
-    this.state = {}
-    // we need a state for this because it can be controlled or non-controlled
-    // i.e. - given a 'checked' or 'defaultChecked' (or both - 'checked' wins)
-    if (props.checked !== undefined) {
-      this.state.checked = props.checked
-    } else if (props.defaultChecked !== undefined) {
-      this.state.checked = props.defaultChecked
-    } else {
-      this.state.checked = false
+    this.state = {
+      checked: props.checked
     }
   }
   componentWillReceiveProps(nextProps) {
@@ -64,93 +41,68 @@ class Checkbox extends Component {
   }
   render() {
     const {
-      error,
-      warning,
-      labelStyle,
+      checked,
       disabled,
       label,
-      description,
-      hint,
-      style
+      color,
+      children,
+      allowLabelClick
     } = this.props
-
-    let computerContainerStyle = Object.assign({}, defaultContainerStyle, style)
-    let textColorStyle = Object.assign(
-      {},
-      warning ? { color: colors.goldenTainoi } : {},
-      error ? { color: colors.amaranth } : {}
-    )
-    let computedLabelStyle = Object.assign({}, defaultLabelStyle, labelStyle)
-    let computedHintStyle = Object.assign({}, textColorStyle)
-    let computedCheckboxStyle = Object.assign(
-      {},
-      defaultCheckboxStyle,
-      this.state.checked ? checkedStyle : {},
-      disabled ? disabledStyle : {},
-      this.state.checked && disabled ? { backgroundColor: colors.silver } : {}
-    )
-
     return (
-      <div style={computerContainerStyle}>
-        <div style={{ flex: '0 1 auto', marginRight: '0.7rem' }}>
-          <label
+      <Container>
+        <CheckboxDiv>
+          <CheckboxButton
+            color={color}
+            disabled={disabled}
+            checked={this.state.checked}
             onClick={this._toggleCheckbox}
-            htmlFor={this.refs.checkboxInput}
-            style={computedCheckboxStyle}
           >
             {this.state.checked === true
               ? <CheckIcon
                   style={{
-                    strokeWidth: '3.5px',
-                    width: '1.4rem',
-                    height: '1.4rem',
-                    verticalAlign: 'none'
+                    width: '1.2em',
+                    height: '1.2em',
+                    strokeWidth: '2.5px'
                   }}
                 />
-              : null}
-            <input
-              ref="checkboxInput"
-              style={{ visibility: 'hidden', position: 'absolute', left: 0 }}
-              type="checkbox"
-              disabled={disabled}
-              checked={this.state.checked}
-              onChange={this._onChange}
-            />
-          </label>
-        </div>
-        <div style={{ flex: '1 1 auto' }}>
-          {label ? <label style={computedLabelStyle}>{label}</label> : null}
-          {description
-            ? <div style={{ marginBottom: '0.5rem' }}>{description}</div>
-            : null}
-          {hint ? <div style={computedHintStyle}>{hint}</div> : null}
-        </div>
-      </div>
+              : <BlankIcon style={{ width: '1.2em', height: '1.2em' }} />}
+          </CheckboxButton>
+        </CheckboxDiv>
+        <LabelDiv>
+          {label &&
+            <LabelText
+              clickable={allowLabelClick && !disabled}
+              onClick={disabled ? () => false : this._toggleCheckbox}
+            >
+              {label}
+            </LabelText>}
+          {children && <ChildrenDiv>{children}</ChildrenDiv>}
+        </LabelDiv>
+      </Container>
     )
   }
-  _toggleCheckbox = e => {
-    e.preventDefault()
+  _toggleCheckbox = () => {
+    const { onChange } = this.props
     if (!this.props.disabled) {
       this.setState({ checked: !this.state.checked }, () => {
-        this.props.onChange(this.state.checked)
+        onChange(this.state.checked)
       })
     }
   }
-  _onChange = e => {
-    // with a controlled input, react requires an onchange handler - do nothing
-  }
+}
+
+Checkbox.defaultProps = {
+  color: colors.blueBayoux
 }
 
 Checkbox.propTypes = {
   checked: PropTypes.bool,
-  defaultChecked: PropTypes.bool,
+  color: PropTypes.string,
   disabled: PropTypes.bool,
-  error: PropTypes.bool,
-  hint: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   label: PropTypes.string,
-  labelStyle: PropTypes.object,
-  onChange: PropTypes.func.isRequired,
-  warning: PropTypes.bool
+  allowLabelClick: PropTypes.bool,
+  children: PropTypes.node,
+  onChange: PropTypes.func.isRequired
 }
 
 export default Checkbox
